@@ -6,7 +6,7 @@ import {
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
 import {MenuScreen} from '../screens/menu/MenuScreen';
-import {QuizScreen} from '../screens/quiz/QuizScreen';
+import {DrawerNavigator} from './DrawerNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,16 +26,16 @@ export type MenuScreenProps = RootNavigatorProps<AppRoute.MENU>;
 
 export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
   return (
-    <Stack.Navigator {...props} initialRouteName={AppRoute.QUIZ}>
+    <Stack.Navigator {...props} initialRouteName={AppRoute.DRAWER}>
       <Stack.Screen
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{headerShown: false}}
         name={AppRoute.MENU}
         component={MenuScreen}
       />
       <Stack.Screen
-        options={{gestureEnabled: false, headerShown: false}}
-        name={AppRoute.QUIZ}
-        component={QuizScreen}
+        options={{headerShown: false}}
+        name={AppRoute.DRAWER}
+        component={DrawerNavigator}
       />
     </Stack.Navigator>
   );
