@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, StatusBar, Text, View} from 'react-native';
 import {useSelector} from 'react-redux';
+import {CustomText} from '../../components/customText/CustomText';
 import {MenuScreenProps} from '../../navigation/RootNavigator';
 import {RootState} from '../../reducers/rootReducer';
 import {changeLogInState} from '../../reducers/settingsReducer';
@@ -16,7 +17,9 @@ export const MenuScreen: React.FC<MenuScreenProps> = () => {
     <View style={style.container}>
       <StatusBar barStyle="dark-content" />
       <Logo />
-      <Text>Is user logged in: {isLoggedIn ? 'true' : 'false'}</Text>
+      <CustomText>
+        Is user logged in: {isLoggedIn ? 'true' : 'false'}
+      </CustomText>
       <Button
         onPress={() => dispatch(changeLogInState(!isLoggedIn))}
         title="Change user state"
