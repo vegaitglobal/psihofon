@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, StatusBar, View} from 'react-native';
 import {useSelector} from 'react-redux';
+import { CustomButton } from '../../components/customButton/CustomButton';
 import {CustomText} from '../../components/customText/CustomText';
 import {MenuScreenProps} from '../../navigation/RootNavigator';
 import {RootState} from '../../reducers/rootReducer';
