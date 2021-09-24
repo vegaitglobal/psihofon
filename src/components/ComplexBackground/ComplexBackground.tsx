@@ -15,7 +15,7 @@ export const ComplexBackground: React.FC<Props> = ({
 }) => {
   return (
     <SafeAreaView style={style.root}>
-      <StatusBar animated={true} backgroundColor={Colors.PRIMARY} />
+      <StatusBar animated={false} backgroundColor={Colors.PRIMARY} />
       <View style={style.upperContentContainer}>
         <View style={style.upperContent}>{upperContent}</View>
       </View>
