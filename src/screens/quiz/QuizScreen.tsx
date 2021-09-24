@@ -10,11 +10,15 @@ import {useAppDispatch} from '../../store/store';
 import Logo from './../../../assets/icons/Logo.svg';
 import styles from './style';
 
-export const QuizScreen: React.FC<QuizScreenProps> = () => {
+export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
   const {isLoggedIn} = useSelector((state: RootState) => state.settings);
   const dispatch = useAppDispatch();
 
   return (
-    <SolidBackground isDark={false} onPressMenu={() => {}}></SolidBackground>
+    <SolidBackground
+      isDark={false}
+      onPressMenu={() => navigation.toggleDrawer()}>
+      <View />
+    </SolidBackground>
   );
 };
