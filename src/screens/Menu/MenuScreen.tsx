@@ -1,28 +1,36 @@
 import React from 'react';
-import {Button, StatusBar, View} from 'react-native';
-import {useSelector} from 'react-redux';
+import {Button, View} from 'react-native';
+import {ComplexBackground} from '../../components/ComplexBackground/ComplexBackground';
 import {CustomText} from '../../components/customText/CustomText';
 import {MenuScreenProps} from '../../navigation/RootNavigator';
-import {RootState} from '../../reducers/rootReducer';
 import {changeLogInState} from '../../reducers/settingsReducer';
 import {useAppDispatch} from '../../store/store';
-import Logo from './../../../assets/icons/Logo.svg';
-import style from './style';
+import styles from './style';
 
 export const MenuScreen: React.FC<MenuScreenProps> = () => {
-  const {isLoggedIn} = useSelector((state: RootState) => state.settings);
   const dispatch = useAppDispatch();
 
   return (
-    <View style={style.container}>
-      <StatusBar barStyle="dark-content" />
-      <Logo />
-      <CustomText>
-        Is user logged in: {isLoggedIn ? 'true' : 'false'}
-      </CustomText>
-      <Button
-        onPress={() => dispatch(changeLogInState(!isLoggedIn))}
-        title="Change user state"
+    <View style={styles.container}>
+      <ComplexBackground
+        //TODO These are just placeholders
+        upperContent={
+          <CustomText>
+            123312312312312312312esaffr1423edasf123sfcf32sffsdfsdf
+            sffsdfdssdfsdfsd f sdffsdf sf
+            fasdasdadasasdasdasdasdasdasdasdasdasdasdasdasdasdasda
+            sdasasdasdassadasdasdadasdasagsdfgfsgsfasfsdgfsdf a
+          </CustomText>
+        }
+        lowerContent={
+          <>
+            <CustomText>Is user logged in: Fake bool: true</CustomText>
+            <Button
+              onPress={() => dispatch(changeLogInState(true))}
+              title="Change user state"
+            />
+          </>
+        }
       />
     </View>
   );

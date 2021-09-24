@@ -36,7 +36,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
         component={IntroMenuScreen}
       />
       <Stack.Screen
-        options={{gestureEnabled: false}}
+        options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.MENU}
         component={MenuScreen}
       />

@@ -1,7 +1,7 @@
-import {Colors} from '../../constants/colors';
-import {BorderRadiuses} from '../../constants/style';
-import {isTinyDevice} from '../../constants/constants';
-import {moderateVerticalScale} from './../../utils/helpers';
+import {Colors} from '../../../constants/colors';
+import {BorderRadiuses} from '../../../constants/style';
+import {isTinyDevice} from '../../../constants/constants';
+import {moderateVerticalScale} from './../../../utils/helpers';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 export default StyleSheet.create({
