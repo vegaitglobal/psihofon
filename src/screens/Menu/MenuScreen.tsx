@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button, StatusBar, Text, View } from 'react-native';
-import { useSelector } from 'react-redux';
-import { RecommendationBox } from '../../components/recommendationBox/RecommendationBox';
-import { MenuScreenProps } from '../../navigation/RootNavigator';
-import { RootState } from '../../reducers/rootReducer';
-import { changeLogInState } from '../../reducers/settingsReducer';
-import { useAppDispatch } from '../../store/store';
+import {Button, StatusBar, View} from 'react-native';
+import {useSelector} from 'react-redux';
+import {CustomText} from '../../components/customText/CustomText';
+import {MenuScreenProps} from '../../navigation/RootNavigator';
+import {RootState} from '../../reducers/rootReducer';
+import {changeLogInState} from '../../reducers/settingsReducer';
+import {useAppDispatch} from '../../store/store';
 import Logo from './../../../assets/icons/Logo.svg';
 import style from './style';
 
@@ -16,7 +16,14 @@ export const MenuScreen: React.FC<MenuScreenProps> = () => {
   return (
     <View style={style.container}>
       <StatusBar barStyle="dark-content" />
-      <RecommendationBox />
+      <Logo />
+      <CustomText>
+        Is user logged in: {isLoggedIn ? 'true' : 'false'}
+      </CustomText>
+      <Button
+        onPress={() => dispatch(changeLogInState(!isLoggedIn))}
+        title="Change user state"
+      />
     </View>
   );
 };

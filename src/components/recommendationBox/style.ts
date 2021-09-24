@@ -4,8 +4,6 @@ export default StyleSheet.create({
     container: {
         backgroundColor: '#005751',
         borderRadius: 10,
-        // alignItems: 'center',
-        // justifyContent: 'center',
         flexDirection: 'row',
         width: '100%',
         height: 71,

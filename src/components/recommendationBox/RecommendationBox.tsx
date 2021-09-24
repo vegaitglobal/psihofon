@@ -1,5 +1,6 @@
 import React from 'react'
-import { Text, View, Image } from 'react-native'
+import { View, Image } from 'react-native'
+import { CustomText } from '../customText/CustomText';
 import style from './style';
 
 const timerIconPath = require('./../../../assets/icons/Timer.png')
@@ -13,8 +14,8 @@ export const RecommendationBox: React.FC<RecommendationBoxProps> = () => {
             
             <Image source={timerIconPath}/>
             <View style={style.textContainer}>
-                <Text style={style.title}>Ucestalost rada</Text>
-                <Text style={style.textContent}>1x dnevno, svaki dan, u trajanju od 7 dana</Text>
+                <CustomText style={style.title}>Učestalost rada</CustomText>
+                <CustomText style={style.textContent}>1x dnevno, svaki dan, u trajanju od 7 dana</CustomText>
             </View>
 
         </View>
