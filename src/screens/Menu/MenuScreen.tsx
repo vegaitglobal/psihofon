@@ -11,7 +11,7 @@ import Logo from './../../../assets/icons/Logo.svg';
 import styles from './style';
 
 export const MenuScreen: React.FC<MenuScreenProps> = () => {
-  const {isLoggedIn} = useSelector((state: RootState) => state.settings);
+  const { isLoggedIn } = useSelector((state: RootState) => state.settings);
   const dispatch = useAppDispatch();
 
   return (
