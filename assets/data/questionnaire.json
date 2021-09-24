@@ -1,22 +1,20 @@
 {
-  "questionnaire": {
-    "questions": [
-      {
+  "questions": [
+    {
+      "id": 1,
+      "text": "text",
+      "orderNumber": 1,
+      "mentalState": {
         "id": 1,
-        "text": "text",
-        "orderNumber": 1,
-        "mentalState": {
-          "id": 1,
-          "name": "Anxiety"
-        }
+        "name": "Anxiety"
       }
-    ],
-    "answers": [
-      {
-        "id": 1,
-        "text": "text",
-        "orderNumber": 1
-      }
-    ]
-  }
+    }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "text": "text",
+      "orderNumber": 1
+    }
+  ]
 }
