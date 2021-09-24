@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "all": "yarn install && cd ios && pod install && cd ..",
+    "debugapk": "cd ./android/app/src/main; mkdir ./assets; cd ./assets; touch 'index.android.bundle'; cd ../../../../../; rm ./android/app/build/outputs/apk/debug/app-debug.apk || del ./android/app/build/outputs/apk/debug/app-debug.apk; react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/ && cd ./android && ./gradlew assembleDebug && cd .. && open ./android/app/build/outputs/apk/debug || explorer ./android/app/build/outputs/apk/debug",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
