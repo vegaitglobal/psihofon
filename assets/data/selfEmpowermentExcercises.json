@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Title",
+    "weekNumber": 1,
+    "preparation": "Text",
+    "description": "Desc",
+    "explanation": "Explanation",
+    "durationDescription": "Duration"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Anxiety",
+    "id": 1,
+    "excercises": [
+      {
+        "id": 1,
+        "title": "Title",
+        "description": "Description",
+        "recommendation": "Recommendation"
+      }
+    ]
+  }
+]

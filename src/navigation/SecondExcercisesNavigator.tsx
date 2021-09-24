@@ -5,33 +5,33 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
-import {MenuScreen} from '../screens/menu/MenuScreen';
 import {QuizScreen} from '../screens/quiz/QuizScreen';
 
 const Stack = createNativeStackNavigator();
 
 type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
 
-export type RootNavigatorParams = {
-  [AppRoute.MENU]: undefined;
+export type SecondExcercisesNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
 };
 
-export interface RootNavigatorProps<Screen extends keyof RootNavigatorParams> {
-  navigation: NativeStackNavigationProp<RootNavigatorParams, Screen>;
-  route: RouteProp<RootNavigatorParams, Screen>;
+export interface RootNavigatorProps<
+  Screen extends keyof SecondExcercisesNavigatorParams,
+> {
+  navigation: NativeStackNavigationProp<
+    SecondExcercisesNavigatorParams,
+    Screen
+  >;
+  route: RouteProp<SecondExcercisesNavigatorParams, Screen>;
 }
 
-export type MenuScreenProps = RootNavigatorProps<AppRoute.MENU>;
+export type QuizScreenProps = RootNavigatorProps<AppRoute.QUIZ>;
 
-export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
+export const SecondExcercisesNavigator = (
+  props: Partial<StackNavigatorProps>,
+) => {
   return (
     <Stack.Navigator {...props} initialRouteName={AppRoute.QUIZ}>
-      <Stack.Screen
-        options={{gestureEnabled: false, headerShown: false}}
-        name={AppRoute.MENU}
-        component={MenuScreen}
-      />
       <Stack.Screen
         options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.QUIZ}
