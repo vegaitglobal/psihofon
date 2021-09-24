@@ -1,11 +1,11 @@
 import React from 'react';
-import {Button, StatusBar, View} from 'react-native';
-import {useSelector} from 'react-redux';
-import {CustomText} from '../../components/customText/CustomText';
-import {MenuScreenProps} from '../../navigation/RootNavigator';
-import {RootState} from '../../reducers/rootReducer';
-import {changeLogInState} from '../../reducers/settingsReducer';
-import {useAppDispatch} from '../../store/store';
+import { Button, StatusBar, View } from 'react-native';
+import { useSelector } from 'react-redux';
+import { CustomText } from '../../components/customText/CustomText';
+import { MenuScreenProps } from '../../navigation/RootNavigator';
+import { RootState } from '../../reducers/rootReducer';
+import { changeLogInState } from '../../reducers/settingsReducer';
+import { useAppDispatch } from '../../store/store';
 import Logo from './../../../assets/icons/Logo.svg';
 import styles from './style';
 
