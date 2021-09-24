@@ -26,7 +26,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
   return (
     <Stack.Navigator {...props} initialRouteName={AppRoute.MENU}>
       <Stack.Screen
-        options={{gestureEnabled: false}}
+        options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.MENU}
         component={MenuScreen}
       />
