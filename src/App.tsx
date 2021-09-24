@@ -2,8 +2,8 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
-import {RootNavigator} from './src/navigation/RootNavigator';
-import {persistor, store} from './src/store/store';
+import {RootNavigator} from './navigation/RootNavigator';
+import {persistor, store} from './store/store';
 import {PersistGate} from 'redux-persist/integration/react';
 
 const App = () => {
