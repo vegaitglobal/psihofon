@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, StatusBar, Text, View} from 'react-native';
+import {Button, StatusBar, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {CustomText} from '../../components/customText/CustomText';
 import {MenuScreenProps} from '../../navigation/RootNavigator';
