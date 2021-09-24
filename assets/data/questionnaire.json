@@ -1,214 +1,212 @@
 {
-  "questionnaire": {
-    "description": "U sledećim pitanjima odgovore dajete prema  skali koja definiše meru u kojoj vas opisuju navedene situacije. Skalu smo definisali na sledeći način:",
-    "questions": [
-      {
+  "description": "U sledećim pitanjima odgovore dajete prema  skali koja definiše meru u kojoj vas opisuju navedene situacije. Skalu smo definisali na sledeći način:",
+  "questions": [
+    {
+      "id": 1,
+      "text": "Ponekad se osećam uplašeno bez jasnog razloga.",
+      "orderNumber": 1,
+      "mentalState": {
         "id": 1,
-        "text": "Ponekad se osećam uplašeno bez jasnog razloga.",
-        "orderNumber": 1,
-        "mentalState": {
-          "id": 1,
-          "name": "Anksioznost"
-        }
-      },
-      {
-        "id": 2,
-        "text": "Ponekad osećam da mi srce “lupa” ili “preskače” iako se nisam fizički umorio/la.",
-        "orderNumber": 2,
-        "mentalState": {
-          "id": 1,
-          "name": "Anksioznost"
-        }
-      },
-      {
-        "id": 3,
-        "text": "Ponekad imam poteškoće sa disanjem iako se nisam umorio/la.",
-        "orderNumber": 3,
-        "mentalState": {
-          "id": 1,
-          "name": "Anksioznost"
-        }
-      },
-      {
-        "id": 4,
-        "text": "Osećam da sam često na “ivici nerava”.",
-        "orderNumber": 4,
-        "mentalState": {
-          "id": 1,
-          "name": "Anksioznost"
-        }
-      },
-      {
-        "id": 5,
-        "text": "Brine me šta nosi budućnost.",
-        "orderNumber": 5,
-        "mentalState": {
-          "id": 1,
-          "name": "Anksioznost"
-        }
-      },
-      {
-        "id": 6,
-        "text": "Ponekad mi je teško da ostvarim inicijativu ili započnem nešto.",
-        "orderNumber": 6,
-        "mentalState": {
-          "id": 2,
-          "name": "Tuga"
-        }
-      },
-      {
-        "id": 7,
-        "text": "Nisam imao nikakvo lepo osećanje.",
-        "orderNumber": 7,
-        "mentalState": {
-          "id": 2,
-          "name": "Tuga"
-        }
-      },
-      {
-        "id": 8,
-        "text": "Osećam da nemam čemu da se nadam.",
-        "orderNumber": 8,
-        "mentalState": {
-          "id": 2,
-          "name": "Tuga"
-        }
-      },
-      {
-        "id": 9,
-        "text": "Osećam se tužno ili jadno.",
-        "orderNumber": 9,
-        "mentalState": {
-          "id": 2,
-          "name": "Tuga"
-        }
-      },
-      {
-        "id": 10,
-        "text": "Osećam da je život besmislen.",
-        "orderNumber": 10,
-        "mentalState": {
-          "id": 2,
-          "name": "Tuga"
-        }
-      },
-      {
-        "id": 11,
-        "text": "U nekim situacijama reagujem preterano.",
-        "orderNumber": 11,
-        "mentalState": {
-          "id": 3,
-          "name": "Stres"
-        }
-      },
-      {
-        "id": 12,
-        "text": "Teško mi je da se opustim.",
-        "orderNumber": 12,
-        "mentalState": {
-          "id": 3,
-          "name": "Stres"
-        }
-      },
-      {
-        "id": 13,
-        "text": "Ne volim kad me nešto prekida u radu.",
-        "orderNumber": 13,
-        "mentalState": {
-          "id": 3,
-          "name": "Stres"
-        }
-      },
-      {
-        "id": 14,
-        "text": "Ponekad mi je teško da se smirim.",
-        "orderNumber": 14,
-        "mentalState": {
-          "id": 3,
-          "name": "Stres"
-        }
-      },
-      {
-        "id": 15,
-        "text": "Ponekad sam preterano osetljiv/a.",
-        "orderNumber": 15,
-        "mentalState": {
-          "id": 3,
-          "name": "Stres"
-        }
-      },
-      {
-        "id": 16,
-        "text": "Ponekad se teško nosim sa izazovima.",
-        "orderNumber": 16,
-        "mentalState": {
-          "id": 4,
-          "name": "Nisko samopoštovanje"
-        }
-      },
-      {
-        "id": 17,
-        "text": "Ponekad mi je neprijatno da razmišljam o sebi.",
-        "orderNumber": 17,
-        "mentalState": {
-          "id": 4,
-          "name": "Nisko samopoštovanje"
-        }
-      },
-      {
-        "id": 18,
-        "text": "Ponekad se osećam potpuno beskorisno.",
-        "orderNumber": 18,
-        "mentalState": {
-          "id": 4,
-          "name": "Nisko samopoštovanje"
-        }
-      },
-      {
-        "id": 19,
-        "text": "Nisam zadovoljan/na sobom.",
-        "orderNumber": 19,
-        "mentalState": {
-          "id": 4,
-          "name": "Nisko samopoštovanje"
-        }
-      },
-      {
-        "id": 20,
-        "text": "Nema mnogo toga čime bih se mogao/la ponositi.",
-        "orderNumber": 20,
-        "mentalState": {
-          "id": 4,
-          "name": "Nisko samopoštovanje"
-        }
+        "name": "Anksioznost"
       }
-    ],
-    "answers": [
-      {
+    },
+    {
+      "id": 2,
+      "text": "Ponekad osećam da mi srce “lupa” ili “preskače” iako se nisam fizički umorio/la.",
+      "orderNumber": 2,
+      "mentalState": {
         "id": 1,
-        "text": "Uopšte nije karakteristično za mene",
-        "orderNumber": 1
-      },
-      {
-        "id": 2,
-        "text": "Nije karakteristično za mene",
-        "orderNumber": 2
-      },
-      {
-        "id": 3,
-        "text": "Ne znam, nemam mišljenje",
-        "orderNumber": 3
-      },
-      {
-        "id": 4,
-        "text": "Delimično me opisuje",
-        "orderNumber": 4
-      },
-      {
-        "id": 5,
-        "text": "U potpunosti me opisuje",
-        "orderNumber": 5
+        "name": "Anksioznost"
       }
-    ]
-  }
+    },
+    {q
+      "id": 3,
+      "text": "Ponekad imam poteškoće sa disanjem iako se nisam umorio/la.",
+      "orderNumber": 3,
+      "mentalState": {
+        "id": 1,
+        "name": "Anksioznost"
+      }
+    },
+    {
+      "id": 4,
+      "text": "Osećam da sam često na “ivici nerava”.",
+      "orderNumber": 4,
+      "mentalState": {
+        "id": 1,
+        "name": "Anksioznost"
+      }
+    },
+    {
+      "id": 5,
+      "text": "Brine me šta nosi budućnost.",
+      "orderNumber": 5,
+      "mentalState": {
+        "id": 1,
+        "name": "Anksioznost"
+      }
+    },
+    {
+      "id": 6,
+      "text": "Ponekad mi je teško da ostvarim inicijativu ili započnem nešto.",
+      "orderNumber": 6,
+      "mentalState": {
+        "id": 2,
+        "name": "Tuga"
+      }
+    },
+    {
+      "id": 7,
+      "text": "Nisam imao nikakvo lepo osećanje.",
+      "orderNumber": 7,
+      "mentalState": {
+        "id": 2,
+        "name": "Tuga"
+      }
+    },
+    {
+      "id": 8,
+      "text": "Osećam da nemam čemu da se nadam.",
+      "orderNumber": 8,
+      "mentalState": {
+        "id": 2,
+        "name": "Tuga"
+      }
+    },
+    {
+      "id": 9,
+      "text": "Osećam se tužno ili jadno.",
+      "orderNumber": 9,
+      "mentalState": {
+        "id": 2,
+        "name": "Tuga"
+      }
+    },
+    {
+      "id": 10,
+      "text": "Osećam da je život besmislen.",
+      "orderNumber": 10,
+      "mentalState": {
+        "id": 2,
+        "name": "Tuga"
+      }
+    },
+    {
+      "id": 11,
+      "text": "U nekim situacijama reagujem preterano.",
+      "orderNumber": 11,
+      "mentalState": {
+        "id": 3,
+        "name": "Stres"
+      }
+    },
+    {
+      "id": 12,
+      "text": "Teško mi je da se opustim.",
+      "orderNumber": 12,
+      "mentalState": {
+        "id": 3,
+        "name": "Stres"
+      }
+    },
+    {
+      "id": 13,
+      "text": "Ne volim kad me nešto prekida u radu.",
+      "orderNumber": 13,
+      "mentalState": {
+        "id": 3,
+        "name": "Stres"
+      }
+    },
+    {
+      "id": 14,
+      "text": "Ponekad mi je teško da se smirim.",
+      "orderNumber": 14,
+      "mentalState": {
+        "id": 3,
+        "name": "Stres"
+      }
+    },
+    {
+      "id": 15,
+      "text": "Ponekad sam preterano osetljiv/a.",
+      "orderNumber": 15,
+      "mentalState": {
+        "id": 3,
+        "name": "Stres"
+      }
+    },
+    {
+      "id": 16,
+      "text": "Ponekad se teško nosim sa izazovima.",
+      "orderNumber": 16,
+      "mentalState": {
+        "id": 4,
+        "name": "Nisko samopoštovanje"
+      }
+    },
+    {
+      "id": 17,
+      "text": "Ponekad mi je neprijatno da razmišljam o sebi.",
+      "orderNumber": 17,
+      "mentalState": {
+        "id": 4,
+        "name": "Nisko samopoštovanje"
+      }
+    },
+    {
+      "id": 18,
+      "text": "Ponekad se osećam potpuno beskorisno.",
+      "orderNumber": 18,
+      "mentalState": {
+        "id": 4,
+        "name": "Nisko samopoštovanje"
+      }
+    },
+    {
+      "id": 19,
+      "text": "Nisam zadovoljan/na sobom.",
+      "orderNumber": 19,
+      "mentalState": {
+        "id": 4,
+        "name": "Nisko samopoštovanje"
+      }
+    },
+    {
+      "id": 20,
+      "text": "Nema mnogo toga čime bih se mogao/la ponositi.",
+      "orderNumber": 20,
+      "mentalState": {
+        "id": 4,
+        "name": "Nisko samopoštovanje"
+      }
+    }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "text": "Uopšte nije karakteristično za mene",
+      "orderNumber": 1
+    },
+    {
+      "id": 2,
+      "text": "Nije karakteristično za mene",
+      "orderNumber": 2
+    },
+    {
+      "id": 3,
+      "text": "Ne znam, nemam mišljenje",
+      "orderNumber": 3
+    },
+    {
+      "id": 4,
+      "text": "Delimično me opisuje",
+      "orderNumber": 4
+    },
+    {
+      "id": 5,
+      "text": "U potpunosti me opisuje",
+      "orderNumber": 5
+    }
+  ]
 }
