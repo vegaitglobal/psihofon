@@ -1,14 +1,15 @@
 import {StyleSheet, ViewStyle} from 'react-native';
 import {Margins} from '../../styles/margins';
+import {verticalScale} from '../../utils/helpers';
 
 export default StyleSheet.create({
   centerContainer: {
     justifyContent: 'center',
     alignContent: 'center',
-    flex: 1,
+    flex: 2,
   } as ViewStyle,
-  list: {marginTop: Margins.LARGE} as ViewStyle,
-  separator: {marginVertical: Margins.SMALL} as ViewStyle,
+  list: {marginTop: verticalScale(Margins.LARGE)} as ViewStyle,
+  separator: {marginVertical: verticalScale(Margins.SMALL)} as ViewStyle,
   textButton: {
     color: 'white',
     fontSize: 12,
@@ -17,5 +18,9 @@ export default StyleSheet.create({
     textAlign: 'center',
     textDecorationLine: 'underline',
   } as ViewStyle,
-  bottomButton: {marginBottom: Margins.XLARGE},
+  bottomButton: {marginBottom: verticalScale(40)},
+  lowerArea: {
+    flex: 1,
+    justifyContent: 'flex-end',
+  } as ViewStyle,
 });

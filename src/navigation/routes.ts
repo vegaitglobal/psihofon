@@ -10,5 +10,6 @@ export enum AppRoute {
   FIRST_TYPE_EXCERCISE_CHECK = 'First Type Excercise Check',
   CRISIS = 'Crisis',
   CRISIS_EXERCISES = 'Crisis Exercises',
+  EXERCISE_LIST = 'Exercise List',
   CRISIS_EXERCISE_SCREEN = 'Crisis Exercise Screen',
 }
