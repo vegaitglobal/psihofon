@@ -10,7 +10,7 @@ services:
     env_file:
       - .env
     ports:
-      - "80:8000"
+      - "48100:8000"
     depends_on:
       - postgres
     volumes:
@@ -33,7 +33,7 @@ services:
       - PGADMIN_DEFAULT_EMAIL=user@pgadmin.com
       - PGADMIN_DEFAULT_PASSWORD=pgadmin
     ports:
-      - "8080:80"
+      - "48101:80"
     depends_on:
       - postgres
     volumes:
