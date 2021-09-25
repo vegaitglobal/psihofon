@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Anksioznost",
+    "exerciseListLabel": "Vežbe za anksioznost",
     "exercises": [
       {
         "id": 1,
@@ -92,6 +93,7 @@
   {
     "id": 2,
     "name": "Nisko samopoštovanje",
+    "exerciseListLabel": "Vežbe za samopouzdanje",
     "exercises": [
       {
         "id": 15,
@@ -170,6 +172,7 @@
   {
     "id": 3,
     "name": "Stres",
+    "exerciseListLabel": "Antistres vežbe",
     "exercises": [
       {
         "id": 27,
@@ -254,6 +257,7 @@
   {
     "id": 4,
     "name": "Tuga",
+    "exerciseListLabel": "Vežbe za tugu/Loše raspoloženje",
     "exercises": [
       {
         "id": 40,
