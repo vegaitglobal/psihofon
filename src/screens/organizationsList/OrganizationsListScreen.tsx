@@ -1,131 +1,99 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   Alert,
-  NativeSyntheticEvent,
+  FlatList,
+  Linking,
   Text,
-  TextLayoutEventData,
-  TextStyle,
+  TouchableOpacity,
   View,
 } from 'react-native';
+import organizations from '../../../assets/data/organizations.json';
 import {CustomText} from '../../components/customText/CustomText';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import style from './style';
 import {Colors} from '../../constants/colors';
-
-interface AdjustableFontTextProps {
-  children: React.ReactNode;
-  style?: TextStyle;
-}
-
-const AdjustableFontText: React.FC<AdjustableFontTextProps> = ({
-  children,
-  style,
-}) => {
-  const [fontSize, setFontSize] = useState(style?.fontSize | 12);
-
-  const onTextLayout = (e: NativeSyntheticEvent<TextLayoutEventData>) => {
-    const {lines} = e.nativeEvent;
-
-    if (lines.length > 1) {
-      setFontSize(prev => prev - 1);
-    }
-  };
-
-  return (
-    <Text onTextLayout={onTextLayout} style={{...style, fontSize}}>
-      {children}
-    </Text>
-  );
-};
+import {useLightHeader} from '../../hooks/useLightHeader';
+import {OrganizationsListScreenProps} from '../../navigation/DrawerNavigator';
+import style from './style';
 
 interface OrganizationLabelProps {
-  label: string;
+  name: string;
 }
 
-const OrganizationLabel: React.FC<OrganizationLabelProps> = ({label}) => {
+const OrganizationLabel: React.FC<OrganizationLabelProps> = ({name}) => {
   return (
     <View style={style.organziationLabel}>
-      <Text>{label}</Text>
+      <Text>{name}</Text>
     </View>
   );
 };
 
 interface OrganizationLinkProps {
   city: string;
-  link: string;
+  websiteUrl: string;
   linkFontSize?: number;
 }
 
-const OrganizationLink: React.FC<OrganizationLinkProps> = ({link, city}) => {
-  return (
+const OrganizationLink: React.FC<OrganizationLinkProps> = ({
+  websiteUrl,
+  city,
+}) => {
+  const handlePress = () =>
+    Linking.canOpenURL(websiteUrl).then(canOpen => {
+      canOpen && Linking.openURL(websiteUrl);
+    });
+
+  return websiteUrl?.length ? (
+    <TouchableOpacity onPress={handlePress} style={style.organizationLink}>
+      <Text style={style.city}>{city}</Text>
+      <Text style={style.link}>Vebsajt</Text>
+    </TouchableOpacity>
+  ) : (
     <View style={style.organizationLink}>
       <Text style={style.city}>{city}</Text>
-      <AdjustableFontText style={style.link}>{link}</AdjustableFontText>
     </View>
   );
 };
 
 interface OrganizationContainerProps {
-  label: string;
+  name: string;
   city: string;
-  link: string;
+  websiteUrl: string;
 }
 
 const OrganizationContainer: React.FC<OrganizationContainerProps> = ({
-  label,
-  link,
+  name,
+  websiteUrl,
   city,
 }) => {
   return (
     <View style={style.organizationContainer}>
-      <OrganizationLabel label={label} />
-      <OrganizationLink city={city} link={link} />
+      <OrganizationLabel name={name} />
+      <OrganizationLink city={city} websiteUrl={websiteUrl} />
     </View>
   );
 };
 
-const organizations = [
-  {
-    label: 'Psihološki centar ProActiva',
-    city: 'Subotica',
-    link: 'www.proaktiva.rs',
-  },
-  {
-    label: 'Psihološko savetovalište za mlade - Novosadski humanitarni centar',
-    city: 'Novi Sad',
-    link: 'www.savetovaliste.nshc.org.rs',
-  },
-  {label: 'Sos ženski centar', city: 'Novi Sad', link: 'www.sosns.rs'},
-  {
-    label: 'Psihološko savetovalište za mlade – Infopolis (EDIT Centar)',
-    city: 'Novi Sad',
-    link: 'www.infopolis.rs',
-  },
-  {
-    label: 'Udruženje Crvena Linija',
-    city: 'Novi Sad',
-    link: 'www.crvenalinija.org',
-  },
-  {
-    label: 'Centar Srce',
-    city: 'Novi Sad',
-    link: 'www.centarsrce.org',
-  },
-];
+export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
+  ({navigation}) => {
+    const renderItem = ({item}) => (
+      <OrganizationContainer
+        name={item.name}
+        city={item.city}
+        websiteUrl={item.websiteUrl}
+      />
+    );
 
-export const OrganizationsListScreen: React.FC<{}> = () => {
-  return (
-    <SolidBackground
-      backgroundColor={Colors.PALE_GRAY}
-      onPressMenu={() => Alert.alert('Hi there')}>
-      <CustomText style={style.title}>Baza podataka organizacija</CustomText>
-      {organizations.map(org => (
-        <OrganizationContainer
-          label={org.label}
-          city={org.city}
-          link={org.link}
+    useLightHeader(navigation);
+
+    return (
+      <SolidBackground backgroundColor={Colors.PALE_GRAY}>
+        <CustomText style={style.title}>Baza podataka organizacija</CustomText>
+        <FlatList
+          showsVerticalScrollIndicator={false}
+          data={organizations}
+          renderItem={renderItem}
+          keyExtractor={item => item.id.toString()}
         />
-      ))}
-    </SolidBackground>
-  );
-};
+      </SolidBackground>
+    );
+  };

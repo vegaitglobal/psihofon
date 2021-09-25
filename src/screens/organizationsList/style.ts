@@ -19,7 +19,6 @@ export default StyleSheet.create({
     width: '60%',
     height: 40,
     paddingLeft: 9,
-    //paddingVertical: 11,
     borderRadius: 10,
     marginRight: 8,
   } as ViewStyle,
@@ -34,6 +33,7 @@ export default StyleSheet.create({
     fontSize: 12,
     fontWeight: '500',
     lineHeight: 18,
+    // textDecorationLine: 'underline'
   } as TextStyle,
   title: {
     color: '#706F6F',

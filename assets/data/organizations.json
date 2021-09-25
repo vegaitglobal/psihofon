@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Psihološki centar ProActiva",
+    "city": "Subotica",
+    "websiteUrl": "https://proaktiva.rs/"
+  },
+  {
+    "id": 2,
+    "name": "Psihološko savetovalište za mlade - Novosadski humanitarni centar",
+    "city": "Novi Sad",
+    "websiteUrl": "http://www.savetovaliste.nshc.org.rs/?fbclid=IwAR1q4nU04m1FHM0-J4aPS9n2wWD8m5ASF4QpMV6T_iFth5D4DjjzhFQj9GQ"
+  },
+  {
+    "id": 3,
+    "name": "Sos ženski centar",
+    "city": "Novi Sad",
+    "websiteUrl": "https://sosns.rs/?fbclid=IwAR3PqrwG3NXX_QPe3EK-iWXydK7a3e2gEp9muz7amCW8BAyZm7OcwE6aNss"
+  },
+  {
+    "id": 4,
+    "name": "Psihološko savetovalište za mlade – Infopolis (EDIT Centar)",
+    "city": "Novi Sad",
+    "websiteUrl": "http://infopolis.rs/psiholosko-savetovaliste/"
+  },
+  {
+    "id": 5,
+    "name": "Udruženje Crvena Linija",
+    "city": "Novi Sad",
+    "websiteUrl": "http://www.crvenalinija.org/?fbclid=IwAR1W7X8XwzFLofEE6ltFdte6swHoDdwYyNZFwi4MHiCreoemebvBAGmPU3E"
+  },
+  {
+    "id": 6,
+    "name": "Centar Srce",
+    "city": "Novi Sad",
+    "websiteUrl": "https://www.centarsrce.org/?fbclid=IwAR0uh97z0YHTpd1z7NMIsPQMWdvZ4Spt9dX2GPhB2LleyaZg6BFdHw6afok"
+  },
+  {
+    "id": 7,
+    "name": "Grupa IZAĐI",
+    "city": "Novi Sad",
+    "websiteUrl": "https://izadji.rs/?fbclid=IwAR276YRfkQgs_verJk7z_FKPECuQBjOoLGy_zVOtOGJTGdu_MAiFpRYonSs"
+  },
+  {
+    "id": 8,
+    "name": "Omladina JAZAS Novi Sad",
+    "city": "Novi Sad",
+    "websiteUrl": "https://www.omladinajazas.rs/?fbclid=IwAR1E7SeMP6pY72ikVNsB7ypfFQPT11aa77fTqeybhiBBHv-MV930C9GXRx4"
+  },
+  {
+    "id": 9,
+    "name": "Iz Kruga Vojvodine",
+    "city": "Novi Sad",
+    "websiteUrl": "https://www.facebook.com/izkrugavojvodina"
+  },
+  {
+    "id": 10,
+    "name": "Patrija",
+    "city": "Novi Sad",
+    "websiteUrl": "http://www.patrija.com/psiholosko-savetovaliste/"
+  },
+  {
+    "id": 11,
+    "name": "Ubuntu centar",
+    "city": "Novi Sad",
+    "websiteUrl": "https://www.ubuntucentar.com/"
+  },
+  {
+    "id": 12,
+    "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+    "city": "Novi Sad",
+    "websiteUrl": "https://www.csrns.org.rs/savetovaliste-za-brak-i-porodicu/"
+  },
+  {
+    "id": 13,
+    "name": "Savetovalište za brak i porodicu - Centar za socijalni rad ",
+    "city": "Sremska Mitrovica",
+    "websiteUrl": ""
+  },
+  {
+    "id": 14,
+    "name": "Psihološki centar Self",
+    "city": "Novi Sad, Sombor",
+    "websiteUrl": "http://www.self.rs/"
+  },
+  {
+    "id": 15,
+    "name": "Porodični centar Paradigma",
+    "city": "Sombor",
+    "websiteUrl": "https://www.facebook.com/Porodi%C4%8Dni-centar-Paradigma-107172971091965/"
+  },
+  {
+    "id": 16,
+    "name": "Bračno i porodično savetovalište “Rodinka”",
+    "city": "Bački Petrovac",
+    "websiteUrl": ""
+  },
+  {
+    "id": 17,
+    "name": "Psihološko savetovanje i psihoterapija Centar “Poveži se”",
+    "city": "Kikinda",
+    "websiteUrl": "https://povezise.weebly.com/?fbclid=IwAR3I9muTIRWSK_Ya_w2gQyijZ4nzcznLbJ75eqR57gGT_x8j_4A7p8VRcuI"
+  },
+  {
+    "id": 18,
+    "name": "Centar za lični razvoj Spektrum",
+    "city": "Subotica, Bačka Topola",
+    "websiteUrl": "https://www.centarspektrum.com/"
+  },
+  {
+    "id": 19,
+    "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+    "city": "Zrenjanin",
+    "websiteUrl": "https://centarmostzr.rs/savetovaliste-za-brak-i-porodicu/"
+  },
+  {
+    "id": 20,
+    "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+    "city": "Stara Pazova",
+    "websiteUrl": ""
+  },
+  {
+    "id": 21,
+    "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+    "city": "Kula",
+    "websiteUrl": "https://csrkula.org/savetovaliste-za-brak-i-porodicu/"
+  },
+  {
+    "id": 22,
+    "name": "Bračno i porodično savetovalište - Centar za socijalni rad",
+    "city": "Sombor",
+    "websiteUrl": "https://www.csrsombor.org.rs/index.php?str=23&p=lat"
+  },
+  {
+    "id": 23,
+    "name": "Centar za individualni razvoj i unapređenje društva - PSIHOZON",
+    "city": "Sombor",
+    "websiteUrl": "https://www.facebook.com/psihozon/"
+  },
+  {
+    "id": 24,
+    "name": "Psihološki centar Tri",
+    "city": "Sremska Mitrovica",
+    "websiteUrl": "https://psiholoskicentartri.org.rs/o-nama/"
+  },
+  {
+    "id": 25,
+    "name": "Centar za mentalno zdravlje Kikinda",
+    "city": "Kikinda",
+    "websiteUrl": ""
+  }
+]
