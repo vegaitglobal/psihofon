@@ -35,14 +35,14 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
           gestureEnabled: false,
           title: '',
           headerStyle: {
-            backgroundColor: Colors.LIGHT_BACKGROUND,
+            backgroundColor: Colors.PALE_GREY,
           },
         }}
         name={AppRoute.INTRO_MENU}
         component={IntroMenuScreen}
       />
       <Stack.Screen
-        options={{headerShown: true, header: () => <View />}}
+        options={{headerShown: false, header: () => <View />}}
         name={AppRoute.DRAWER}
         component={DrawerNavigator}
       />

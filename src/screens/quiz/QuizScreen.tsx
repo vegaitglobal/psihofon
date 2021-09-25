@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {useLightHeader} from '../../hooks/useLightHeader';
+import {useHeader} from '../../hooks/useHeader';
 import {QuizScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {RootState} from '../../reducers/rootReducer';
 import {useAppDispatch} from '../../store/store';
@@ -12,7 +12,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
   const {isLoggedIn} = useSelector((state: RootState) => state.settings);
   const dispatch = useAppDispatch();
 
-  useLightHeader(navigation);
+  useHeader(navigation, true);
 
   return (
     <SolidBackground isDark={false}>
