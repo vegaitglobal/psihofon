@@ -8,6 +8,7 @@ import {
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
 import {Title} from '../../components/title/Title';
+import {useHeader} from '../../hooks/useHeader';
 import {AnalyticsQuizResultsScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {Paddings} from '../../styles/paddings';
 import style from './style';
@@ -16,12 +17,12 @@ const scores: AnalyticsQuizResultItemModel[] = [
   {title: 'Anksioznost', percentage: '50%'},
   {title: 'Tuga', percentage: '25%'},
   {title: 'Stres', percentage: '10%'},
-  {title: 'Nisko samopostovanje', percentage: '15%'},
+  {title: 'Nisko samopoštovanje', percentage: '15%'},
 ];
 
 export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProps> =
   ({navigation}: AnalyticsQuizResultsScreenProps) => {
-    //todo hook za useDarkHeader
+    useHeader(navigation);
     return (
       <SolidBackground isDark={true}>
         <View style={style.centerContainer}>
@@ -42,8 +43,8 @@ export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProp
           </View>
           <CustomButton
             isDark={false}
-            onPress={() => console.log('test')}
-            text="Pogledaj vezbe"
+            onPress={() => console.log('Pogledaj vežbe')}
+            text="Pogledaj vežbe"
           />
         </View>
       </SolidBackground>
