@@ -2,6 +2,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
   "eslint.validate": ["javascript"],
   "terminal.integrated.tabs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",

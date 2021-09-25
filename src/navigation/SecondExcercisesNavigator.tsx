@@ -7,6 +7,7 @@ import {
 import {AppRoute} from './routes';
 import {QuizScreen} from '../screens/quiz/QuizScreen';
 import {DrawerNavigatorParams} from './DrawerNavigator';
+import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/AnalyticsQuizResultsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
 
 export type SecondExcercisesNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
+  [AppRoute.ANALYTICS_QUIZ_RESULTS]: undefined;
 };
 
 export interface SecondExcercisesNavigatorProps<
@@ -31,9 +33,18 @@ export interface QuizScreenProps {
     SecondExcercisesNavigatorParams,
     AppRoute.QUIZ
   >;
-  route:
-    | RouteProp<DrawerNavigatorParams, AppRoute.QUIZ>
-    | RouteProp<SecondExcercisesNavigatorParams, AppRoute.QUIZ>;
+  route: RouteProp<SecondExcercisesNavigatorParams, AppRoute.QUIZ>;
+}
+
+export interface AnalyticsQuizResultsScreenProps {
+  navigation: NativeStackNavigationProp<
+    SecondExcercisesNavigatorParams,
+    AppRoute.ANALYTICS_QUIZ_RESULTS
+  >;
+  route: RouteProp<
+    SecondExcercisesNavigatorParams,
+    AppRoute.ANALYTICS_QUIZ_RESULTS
+  >;
 }
 
 export const SecondExcercisesNavigator = (
@@ -52,6 +63,11 @@ export const SecondExcercisesNavigator = (
         options={{gestureEnabled: false, title: ''}}
         name={AppRoute.QUIZ}
         component={QuizScreen}
+      />
+      <Stack.Screen
+        options={{gestureEnabled: false, title: ''}}
+        name={AppRoute.ANALYTICS_QUIZ_RESULTS}
+        component={AnalyticsQuizResultsScreen}
       />
     </Stack.Navigator>
   );

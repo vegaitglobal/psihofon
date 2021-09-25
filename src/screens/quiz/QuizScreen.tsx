@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {useLightHeader} from '../../hooks/useDarkHeader';
+import {useLightHeader} from '../../hooks/useLightHeader';
 import {QuizScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {RootState} from '../../reducers/rootReducer';
 import {useAppDispatch} from '../../store/store';

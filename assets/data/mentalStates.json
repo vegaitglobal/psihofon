@@ -88,5 +88,233 @@
         "recommendation": "Vežba se radi dva dana po 15 minuta"
       }
     ]
+  },
+  {
+    "id": 2,
+    "name": "Nisko samopoštovanje",
+    "exercises": [
+      {
+        "id": 15,
+        "title": "Vodi dnevnik uspeha",
+        "description": "Zapisivanje uspeha i fokusiranje na pozitivne misli smanjuje nesigurnost. Odvoj 10 minuta u toku dana i razmisli o uspesima koje si postigao u svom životu – postignućima na koje si ponosan. Nemoj biti previše kritičan prema sebi, to mogu biti i manji uspesi, poput: položio vozački ispit, bio najbolji na modelarskoj sekciji, itd.\nZapiši svoja postignuća, a potom ih nacrtaj - predstavi ih u vidu stepenica. Neka svaki tvoj uspeh odgovara jedom stepeniku. Ovaj vizuelni podsetnik o tvom napretku pomoći će ti da nastaviš da “loviš” svoje uspehe i da jasnije uvidiš koliko si već postigao u svom životu.",
+        "recommendation": ""
+      },
+      {
+        "id": 16,
+        "title": "Zamišljaj svoj uspeh",
+        "description": "Ova mentalna vežba podrazumeva vizualizaciju sebe kao uspešne osobe u nekoj od oblasti života. Odaberi svoju ulogu i oblast u kojoj želiš da budeš uspešan (posao, brak, roditeljstvo…). Svako veče pre spavanja, u toku jedne nedelje, odvoj 10 minuta zamišljajući sebe kao vrlo uspešnog u odabranoj ulozi – ulozi oca, zaposlenog u kompaniji i sl.\nNapravi film u svojoj glavi o sebi kao uspešnom čoveku i pri tome uključi sva čula – vidi sebe detaljno, čuj zvukove oko sebe, oseti mirise.",
+        "recommendation": ""
+      },
+      {
+        "id": 17,
+        "title": "Nacrtaj svog život",
+        "description": "Sačini listu dosadašnjih uspeha – tzv. Timeline. Timeline podrazumeva horizontalnu liniju na parčetu papira sa krivuljom koja prolazi kroz nju.\nNa vrhovima krivulje upisuj tvoje uspehe, a na donjim delovima krivulje upisuj događaje koji nisu bili uspešni. Razumećeš da se život upravo sastoji od uspeha i neuspeha i da je to pravilo koje važi za sve ljude. Uspesi nas čine ponosnim i povećavaju naše samopouzdanje. Neuspesi su takođe važni. Bez njih ne bismo imali prilike da učimo, menjamo se i rastemo.",
+        "recommendation": ""
+      },
+      {
+        "id": 18,
+        "title": "Imenuj svoje dobre osobine",
+        "description": "U svesci nacrtaj konturu čoveka/žene koja te predstavlja. Svaki dan u toku jedne nedelje u crtež upiši bar po tri dobre osobine koje poseduješ. Postavi konturu na vidljivo mesto. Nije važno da li umeš da crtaš ili ne, važno je da svaki dan u toku nedelje marljivo puniš crtež dobrim osobinama. Možeš koristiti i različite boje kako bi istakao neke od osobina.",
+        "recommendation": ""
+      },
+      {
+        "id": 19,
+        "title": "Budi nasmejan supermen",
+        "description": "Naše telo odražava kako se osećamo. Dovoljno je da pogledaš kako neko hoda, drži glavu, gde gleda, šta radi sa rukama itd., pa da zaključiš u kakvom je emotivnom stanju. Međutim, može i obrnuto. Stavom tela možemo “probuditi” emotivna stanja koja želimo.\nStani nasred sobe. Zauzmi stav supermena – imitiraj njegovo samouvereno držanje, kruto, čvrsto telo sa podignutom glavom i uprtim pogledom ispred sebe, uspravna ramena, ruke na bokovima (ćirilično slovo Ф), malo raširene noge, čvrsto prizemljene.\nDuši duboko i nasmej se. Ostani u ovoj pozi i sa osmehom 5 minuta.\nKada je tvoje telo u supermen pozi i sa osmehom na licu, odmah ćeš se osećati bolje.\nOvo su male promene koje mogu imati lančanu reakciju.\nOseti kako ti nadolaze dobre emocije i samopouzdanje.",
+        "recommendation": ""
+      },
+      {
+        "id": 20,
+        "title": "Razvij samopomažuće misli",
+        "description": "Kod nestabilnog samopouzdanja pomoć pružaju tzv. samopomažuće misli. Samopomažuće mišljenje može sadržati sledeće tvrdnje:\nŠta god da se desi, pronaći ću način da sa tim izađem na kraj.\nNe volim da grešim, ali znam da su greške sastavni deo učenja. Ne mogu naučiti ako prethodno nisam grešio.\nNišta me ne može učiniti ni više ni manje vrednom osobom. Moja vrednost ne zavisi od okolnosti ili događaja.\nKoliko će mi ovo što se dešava sada biti značajno za tri, pet godina?",
+        "recommendation": "Napiši samopomažuće misli i postavi ih na vidljivo mesto. Čitaj ih više puta na dan, a naročito kada osetiš da ti je samopouzdanje ugroženo."
+      },
+      {
+        "id": 21,
+        "title": "Jačaj samopouzdanje uz pomoć dragih ljudi",
+        "description": "Narednih nedelju dana intervjuiši najmanje deset osoba koje čine krug tvojih najbližih prijatelja ili rodbine. Zamoli ih da ti kažu koje pozitivne osobine uočavaju kod tebe.  Zapiši sve što si čuo. Zahvali im se na pomoći.\nDa li si saznao nešto novo o sebi? Kakav je osećaj kada znaš koliko dobro mišljenje o tebi imaju tebi dragi ljudi?",
+        "recommendation": ""
+      },
+      {
+        "id": 22,
+        "title": "Pronađi svoju najbolniju misao i razotkrij je",
+        "description": "Od svih negativnih i bolnih misli u tvojoj glavi, odaberi najbolniju.\nPotraži priču koju često vrtiš, a koja nosi mnogo emocionalne nelagodnosti, poput: ”Ja sam bezvredan i nedostojan ljubavi, niko nikada neće hteti da bude sa mnom”, ili ”Ja sam beskorisna i neuspešna, ne zaslužujem ništa što je dobro”.\nZapiši svoje bolno uverenje na papir, a zatim sebi postavi sledeća pitanja.\n1. Možeš li apsolutno znati da je ova tvoja misao istinita?\nMožeš li apsolutno znati da si bezvredan i nedostojan ljubavi i da niko nikada neće hteti sa tobom da bude? Možeš li apsolutno znati da si beskorisna i neuspešna i da ne zaslužuješ ništa što je dobro?\nU početku će ti biti teško da odgovoriš na ovo pitanje. Tvoj mozak će verovatno i dalje insistirati na tome da je tvoja priča potpuno tačna. Međutim, nakon što si neko vreme razmišljao o ovome, mogao bi se čuti tihi šapat koji ti dobacuje da postoji mogućnost da je tvoje samoporažavajuće uverenje lažno.\n2. Šta se događa kada poveruješ u svoju najbolniju misao?\nKada poveruješ svojoj misli, da li ti to donosi mir ili stres? Koji fizički osećaji i mentalne slike dolaze s njom? Šta osećaš? Kako se odnosiš prema sebi i drugima kada imaš svoju bolnu misao? Ovaj korak ti omogućuje da stupiš u kontakt s punim uticajem koji ova otrovna misao ima na tvoje celokupno blagostanje.\n3. Ko bi ti bio da nemaš svoju najbolniju misao?\nProveri na trenutak, sam sa sobom, ko bi ti bio bez svog otrovnog uverenja? Kako bi se osećao u svom telu? Kakve bi misli i osećanja imao? Kako bi se odnosio prema sebi i svetu?\n4. Okreni svoju misao i pronađi jednako valjanu, korisniju.\nNa primer, mogao bi preokrenuti izvorno uverenje i sebi reći: ”Vredan sam i dostojan ljubavi i učiniću sve što mogu da stvorim smislen odnos u svom životu”, ili ”Ja jesam pravila greške, ali to me ne čini beskorisnom. Zaslužujem sve što je dobro”.",
+        "recommendation": "Kada završiš ovu vežbu, ugodi sebi. Napravi sebi čaj, sedi na terasu i meditiraj, idi u šetnju…."
+      },
+      {
+        "id": 23,
+        "title": "Budi aktivan",
+        "description": "Samopouzdanje se najbolje obnavlja kroz akcije i delovanje.\nLepo se obuci. Ako se lepo obučeš, ako si sebi spoljašnje dopadljiv, osećaćeš se dobro i u sebi. Osećaćeš se uspešnim, prezentabilnim i spremnim uhvatiti se u koštac sa svetom.\nDeluj pozitivno. Ti si ono što radiš, pa ako promeniš ono što radiš, promenićeš i ono što jesi. Preduzmi neku akciju, pokreni se, radi ono što voliš. Razgovaraj s ljudima na pozitivan način, uloži energiju u svoje postupke.\nUskoro ćeš početi primećivati razliku i u svom samopouzdanju.",
+        "recommendation": ""
+      },
+      {
+        "id": 24,
+        "title": "Postavi male ciljeve",
+        "description": "Postavi sebi neki mali cilj i ostvari ga. Ljudi često sebi postave visoke, nedostižne ciljeve, a onda kad ne uspeju da ih realizuju, obeshrabre se. Umesto toga, kreni ka nečim mnogo ostvarivijim.\nPostavi cilj za koji znaš da ga možeš postići, a zatim ga ostvari. Tvoj cilj može da bude da svaki dan ove nedelje pročitaš 10 strana neke dobre knjige, da vežbaš tri puta u toku nedelje, da izbegneš slatkiše dva dana ili da pospremiš ormar o kom već odavno razmišljaš.\nKada obaviš planiranu akciju i postigneš svoj cilj, osećaćeš se dobro.\nSada postavi još jedan mali cilj i njega ostvari. Što više malih ciljeva postigneš, bićeš bolji u obavljanju aktivnosti, tvoje samopouzdanje će rasti i počećeš da razmišljaš o većim ciljevima.",
+        "recommendation": ""
+      },
+      {
+        "id": 25,
+        "title": "Nađi svoje unutrašnje pomagače",
+        "description": "Unutrašnji pomagač može biti jedna osoba ili cela porodica koja stoji iza tebe. Možeš da zamisliš stvarne osobe, osobe koje nisu više žive - a značile su ti, a možeš u pomoć da pozoveš i bića iz mašte – vile, supermena i slično.\nZa različite situacije možeš potražiti pomoć različitih “pomagača”, već prema svojim potrebama i sposobnostima. Ako ideš na razgovor za posao i osećaš se nesigurno, razmisli ko bi mogao biti tvoj pomagač. To može biti cela tvoja porodica ili psiholog koji te je pripremao za razgovor. Da bi povećao svoje samopouzdanje, zamisli kako svi oni idu za tobom i hrabre te: osmesima, pokretima i glasovima podrške.\nI svaki sledeći put kada ti je potrebna podrška i veće samopouzdanje, zamisli da su kraj tebe “pomagači”. Tako ćeš uspešnije vladati situacijom.",
+        "recommendation": ""
+      },
+      {
+        "id": 26,
+        "title": "Pogledaj sebe u ogledalu",
+        "description": "Jednom dnevno pogledaj sebe u ogledalu. Pronađi svoje oči, pogledaj sebe i naglas izgovori svoja nova samopotvrđujuća uverenja.\nPostoji nešto vrlo moćno u tome da vidiš svoju sliku i istovremeno naglas potvrdiš svoju ispravnost i vrednost. Kad to učiniš, svesno poništavaš ono što je bilo u prošlosti i menjaš sebe.\nBio si povređen negativnim porukama iz prošlosti i nije ti bilo lako da se nosiš sa njima. Sada si u prilici da ti biraš afirmativne reči kako bi sebe ojačao i izgradio.\nNa primer, mogao bi sebe pogledati u ogledalu i reći: „Vredan sam ljubavi, zaslužujem dobrotu i poštovanje. Ja sam jedinstveno i vredno ljudsko biće ”.\nMožda će ti ove reči najpre zvučati neobično i nećeš moći da ih vežeš za sebe. Ali uz doslednost i svakodnevno ponavljanje, usvojićeš ih i one će postati tvoje novo pozitivno uverenje.",
+        "recommendation": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Stres",
+    "exercises": [
+      {
+        "id": 27,
+        "title": "Razgovaraj o onome što te muči",
+        "description": "Kada osećaš da si u stresu, razgovaraj s nekim kome veruješ i ko te može saslušati. Ispričaj kako se osećaš - koje misli imaš i šta osećaš u svom telu. Budi što specifičniji. Navedi detalje tvog stanja.\nPokušaj da razumeš zašto se osećaš tako? Da li ti nešto govori tvoja emocija i reakcija? Šta je bio okidač za tvoj stres?\nRazgovor s nekim kome veruješ, o onome što te uznemirava, može pomoći da: rešiš problem, jasnije sagledaš situaciju i otpustiš nagomilanu napetost.\nKada svoje emotivno stanje izrazimo govorom, detaljno i autentično i uz to se povežemo sa osobom koja nas sluša, smanjuju se i fiziološki znaci stresa.",
+        "recommendation": ""
+      },
+      {
+        "id": 28,
+        "title": "Gledaj na događaje iz drugačije perspektive",
+        "description": "Pomisli na neko neprijatno iskustvo sa kojim se suočavaš: neki događaj koji te je rastužio, naljutio ili povredio. Pokušaj da shvatiš svoja osećanja koristeći zamenicu “on / ona“ i svoje ime, što je više moguće. Ako se, na primer, zoveš Ana, zapitaj se: “Zašto se Ana tako oseća? Zašto ovu situaciju doživljava na ovaj način?“ Kada sliku događaja jasno dozoveš u svoj um, pokušaj da događaj posmatraš kroz oči nekog distanciranog, trećeg posmatrača. Ili probaj na celu situaciju da gledaš “odozgo”, ili sa strane, kao da joj svedočiš, a ne kao da zapravo u njoj učestvuješ. Nemoj na nju gledati sopstvenim očima. Kako ti sada sve deluje? Šta vidiš?\nŠta bi rekao, uradio iz perspektive te osobe ili iz perspektive “svedoka”?\nProvedi pet minuta posmatrajući događaj iz druge perspektive i razmišljajući na ovaj način. Zapiši svoje misli.",
+        "recommendation": ""
+      },
+      {
+        "id": 29,
+        "title": "Odvoj sebe od problema i situacija",
+        "description": "Nauči da se odvojiš od svoje okoline. Budi svestan svoje prošlosti, svojih iskustava i svojih navika, ali nemoj postati njihova žrtva. Ono što se događalo pre i ovo što se događa sada može te oblikovati ... ali to nisi ti.\nKada osetiš da si u stresu, razmisli koliko si privržen svojoj nesigurnosti i nezadovoljstvu. Posmatraj prisilnu želju da razgovaraš ili razmišljaš o tome.\nSada stresnu situaciju ili problem postavi ispred sebe. Odvoj se od nje, neka ona bude ispred, a ne iznad tebe. Napravi granicu između stresne situacije i sebe. Čuvaj svoje samopouzdanje.\nNe zaboravi. Treba da reaguješ na stresnu situaciju, a ne da se sa njom poistovetiš.",
+        "recommendation": ""
+      },
+      {
+        "id": 30,
+        "title": "Vodi dnevnik zahvalnosti",
+        "description": "Zahvalnost ti može pomoći u ublažavanju stresa. Osami se i usmeri svoje misli deset minuta u toku dana na ono što je pozitivno i dobro u tvom životu. Zapiši to. Podstakni kod sebe zahvalnost za to što si zdrav, što imaš dobru porodicu, posao koji te ispunjava ili dobre prijatelje. Sve su to važni resursi koji ti pomažu da kroz život ideš lakše i sa manje stresa. Nemoj ih uzimati zdravo za gotovo.",
+        "recommendation": ""
+      },
+      {
+        "id": 31,
+        "title": "Iznesi smeće",
+        "description": "Ako se boriš s negativnim ili preplavljujućim mislima, tehnika koja će ti pomoći da ublažiš napetost i stres je zapisivanje ovih misli na papir. Svaku negativnu misao zapiši na poseban papir. Kada si završio zapisivanje, pogledaj tvoje papire. Pocepaj svaki papir na što više komada i baci sve ili zapali. Ovo simbolično pomaže tvom umu da shvati da su tvoje negativne i preplavljujuće misli smeće.\nStvori ritual da se svaki dan oslobađaš svog smeća.",
+        "recommendation": ""
+      },
+      {
+        "id": 32,
+        "title": "Aktiviraj čula, uđi u momenat sada i ovde",
+        "description": "Kada imaš previše misli u glavi, previše razmišljanja koje ti stvara stres, potrebno je da se vratiš u sadašnji trenutak, u trenutak “ovde i sad”. Naše misli su najčešće povezane sa događajima iz prošlosti, ili još češće sa onim što se može dogoditi, odnosno, sa budućnošću. Stresa nema, osećamo mir i spokoj ako smo u sadašnjem trenutku. Da bi “ušao” u sadašnji trenutak, potrebno je da „izađeš iz glave i uđeš u svoja čula”. Put do čula je jednostavan.\nOtvori svoj novčanik i prebroj sitan novac u njemu, razvrstaj dugmad po bojama, složi hranu u frižideru, izbroj pločice u kupatilu…\nIli …. Zapitaj se: Šta u ovom momentu mogu čuti, šta mogu osetiti, pomirisati ili dodirnuti?\nAktiviranje svih čula je tehnika koja nas prizemljuje i drži u sadašnjem trenutku.",
+        "recommendation": ""
+      },
+      {
+        "id": 33,
+        "title": "Isteži svoje telo što više",
+        "description": "Ne moraš imati prostirku za jogu, ne moraš imati mnogo prostora oko sebe, niti biti fizički fleksibilan i rastegljiv, da bi vežbao istezanje tela. Kada osetiš da si u stresu, odvoj 10 minuta za duboko i lagano disanje i istezanje na bilo koji način koji ti se čini ugodnim.\nMožeš se istezati podizanjem obe ili jedne ruke u vis, širenjem obe ili jedne ruke u stranu, podizanjem tela na nožne prste i usmeravanjem glave prema gore.\nAko će ti biti lakše, dok se istežeš prema gore pomisli kako dohvataš višnje sa visoke grane drveta, ili kako pokušavaš sa strane da dosegneš neki predmet. Upotrebi maštu koja će te podstaći da ti telo bude u što više istegnutom položaju.",
+        "recommendation": ""
+      },
+      {
+        "id": 34,
+        "title": "Diši duboko",
+        "description": "Kada si u stresu, usredsredi se na svoje disanje. Sporo disanje ima umirujuće delovanje na središnji nervni i kardiovaskularni sistem, a posebno stomačno disanje može poboljšati pažnju, raspoloženje i smanjiti nivo hormona stresa - kortizola.\nZato, usmeri svoju pažnju na disanje u stomaku. Ne razmišljaj, samo prati disanje. Isprati bar 30 svojih udisaja-izdisaja i stomak koji se podiže i spušta.",
+        "recommendation": ""
+      },
+      {
+        "id": 35,
+        "title": "Zaposli svoj mozak",
+        "description": "Ako je stres više psihički nego fizički i osećaš kako ti se um zapetljava mislima, zadaj sebi diskretan zadatak. Slaži cipele u ormaru ili rešavaj ukrštene reči.\nKada si pod stresom, tvoj mozak kao da se vrti i zapetljava. Ako mu daš zadatak da se usmeri, osećaćeš se smirenije i bolje ćeš se nositi s onim što ti zaista stvara stres.",
+        "recommendation": ""
+      },
+      {
+        "id": 36,
+        "title": "Voli svoje telo",
+        "description": "Kada smo u stresu, naše telo je zgrčeno i napeto, ono pati. Da bi otpustio stres iz svog tela, neophodno je da mu svaki dan posvetiš posebnu pažnju.\nOdvoj svaki dan po 15 minuta i pokaži svom telu koliko ga voliš. Govori mu lepo, obraćaj mu se kao detetu.\nPokreći se u ritmu koji godi tvom telu. Možeš koristiti muziku koja će te pokrenuti. Jedi hranu koja prija tvom telu i koja čini da se dobro osećaš. Relaksiraj telo toplom kupkom, samomasažom ili milovanjem tela kremom ili lekovitim uljima.\nU koži postoje čulni receptori koji šalju poruke našem mozgu, signalizirajući da se može opustiti. Takođe, usmerenost ka telu čini te svesnijim gde se u tvom telu osećaš napeto, pa možeš svesno opustiti ta područja.",
+        "recommendation": ""
+      },
+      {
+        "id": 37,
+        "title": "Pravi korak po korak",
+        "description": "Kada ti stres stvaraju mnogobrojne obaveze, kada ti pogled na tvoj planer podstiče paniku jer nećeš stići sve da završiš, zastani i napravi samo prvi korak.\nŠta je prva tvoja aktivnost koju treba da uradiš? Usmeri se samo ka njoj, uroni u tu aktivnost, uradi je. Ostale obaveze izbriši iz svog uma.\nMožeš pokriti deo planera u kom su ostale obaveze, sve dok ne završiš prvu. Ili, možeš zamisliti kako navlačiš zavesu u svojoj glavi da ne bi gledao brdo obaveza. Važno je da napraviš prvi korak, da se usmeriš i udubiš u prvu aktivnost.\nNakon toga, sledi drugi korak, druga aktivnost. Brdo obaveza koje te plaši, posmatraj kroz pojedinačne korake i usmeri se samo ka koraku koji trenutno obavljaš.",
+        "recommendation": ""
+      },
+      {
+        "id": 38,
+        "title": "Seti se svojih izvora",
+        "description": "Svako od nas ima svoje izvore iz kojih crpi energiju, snagu i dobro raspoloženje. Da li se dobro osećaš kada pomisliš na osobu kojoj se diviš? Da li tvoja snaga dolazi iz nekog ranijeg iskustva koje si uspešno prevladao? Crpiš li svoju moć kada pomisliš na određeno mesto na kom si se osećao srećno i zadovoljno?\nIdentifikuj tvoje izvore. Zapiši ih. Kada se osećaš nesigurno, prizovi tvoje izvore i obnovi svoje samopouzdanje.",
+        "recommendation": ""
+      },
+      {
+        "id": 39,
+        "title": "Izdrobi svoj stres",
+        "description": "Kada smo u stresu, često ga osećamo stomakom. Stomak nam daje različite senzacije: nešto nas zavrće, boli, pecka, pritiska….ili nam se stomak naduva. Da bi umirio svoj stomak, koristi vizualizaciju. Vizualizuj svoj stomak kao uređaj koji može da drobi, razbija, sitni … Vizualizuj ga kao blender, drobilicu ili mikser.\nStavi ruku na svoj stomak i pokreni uređaj koji si vizualizovao (zamislio). Vidi svoju stresnu situaciju ili problem kako se drobi na sitne komade.\nUživaj u tome kako tvoj stres postaje sve manji i sitniji. Oseti kako ti stres u stomaku nestaje.",
+        "recommendation": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Tuga",
+    "exercises": [
+      {
+        "id": 40,
+        "title": "Pruži sebi saosećanje",
+        "description": "Brojni su razlozi zbog kojih se možemo osećati tužno ili loše raspoloženo. Iza ovih emotivnih stanja mogu da stoje: gubici - stvarni ili simbolički, neostvarene želje, osujećene potrebe itd. Bez obzira šta je razlog, važno je da se ne opireš osećanjima. Dozvoli sebi da ih osetiš u potpunosti, prepusti im se.\nMožda će ti, u prvi mah, delovati strašno ili previše bolno da se prepustiš tuzi ili lošem raspoloženju (obično pokušavamo da se borimo protiv njih), ali pokušaj da prihvatiš sve što se u tebi dešava.\nDok se prepuštaš tuzi/lošem raspoloženju, pruži sebi saosećanje i utehu.Možeš sebi reći: “Aha, imam neki osećaj ovde, hajde da to osetim još malo. Hajde da dopustim sebi da imam taj osećaj, hajde da ga istražim…”.\nOva pažnja prema sebi, zainteresovanost i svesnost usmerena ka telu, sastavni su elementi procesa ozdravljenja.",
+        "recommendation": "Odredi 10 minuta u toku dana kada ćeš dozvoliti sebi da osetiš tugu, neraspoloženje, potištenost. Podesi alarm na 10 minuta. Kada vreme istekne, nastavi sa uobičajenim aktivnostima. Vežbu ponavljaj narednih 7 dana, poželjno, u isto vreme."
+      },
+      {
+        "id": 41,
+        "title": "Vežbaj",
+        "description": "Provereno sredstvo za bolje raspoloženje je vežbanje. Vežbanje dovodi do oslobađanja značajnih hemijskih supstanci u našem mozgu: serotonina, dopamina, endorfina i norepinefrina, koji pomažu da se osećamo zadovoljnije.\nNekim ljudima je lako da vežbaju. Oni se lako pokreću i tako podižu raspoloženje. S druge strane, ima nas puno kojima je teško krenuti i pokrenuti se, pogotovo kad se osećamo neraspoloženo. No, važno je napraviti prvi korak, a on je obično najteži.\nAko sediš ili ležiš i nemaš volje, nateraj sebe, za početak, da ustaneš. Potom, brzo donesi odluku da - izađeš napolje, prošetaš, sedneš na bicikl, kreneš u teretanu ili vežbaš kod kuće. Pusti muziku koju voliš i koja te pokreće. Napravi par pokreta koji prijaju tvom telu. Posle ovog prvog napora, telo će samo tražiti pokret, neće pružati otpor.",
+        "recommendation": "Narednih 7 dana izdvoj najmanje pola sata za šetnju. Bitno je da šetaš svaki dan. Dodatno, uradi 30 čučnjeva svaki dan (odjednom ili ukupno u toku dana)"
+      },
+      {
+        "id": 42,
+        "title": "Poveži se sa svojim sistemom podrške",
+        "description": "Tvoj sistem podrške čine ljudi koji te vole – tvoja porodica i prijatelji. Kada se osećamo tužno ili loše raspoloženo, osećamo se i isključeno, nepovezano i nevrednovano od strane ljudi oko nas. Zato, ne oklevaj. Pozovi prijatelje, izađi sa tebi dragom osobom na kafu, pošalji poruku prijatelju koga davno nisi kontaktirao, pozovi nekog od porodice, porazgovaraj. Aktiviraj tvoj sistem podrške i izađi iz lošeg raspoloženja.\nKao i kod vežbanja, verovatno nećeš imati volje da se družiš. Biće ti teško da uzmeš telefon i pozoveš nekoga, ali to je ono što je najteže. Pomisli koliko ćeš se prijatno osećati posle druženja, rukovodi se time i kreni u akciju.",
+        "recommendation": "Uzmi svoj telefon, pozovi prijatelja/kolegu/komšiju/rođaka na kafu. Ukoliko to nije fizički izvodljivo organizuj online susret. Bitno je da se u narednih 7 dana taj susret (ili susreti) realizuju."
+      },
+      {
+        "id": 43,
+        "title": "Napravi nešto rukama",
+        "description": "Živimo u nesigurnom vremenu koje nas svojom neizvesnošću i čestim lošim vestima može baš oneraspoložiti. Da bismo povratili raspoloženje i osećaj kontrole, makar u svom mikrookruženju, dobro je da se podsetimo stvari koje možemo i znamo da uradimo. Jedan od najboljih načina za to je pravljenje nečega sopstvenim rukama.\nPopravi nešto u stanu, očisti, pospremi fijoke, ispeci kolače, radi u bašti. Rad s rukama može biti izuzetno prijatan i on najčešće odmah pokaže rezultate – ono što radiš ili stvaraš je vidljivo.\nDodatno, rad sa rukama podstiče osećaj umešnosti i kontrole koji popravljaju naše raspoloženje.",
+        "recommendation": "Tokom naredne nedelje pripremi bar jedan zdrav obrok u toku dana. Taj obrok može biti priprema salate, supe ili spremanje omiljenog jela (u zavisnosti od tvojih veština)."
+      },
+      {
+        "id": 45,
+        "title": "U tvojim rukama je daljinski upravljač",
+        "description": "Bol je sastavni deo života. Iako se osećaš povređeno ili razočarano, i dalje možeš ceniti ono što je u tvom životu dobro. Mi se obično preterano usredsređujemo na ono što nije u redu u našem životu. Međutim, postoji mnogo toga na čemu bismo trebali biti zahvalni. Nepristojni komentar nekoga u prodavnici ne bi trebao nadmašiti lepotu jutra ili zadovoljstvo kad vidiš kako tvoj mali nećak radi nešto novo.\nDaljinski upravljač za TV može biti metafora za odabir misli koje svakodnevno imamo u glavi. Umesto da ostanemo na kanalu (mislima)u kome samo gledamo i slušamo pritužbe, zamerke i kukanje na svoj račun, treba da se prilagođavamo onome što je ispravno i dobro u našem životu.\nTi držiš daljinski upravljač, ti upravljaš onim što je trenutno u tvojim mislima. Prebaci kanal, pređi sa drame na pozitivniji sadržaj.",
+        "recommendation": "Kada identifikuješ negativnu misao koja te uznemirava, pokušaj da pronađeš bar tri alternativne koje imaju pozitivno značenje. Radi ovu vežbu najmanje 7 dana."
+      },
+      {
+        "id": 46,
+        "title": "Zapiši kako se osećaš",
+        "description": "Ako se ne osećaš prijatno da pričaš s ljudima o tome šta te muči, piši. Uzmi jedan notes ili svesku samo za sebe i zapiši kako se osećaš. Pisanje o svojim osećanjima pruža olakšanje.",
+        "recommendation": "Tokom narednih 7 dana vodi dnevnik svojih osećanja. Upisuj kako si se osećao i šta je izazvalo to osećanje."
+      },
+      {
+        "id": 47,
+        "title": "Budi velikodušan",
+        "description": "Loše raspoloženje može usmeriti fokus naše pažnje prema sebi, prema unutra. Kada se jednom zaglavimo u određenim mislima ili osećanjima, bez obzira da li se radi o frustraciji, brizi ili tuzi, sve je teže otrgnuti se od tog ciklusa negativnosti koji održava naše loše raspoloženje.\nDa bi izašao iz ove negativne spirale usmerene ka sebi, vrlo je korisno podstaći velikodušnost.\nUključi se u neku akciju velikodušnosti ili ti učini dela velikodušnosti. To može biti volontiranje za neku humanitarnu organizaciju, pomaganje prijatelju određenom uslugom, pomaganje ostarelom komšiji oko lekova ili nabavke.\nAkcije i dela velikodušnosti usmeravaju naš fokus prema spolja, a posvećivanje našeg vremena, energije ili pažnje drugima čini da se osećamo dobro i korisno.",
+        "recommendation": "U narednih nedelju dana zadatak je da uradiš bar jedno dobro delo u toku dana. Pomozi kolegi, nahrani psa lutalicu, doniraj staru odeću… Ukoliko ostaneš bez ideja pohvali nečiji stil oblačenja, rad, ponašanje. Bitno je samo da pohvala bude iskrena."
+      },
+      {
+        "id": 48,
+        "title": "Izađi među ljude",
+        "description": "Kada nismo dobro raspoloženi najradije bismo ostali kući. Imamo potrebu da saberemo misli ili da se opustimo. No, važno je razlikovati vreme koje provodimo baveći se radnjama koje nam pozitivno podižu raspoloženje – vreme za meditaciju, dobru knjigu ili dremanje, od vremena u kom ne radimo ništa i koje nas vuče u još negativnije raspoloženje- prekomerno jedenje ili pijenje, premišljanje, besciljno pregledavanje interneta ili telefona.\nSvima koji imaju loše raspoloženje savetuje se izbegavanje društvenog povlačenja.\nIzađi na pijacu ili u grad. Upoznaj prijatelja ili se jednostavno prošetaj društvenim prostorom. Važno je da si okružen ljudima. Ove aktivnosti mogu ti pomoći u prekidu negativnih ciklusa razmišljanja.",
+        "recommendation": "Tokom naredne nedelje tvoj zadatak je da svakodnevno komuniciraš sa jednom novom osobom. To može biti konobar u tvom omiljenom kafiću, prodavac, slučajni prolaznik dok čekaš prevoz…"
+      },
+      {
+        "id": 49,
+        "title": "Leči sebe osmehom",
+        "description": "Pogledaj komediju, neku smešnu seriju ili video. Isplaniraj i odvoj svaki dan bar po 20 minuta gledajući komičare ili humorističan sadržaj druge vrste. Uživaj u smehu, prepusti mu se.\nHumor preusmerava fokus pažnje. Ono što je smešno odvući će ti pažnju i premestiće je na druge ljude ili situacije. Ovo preusmeravanje pažnje proširuje našu perspektivu – umesto sužene pažnje usmerene isključivo ka sebi i svom (neprijatnom) stanju, fokusiramo se na širi, humoristički aspekt neke situacije kod sebe ili kod drugoga. I ne radi se samo o odvlačenju pažnje od onoga što nam stvara tugu ili loše raspoloženje. Smeh opušta telo i na vrlo lak način podseća mozak da se dobar osećaj može povratiti.",
+        "recommendation": "Nakon večere izdvoj minimalno 20 minuta za gledanje humoristične serije koju voliš. Bitno je da se pridržavaš ove prakse najmanje nedelju dana."
+      },
+      {
+        "id": 50,
+        "title": "Otkrij svoje izvore samoobnove",
+        "description": "Razmisli o aktivnostima, ljudima, pojavama, događajima ili stvarima koji daju najbolji doprinos tvojoj samoobnovi energije i samoregeneraciji.\nDa li je to čitanje dobre knjige, slušanje dobre muzike, razgovor sa optimističnim prijateljem, rad u bašti, gledanje u zvezdano nebo….?\nOtkrij svoje izvore samoobnove, koristi ih što više i donesi jasnu odluku da vreme provodiš više u tom okruženju/aktivnosti. Kreni malim koracima. Odrekni se neke aktivnosti kako bi napravio prostor za ono što te obnavlja.",
+        "recommendation": "Identifikuj jednu aktivnost koja ti pričinjava zadovoljstvo (razgovor sa prijateljem, ispijanje kafe, šetnja psa…) i potrudi se da narednih 7 dana, izdvojiš svakodnevno bar 10 minuta za tu aktivnost. Bitno je da ne propustiš ni jedan dan."
+      }
+    ]
   }
 ]
