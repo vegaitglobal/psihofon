@@ -1,19 +1,35 @@
+import {
+  createDrawerNavigator,
+  DrawerNavigationProp,
+} from '@react-navigation/drawer';
+import {RouteProp} from '@react-navigation/native';
 import React from 'react';
+import {Dimensions} from 'react-native';
+import {OrganizationsListNavigator} from './OrganizationsListNavigator';
 import {AppRoute} from './routes';
 import {SecondExcercisesNavigator} from './SecondExcercisesNavigator';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {Dimensions} from 'react-native';
 
 const Drawer = createDrawerNavigator();
 
-type DrawerNavigatorProps = React.ComponentProps<typeof Drawer.Navigator>;
+type DrawerNavigatorProperties = React.ComponentProps<typeof Drawer.Navigator>;
 
 export type DrawerNavigatorParams = {
   [AppRoute.SECOND_EXCERCISES]: undefined;
   [AppRoute.QUIZ]: undefined;
+  [AppRoute.ORGANIZATIONS_NAVIGATOR]: undefined;
 };
 
-export const DrawerNavigator = (props: Partial<DrawerNavigatorProps>) => {
+export interface RootNavigatorProps<
+  Screen extends keyof DrawerNavigatorParams,
+> {
+  navigation: DrawerNavigationProp<DrawerNavigatorParams, Screen>;
+  route: RouteProp<DrawerNavigatorParams, Screen>;
+}
+
+export type OrganizationsListScreenProps =
+  RootNavigatorProps<AppRoute.ORGANIZATIONS_NAVIGATOR>;
+
+export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
   return (
     <Drawer.Navigator
       {...props}
@@ -32,6 +48,11 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProps>) => {
         options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.SECOND_EXCERCISES}
         component={SecondExcercisesNavigator}
+      />
+      <Drawer.Screen
+        options={{gestureEnabled: false}}
+        name={AppRoute.ORGANIZATIONS_NAVIGATOR}
+        component={OrganizationsListNavigator}
       />
     </Drawer.Navigator>
   );

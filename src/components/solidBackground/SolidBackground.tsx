@@ -5,16 +5,23 @@ import {StatusBar, View} from 'react-native';
 
 interface Props {
   children: React.ReactNode;
-  isDark: boolean;
+  isDark?: boolean;
+  backgroundColor?: string;
 }
 
-export const SolidBackground: React.FC<Props> = ({children, isDark}) => {
+export const SolidBackground: React.FC<Props> = ({
+  children,
+  isDark,
+  backgroundColor: backgroundColorProp,
+}) => {
+  let backgroundColor;
+  if (backgroundColorProp) {
+    backgroundColor = backgroundColorProp;
+  } else {
+    backgroundColorProp = isDark ? Colors.DARK_GREEN : Colors.WHITE;
+  }
   return (
-    <View
-      style={[
-        style.container,
-        {backgroundColor: isDark ? Colors.DARK_GREEN : Colors.WHITE},
-      ]}>
+    <View style={[style.container, {backgroundColor}]}>
       <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
       {children}
     </View>

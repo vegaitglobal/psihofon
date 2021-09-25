@@ -48,7 +48,11 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
         <View style={styles.bottomArea}>
           <Pressable
             style={styles.bottomButton}
-            onPress={() => console.log('Baza podataka organizacija')}>
+            onPress={() =>
+              navigation.navigate(AppRoute.DRAWER, {
+                screen: AppRoute.ORGANIZATIONS_NAVIGATOR,
+              })
+            }>
             <CustomText>Baza podataka organizacija</CustomText>
           </Pressable>
         </View>
