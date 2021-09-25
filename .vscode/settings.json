@@ -2,6 +2,11 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
   "eslint.validate": ["javascript"],
   "terminal.integrated.tabs.enabled": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -11,8 +16,6 @@
   "prettier.singleQuote": true,
   "prettier.useTabs": true,
   "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-  "files.autoSave": "afterDelay",
-  "editor.formatOnType": true,
   "eslint.format.enable": true,
   "eslint.probe": [
     "javascript",
