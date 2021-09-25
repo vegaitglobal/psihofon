@@ -51,7 +51,10 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
               Vežbe za samoosnaživanje
             </CustomText>
           </Pressable>
-          <Pressable>
+          <Pressable
+            onPress={() =>
+              props.navigation.navigate(AppRoute.SECOND_EXCERCISES)
+            }>
             <CustomText style={style.menuItem}>
               Vežbe za: anksioznost, tugu, stres i nisko samopouzdanje
             </CustomText>
@@ -59,7 +62,10 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
           <Pressable>
             <CustomText style={style.menuItem}>U krizi sam</CustomText>
           </Pressable>
-          <Pressable>
+          <Pressable
+            onPress={() =>
+              props.navigation.navigate(AppRoute.ORGANIZATIONS_NAVIGATOR)
+            }>
             <CustomText style={style.menuItem}>
               Baza podataka organizacija
             </CustomText>
