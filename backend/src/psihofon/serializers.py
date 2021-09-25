@@ -6,7 +6,7 @@ class OrganizationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Organization
         fields = [
-            'id', 'name', 'city', 'website_url',
+            'id', 'name', 'city', 'websiteUrl',
         ]
 
 
@@ -14,12 +14,14 @@ class SelfEmpowermentExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = SelfEmpowermentExercise
         fields = [
-            'id', 'title', 'week_number', 'preparation',
-            'description', 'explanation', 'duration_description',
+            'id', 'title', 'weekNumber', 'preparation',
+            'description', 'explanation', 'durationDescription',
         ]
 
 
 class CrisisExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = CrisisExercise
-        fields = ['id', 'title', 'description']
+        fields = [
+            'id', 'title', 'description'
+        ]
