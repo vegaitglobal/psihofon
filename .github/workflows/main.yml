@@ -25,10 +25,21 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Build and push
+      - name: Build docker
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: ./backend
           file: ./backend/django.Dockerfile
           push: false
+          
+      - name: Deploy docker
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: cd ~/hakaton/psihofon/backend && git pull origin main && docker-compose up --build -d
+          
+        
