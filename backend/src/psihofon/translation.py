@@ -11,7 +11,7 @@ class OrganizationOptions(TranslationOptions):
 
 @register(SelfEmpowermentExercise)
 class SelfEmpowermentExerciseOptions(TranslationOptions):
-    fields = ('title', 'preparation', 'description', 'explanation')
+    fields = ('title', 'preparation', 'description', 'explanation', 'duration_description')
 
 
 @register(CrisisExercise)
