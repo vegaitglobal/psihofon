@@ -1,10 +1,18 @@
 from django.contrib.auth.models import AbstractUser
-from django.db import models
+from django.contrib.postgres.fields import CIEmailField
+from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
+    class Meta:
+        verbose_name = _('User')
+        verbose_name_plural = _('Users')
 
-    email = models.EmailField(db_index=True, unique=True)
+    email = CIEmailField(
+        verbose_name=_('email'),
+        db_index=True,
+        unique=True
+    )
 
     # used for login
     USERNAME_FIELD = 'email'
