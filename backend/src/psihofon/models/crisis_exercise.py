@@ -13,3 +13,6 @@ class CrisisExercise(models.Model):
     description = models.TextField(
         verbose_name=_('description')
     )
+
+    def __str__(self):
+        return self.title
