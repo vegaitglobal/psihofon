@@ -32,6 +32,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
     <Stack.Navigator {...props} initialRouteName={AppRoute.INTRO_MENU}>
       <Stack.Screen
         options={{
+          headerShadowVisible: false,
           gestureEnabled: false,
           title: '',
           headerStyle: {
@@ -42,7 +43,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
         component={IntroMenuScreen}
       />
       <Stack.Screen
-        options={{headerShown: true, header: () => <View />}}
+        options={{headerShown: false, header: () => <View />}}
         name={AppRoute.DRAWER}
         component={DrawerNavigator}
       />

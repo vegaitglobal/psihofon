@@ -49,7 +49,7 @@ export const SecondExcercisesNavigator = (
         headerTitle: '',
       }}>
       <Stack.Screen
-        options={{gestureEnabled: false}}
+        options={{gestureEnabled: false, title: ''}}
         name={AppRoute.QUIZ}
         component={QuizScreen}
       />

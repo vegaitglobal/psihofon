@@ -11,8 +11,6 @@
   "prettier.singleQuote": true,
   "prettier.useTabs": true,
   "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-  "files.autoSave": "afterDelay",
-  "editor.formatOnType": true,
   "eslint.format.enable": true,
   "eslint.probe": [
     "javascript",
