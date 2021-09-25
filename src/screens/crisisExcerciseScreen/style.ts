@@ -1,12 +1,12 @@
 import {Colors} from '../../constants/colors';
-import {Margins, Paddings} from '../../constants/style';
 import {verticalScale} from './../../utils/helpers';
+import {Margins, Paddings} from '../../constants/style';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.DEFAULT,
+    backgroundColor: Colors.GREEN,
     paddingHorizontal: Paddings.XXLARGE,
   } as ViewStyle,
   upperContainer: {

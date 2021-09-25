@@ -1,13 +1,9 @@
 import React from 'react';
 import styles from './style';
 import {Colors} from '../../../constants/colors';
+import {ButtonTheme} from '../../../constants/enums';
 import {CustomText} from '../../customText/CustomText';
 import {Pressable, PressableProps, View, ViewStyle} from 'react-native';
-
-export enum ButtonTheme {
-  DEFAULT, //! Green background, white text.
-  INVERTED, //! White background, black text.
-}
 
 interface Props {
   text: string;
@@ -32,7 +28,7 @@ export const BigButton: React.FC<Props & PressableProps> = ({
       break;
     case ButtonTheme.DEFAULT:
     default:
-      backgroundColor = Colors.DEFAULT;
+      backgroundColor = Colors.GREEN;
       textColor = Colors.WHITE;
   }
 

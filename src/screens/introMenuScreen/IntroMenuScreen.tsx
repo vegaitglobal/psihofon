@@ -1,12 +1,10 @@
 import React from 'react';
+import styles from './style';
 import {Pressable, View} from 'react-native';
-import {
-  BigButton,
-  ButtonTheme,
-} from '../../components/buttons/bigButton/BigButton';
+import {ButtonTheme} from '../../constants/enums';
 import {CustomText} from '../../components/customText/CustomText';
 import {IntroMenuScreenProps} from '../../navigation/RootNavigator';
-import styles from './style';
+import {BigButton} from '../../components/buttons/bigButton/BigButton';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({}) => {
   return (
