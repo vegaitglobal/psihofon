@@ -17,3 +17,5 @@ wait_for_postgres
 echo "Starting Django project..."
 python manage.py migrate
 python manage.py runserver 0.0.0.0:8000
+echo "Updating fixtures"
+python manage.py loaddata psihofon/fixtures/*.json
