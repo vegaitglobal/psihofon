@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from psihofon.models import Organization
+from psihofon.models import CrisisExercise
 
 
 class OrganizationSerializer(serializers.ModelSerializer):
