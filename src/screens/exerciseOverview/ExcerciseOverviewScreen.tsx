@@ -1,13 +1,13 @@
 import React from 'react';
 import style from './style';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {Title} from '../../components/title/Title';
 import {Text, View} from 'react-native';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {FlatList} from 'react-native-gesture-handler';
 import {ExcerciseOverviewScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {useHeader} from '../../hooks/useHeader';
 import {AppRoute} from '../../navigation/routes';
+import {TitleText} from '../../components/titleText/TitleText';
 
 const buttonsList = [
   {id: 1, title: 'Vežbe za anksioznost'},
@@ -24,7 +24,7 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
       <SolidBackground isDark={true}>
         <View style={style.centerContainer}>
           <View>
-            <Title text="Spisak vežbi" />
+            <TitleText>{'Spisak vežbi'}</TitleText>
             <FlatList
               data={buttonsList}
               style={style.list}
