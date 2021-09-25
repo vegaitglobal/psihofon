@@ -8,9 +8,5 @@ interface TitleProps {
 }
 
 export const Title: React.FC<TitleProps> = ({text}: TitleProps) => {
-  return (
-    <CustomText style={{color: Colors.WHITE, fontSize: 24, fontWeight: 'bold'}}>
-      {text}
-    </CustomText>
-  );
+  return <CustomText style={style.title}>{text}</CustomText>;
 };

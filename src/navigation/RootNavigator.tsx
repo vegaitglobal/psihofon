@@ -5,7 +5,8 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
-import { MenuScreen } from '../screens/menu/MenuScreen';
+import {MenuScreen} from '../screens/menu/MenuScreen';
+import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/AnalyticsQuizResultsScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,7 +29,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
       <Stack.Screen
         options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.MENU}
-        component={MenuScreen}
+        component={AnalyticsQuizResultsScreen}
       />
     </Stack.Navigator>
   );

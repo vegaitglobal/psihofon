@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, StatusBar, View} from 'react-native';
 import {useSelector} from 'react-redux';
-import { CustomButton } from '../../components/customButton/CustomButton';
+import {CustomButton} from '../../components/customButton/CustomButton';
 import {CustomText} from '../../components/customText/CustomText';
 import {MenuScreenProps} from '../../navigation/RootNavigator';
 import {RootState} from '../../reducers/rootReducer';
@@ -11,7 +11,7 @@ import Logo from './../../../assets/icons/Logo.svg';
 import styles from './style';
 
 export const MenuScreen: React.FC<MenuScreenProps> = () => {
-  const { isLoggedIn } = useSelector((state: RootState) => state.settings);
+  const {isLoggedIn} = useSelector((state: RootState) => state.settings);
   const dispatch = useAppDispatch();
 
   return (

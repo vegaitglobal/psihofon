@@ -35,7 +35,6 @@ export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProp
                 data={scores}
                 showsVerticalScrollIndicator={false}
                 style={style.list}
-                contentContainerStyle={{marginVertical: Margins.LARGE}}
                 ItemSeparatorComponent={() => <View style={style.separator} />}
                 keyExtractor={(item: {title: string}) => item.title}
                 renderItem={({item}) => (
