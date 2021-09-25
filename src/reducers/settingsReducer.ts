@@ -1,23 +1,23 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface SettingsState {
-  isLoggedIn: boolean;
+  isSurveyFinished: boolean;
 }
 
 const initialState: SettingsState = {
-  isLoggedIn: false,
+  isSurveyFinished: false,
 };
 
 export const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    changeLogInState: (state, action: PayloadAction<boolean>) => {
-      state.isLoggedIn = action.payload;
+    toggleIsSurveyFinished: (state, action: PayloadAction<boolean>) => {
+      state.isSurveyFinished = action.payload;
     },
   },
 });
 
-export const {changeLogInState} = settingsSlice.actions;
+export const {toggleIsSurveyFinished} = settingsSlice.actions;
 
 export default settingsSlice.reducer;

@@ -6,7 +6,6 @@ import {
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
 import {QuizScreen} from '../screens/quiz/QuizScreen';
-import {DrawerNavigatorParams} from './DrawerNavigator';
 import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/AnalyticsQuizResultsScreen';
 
 const Stack = createNativeStackNavigator();
@@ -57,15 +56,10 @@ export const SecondExcercisesNavigator = (
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,
-        headerTitle: '',
+        title: '',
       }}>
+      <Stack.Screen name={AppRoute.QUIZ} component={QuizScreen} />
       <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
-        name={AppRoute.QUIZ}
-        component={QuizScreen}
-      />
-      <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
         name={AppRoute.ANALYTICS_QUIZ_RESULTS}
         component={AnalyticsQuizResultsScreen}
       />

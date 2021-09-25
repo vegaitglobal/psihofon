@@ -9,7 +9,6 @@ import {DrawerNavigator, DrawerNavigatorParams} from './DrawerNavigator';
 import {IntroMenuScreen} from '../screens/introMenuScreen/IntroMenuScreen';
 import {Colors} from '../styles/colors';
 import {View} from 'react-native';
-import {OrganizationsListScreen} from '../screens/organizationsList/OrganizationsListScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,8 +26,6 @@ export interface RootNavigatorProps<Screen extends keyof RootNavigatorParams> {
 }
 
 export type IntroMenuScreenProps = RootNavigatorProps<AppRoute.INTRO_MENU>;
-
-
 
 export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
   return (
