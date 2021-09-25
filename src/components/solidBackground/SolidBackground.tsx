@@ -6,20 +6,29 @@ import LogoLight from '../../../assets/icons/LogoLight.svg';
 import Logo from '../../../assets/icons/Logo.svg';
 import Menu from '../../../assets/icons/Menu.svg';
 import MenuDark from '../../../assets/icons/MenuDark.svg';
+import {Colors} from '../../constants/colors';
 
 interface Props {
   children: React.ReactNode;
   onPressMenu: () => void;
-  isDark: boolean;
+  isDark?: boolean;
+  backgroundColor?: string;
 }
 
 export const SolidBackground: React.FC<Props> = ({
   children,
   onPressMenu,
   isDark,
+  backgroundColor: backgroundColorProp,
 }) => {
+  let backgroundColor;
+  if (backgroundColorProp) {
+    backgroundColor = backgroundColorProp;
+  } else {
+    backgroundColorProp = isDark ? Colors.DEFAULT : Colors.WHITE;
+  }
   return (
-    <SafeAreaView style={style.container}>
+    <SafeAreaView style={[style.container, {backgroundColor}]}>
       <View style={style.header}>
         {isDark ? <LogoLight /> : <Logo />}
         <Pressable onPress={onPressMenu}>
