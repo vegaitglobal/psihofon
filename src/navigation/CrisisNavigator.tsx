@@ -6,6 +6,7 @@ import {
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
 import {CrisisExercisesScreen} from '../screens/crisisExcerciseScreen/CrisisExcerciseScreen';
+import {CrisisExerciseScreen} from '../screens/crisisExerciseScreen/CrisisExerciseScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
 
 export type CrisisNavigatorParams = {
   [AppRoute.CRISIS_EXERCISES]: undefined;
+  [AppRoute.CRISIS_EXERCISE_SCREEN]: undefined;
 };
 
 export interface CrisisNavigatorNavigatorProps<
@@ -33,12 +35,15 @@ export const CrisisNavigator = (props: Partial<StackNavigatorProps>) => {
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,
-        headerTitle: '',
+        title: '',
       }}>
       <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
         name={AppRoute.CRISIS_EXERCISES}
         component={CrisisExercisesScreen}
+      />
+      <Stack.Screen
+        name={AppRoute.CRISIS_EXERCISE_SCREEN}
+        component={CrisisExerciseScreen}
       />
     </Stack.Navigator>
   );

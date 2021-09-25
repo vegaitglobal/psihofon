@@ -6,6 +6,7 @@ import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
 import {useHeader} from '../../hooks/useHeader';
 import {CrisisExercisesScreenProps} from '../../navigation/CrisisNavigator';
+import {AppRoute} from '../../navigation/routes';
 
 export const CrisisExercisesScreen: React.FC<CrisisExercisesScreenProps> = ({
   navigation,
@@ -21,7 +22,7 @@ export const CrisisExercisesScreen: React.FC<CrisisExercisesScreenProps> = ({
           <CustomButton
             style={styles.button}
             text={'Dišite duboko'}
-            onPress={() => console.log('Pressed')}
+            onPress={() => navigation.navigate(AppRoute.CRISIS_EXERCISE_SCREEN)}
             isDark={false}
           />
           <CustomButton
