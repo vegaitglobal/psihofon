@@ -32,7 +32,6 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
     <Stack.Navigator {...props} initialRouteName={AppRoute.INTRO_MENU}>
       <Stack.Screen
         options={{
-          headerShadowVisible: false,
           gestureEnabled: false,
           title: '',
           headerStyle: {
