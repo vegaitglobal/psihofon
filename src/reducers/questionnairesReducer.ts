@@ -1,7 +1,8 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import localQuestionnaires from '../../assets/data/questionnaire.json';
 import {AppDispatch} from '../store/store';
-import {Questionnaire} from '../models/Questionnaire';
+import {Answer, Questionnaire} from '../models/Questionnaire';
+import {RootState} from './rootReducer';
 
 export interface QuestionnaireState {
   isLoggedIn: boolean;
@@ -46,5 +47,14 @@ export const getQuestionnaire = () => async (dispatch: AppDispatch) => {
     console.log(error);
   }
 };
+
+export const questionnarieAnswers = createSelector(
+  (state: RootState) => ({
+    answers: state.questionnaire.questionnaires.answers,
+  }),
+  ({answers}): Array<Answer> => {
+    return answers;
+  },
+);
 
 export default questionnaireSlice.reducer;

@@ -33,7 +33,7 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
             text={'Vežbe za: anksioznost, tugu, stres i nisko samopouzdanje'}
             onPress={() =>
               navigation.navigate(AppRoute.DRAWER, {
-                screen: AppRoute.QUIZ,
+                screen: AppRoute.SECOND_EXCERCISES,
               })
             }
           />

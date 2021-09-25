@@ -8,5 +8,6 @@ export enum AppRoute {
   ANALYTICS_QUIZ_RESULTS = 'Analytics Quiz Results',
   FIRST_TYPE_EXCERCISES = 'First Type Excercises',
   CRISIS = 'Crisis',
+  SCALE_EXPLANATION = 'Scale Explanation',
   CRISIS_EXERCISES = 'Crisis Exercises',
 }
