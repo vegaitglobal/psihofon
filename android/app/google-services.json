@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "130177329655",
+    "project_id": "ife-8d479",
+    "storage_bucket": "ife-8d479.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130177329655:android:0c77b28971965ca436a6f2",
+        "android_client_info": {
+          "package_name": "com.fiatwise.fife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130177329655-8mqq3mj02un5n2u5eefdvlhu4b574saj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCofkpN-oyiU9krjeoZL2AjohC4pNPF1uo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "130177329655-8mqq3mj02un5n2u5eefdvlhu4b574saj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "130177329655-g1uss6p0vggoarev8n8vjfabk382tvkc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.mobileapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

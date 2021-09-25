@@ -6,6 +6,8 @@ import {MenuScreenProps} from '../../navigation/RootNavigator';
 import {changeLogInState} from '../../reducers/settingsReducer';
 import {useAppDispatch} from '../../store/store';
 import styles from './style';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
+import PushNotification from 'react-native-push-notification';
 
 export const MenuScreen: React.FC<MenuScreenProps> = () => {
   const dispatch = useAppDispatch();
@@ -26,7 +28,12 @@ export const MenuScreen: React.FC<MenuScreenProps> = () => {
           <>
             <CustomText>Is user logged in: Fake bool: true</CustomText>
             <Button
-              onPress={() => dispatch(changeLogInState(true))}
+              onPress={() => {
+                PushNotification.localNotification({
+                  channelId: '123123123123123123123123123',
+                });
+                dispatch(changeLogInState(true));
+              }}
               title="Change user state"
             />
           </>
