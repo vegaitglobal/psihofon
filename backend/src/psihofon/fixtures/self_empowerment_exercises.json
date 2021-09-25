@@ -1,0 +1,86 @@
+[
+  {
+    "model": "psihofon.selfempowermentexercise",
+    "pk": 1,
+    "fields": {
+      "title": "Ekspresivno pisanje",
+      "week_number": 1,
+      "preparation": "Pre nego što započnete sa programom, odvojte jednu svesku ili beležnicu u koju ćete beležiti sve što bude potrebno dok radite na sebi. Važno je da zadatke radite tačno prema uputstvu da bi oni imali efekta. Za sve zadatke koje se nalaze u ovom program postoje naučni dokazi da doprinose poboljšanju Vašeg mentalnog zdravlja ukoliko se rade prema uputstvu. Nemojte preskakati korake u radu i radite ih po utvrđenom redosledu.",
+      "description": "Pišite u trajanju od 10 minuta, najbolje pred spavanje, narednih 7 dana.\n\nPrva 4 dana: Zapisujte vaše najdublje emocije i misli u vezi sa emocionalnim izazovima koje doživljavate.\n\nPreostala 3 dana: Pišete iz perspektive neke druge osobe uključene u situaciju.",
+      "explanation": "Dozvolite sebi da istažite određeni događaj o kome pišete do kraja i to kako je uticao na Vas. Ovo mogu biti neka iskustva iz detinjstva, odnos sa roditeljima, ljudima koje ste voleli ili volite, Vaša karijera...",
+      "duration_description": "1x dnevno, svaki dan, u trajanju od 7 dana"
+    }
+  },
+  {
+    "model": "psihofon.selfempowermentexercise",
+    "pk": 2,
+    "fields": {
+      "title": "Tri dobre stvari na dan",
+      "week_number": 2,
+      "preparation": "Pripremite beležnicu.",
+      "description": "Svakog dana zapišite tri dobre stvari koje su Vam se desile tog dana, kao i objašnjenje zašto je to dobro. To mogu biti male stvari (npr. kolega mi je skuvao kafu, video/la sam lep oblak) ali i velike (dobio sam unapređenje). Dajte događajima naslov. Napišite šta se tačno desilo, što detaljnije, šta ste Vi rekli, šta su rekli drugi učesnici. Navedite kako ste se osećali zbog događaja kada se dogodio i kako ste se osećali kasnije i sada. Razmotrite šta je izazvao ovaj događaj i kako je došlo do toga da bude izabran.",
+      "explanation": "Ako se fokusirate samo na negativne događaje, preusmerite pažnju na pozitivne događaje i emocije koje ih prate. Ova veština se usvaja vežbanjem, a može promeniti način na koji se osećate.",
+      "duration_description": "1x dnevno (najbolje pred spavanje) po 10 minuta, 7 dana uzastopno"
+    }
+  },
+  {
+    "model": "psihofon.selfempowermentexercise",
+    "pk": 3,
+    "fields": {
+      "title": "Na čemu sam zahvalan/na",
+      "week_number": 3,
+      "preparation": "Pripremite beležnicu.",
+      "description": "Tri puta u toku ove nedelje navedite 5 stvari na kojima ste zahvalni. To mogu biti male stvari (npr. Pojeo sam vrlo ukusan sendvič) ali i velike (Moja sestra je postala majka). Budite što specifičniji, navodite detaljne opise. Idite u dubinu umesto u širinu. Neka bude lično (fokusiranje na ljude je bolje od fokusiranja na događaje).",
+      "explanation": "Razmislite kako bi vaš život izgledao bez određenih ljudi i stvari umesto samo navođenja dobrih stvari. Budite zahvalni za negativne ishode koje ste izbegli ili pretvorili u pozitivne.\n\nPosmatrajte dobre stvari kao „darove“ – ne uzimajte ih „zdravo za gotovo“.\n\nSlavite iznenađenje. Pokušajte dodati i događaje koji su vas iznenadili.\n\nPazite na ponavljanje. Ljudi i događaji se mogu ponavljati, ali samo ako nose neku novinu.",
+      "duration_description": "15 minuta dnevno, 3 puta u toku jedne nedelje"
+    }
+  },
+  {
+    "model": "psihofon.selfempowermentexercise",
+    "pk": 4,
+    "fields": {
+      "title": "Pet dobrih dela",
+      "week_number": 4,
+      "preparation": "Pripremite beležnicu.",
+      "description": "Odvojte vreme u toku jednog dana ove nedelje, od nekoliko minuta do nekoliko sati da učinite pet dobrih dela.\n\n1. Korak: učiniti 5 dobrih dela istog dana\n\n2. Korak: zapisati šta ste učinili u najmanje 2-3 rečenice",
+      "explanation": "Jednog dana ove nedelje učinite 5 dobrih dela – svih 5 jednog istog dana. Nije važno da li su to velika ili mala dela, ali je važno da budu različita. Ova dela ne treba da budu usmerena prema samo jednoj osobi – osoba uopšte ne treba da ih bude svesna. Ovo mogu biti doniranje krvi, pomoć prijatelju oko kućnih poslova ili obezbeđivanje obroka za neku ugroženu osobu. Učinite dobra dela prema sopstvenom izboru",
+      "duration_description": "1 dan u toku cele nedelje"
+    }
+  },
+  {
+    "model": "psihofon.selfempowermentexercise",
+    "pk": 5,
+    "fields": {
+      "title": "Moj najbolji mogući self",
+      "week_number": 5,
+      "preparation": "Pripremite beležnicu.",
+      "description": "Svakog dana u toku naredne dve nedelje razmislite o sebi u budućnosti. Kako izgleda najbolja budućnost koju možete da zamislite za sebe?\n\nRazmotrite sve relevatne aspekte svog života (npr. školovanje, karijera, veze, hobi, zdravlje…) Kako će oni izgledati u najboljoj mogućoj budućnosti koju želite za sebe?\n\nPišite 10 minuta o tome kako izgleda budućnost koju želite za sebe.\n\nNakon toga, odvojte još 5 minuta da napišete tačan cilj koji će vam pomoći da ostvarite najbolje sebe",
+      "explanation": "Zapišite ciljeve koji će vam pomoći da dođete do najboljeg mogućeg sebe kojeg ste upravo opisali. Nekada se dugoročni ciljevi čine neostvarivi i preplavljujući, ali svako putovanje počinje prvim korakom. Mislite o malim koracima koji će vam pomoći da dođete do velikog cilja ili ciljeva. Definisanjem malih koraka približavaćete se velikom cilju ne brinući previše o tome da li je ostvariv. (Mali ciljevi mogu biti vrlo jednostavni kakvi su traženje informacija ili razgovor sa nekim kobi vas mogao posavetovati.)",
+      "duration_description": "Svakodnevno u toku 7 dana, po 15 minuta dnevno"
+    }
+  },
+  {
+    "model": "psihofon.selfempowermentexercise",
+    "pk": 6,
+    "fields": {
+      "title": "Ekspresivno pisanje",
+      "week_number": 6,
+      "preparation": "Pripremite beležnicu.",
+      "description": "Na listi se nalaze različite vrednosti, kvaliteti i karakteristike. Neke od njih vam mogu biti važne, neke druge ne.\n\nZa početak, rangirajte ih od 1 do 11 prema tome koliko su vama važne.\n\nPotom napišite kratko objašnjenje (u nekoliko pasusa) zašto je vrednost koja se našla na vrhu vaše liste važna za Vas, uključujući i vreme kada je igrala važnu ulogu u Vašem životu.\n\n- Umetnost ili umetničke veštine\n\n- Smisao za humor\n\n- Odnos sa prijateljima ili porodicom\n\n- Spontanost ili življenje u sadašnjem momentu\n\n- Socijalne veštine\n\n- Atletika ili sport\n\n- Muzika ili muzičke veštine\n\n- Fizička privlačnost\n\n- Kreativnost\n\n- Poslovne ili menadžerske veštine\n\n- Romantične vrednosti",
+      "explanation": "",
+      "duration_description": "jednom u toku 7 dana, 15 minuta"
+    }
+  },
+  {
+    "model": "psihofon.selfempowermentexercise",
+    "pk": 7,
+    "fields": {
+      "title": "Pripremite beležnicu.",
+      "week_number": 7,
+      "preparation": "Pripremite beležnicu.",
+      "description": "Pomislite na jednu osobu do koje vam je stalo. U ovoj vežbi imate zadatak da toj osobi poklonite pažnju, ali ne bilo kakvu, već u vidu – vašeg vremena.\n\nIsplanirajte kako da poklonite svoje vreme toj osobi. Možete provesti vreme sa njom (uživo ili virtuelno), ali možete uraditi nešto za nju bez njenog prisustva. Potrošite na to koliko god vremena da je potrebno i ne tražite prečice. Možete skinuti sat ili skloniti telefon kako ne biste brinuli o vremenu.\n\nAko ste odlučili da učinite nešto za tu osobu umesto da provedete vreme sa njom – nemojte joj reći koliko vam je vremena bilo potrebno za taj dar. Pustite da poklon govori sam za sebe.\n\nPonovite ovu aktivnost 3x u toku ove nedelje (svaki put za drugu osobu).",
+      "explanation": "",
+      "duration_description": "3x u toku 7 dana, odvojte mnogo vremena"
+    }
+  }
+]
