@@ -1,0 +1,9 @@
+[
+  {
+    "model": "psihofon.questionnaire",
+    "pk": 1,
+    "fields": {
+      "description": "U sledećim pitanjima odgovore dajete prema  skali koja definiše meru u kojoj vas opisuju navedene situacije. Skalu smo definisali na sledeći način:"
+    }
+  }
+]

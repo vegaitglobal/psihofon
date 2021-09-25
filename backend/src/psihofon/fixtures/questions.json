@@ -1,0 +1,202 @@
+[
+  {
+    "model": "psihofon.question",
+    "pk": 1,
+    "fields": {
+      "text": "Ponekad se osećam uplašeno bez jasnog razloga.",
+      "order_number": 1,
+      "mental_state": 1,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 2,
+    "fields": {
+      "text": "Ponekad osećam da mi srce “lupa” ili “preskače” iako se nisam fizički umorio/la.",
+      "order_number": 2,
+      "mental_state": 1,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 3,
+    "fields": {
+      "text": "Ponekad imam poteškoće sa disanjem iako se nisam umorio/la.",
+      "order_number": 3,
+      "mental_state": 1,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 4,
+    "fields": {
+      "text": "Osećam da sam često na “ivici nerava”.",
+      "order_number": 4,
+      "mental_state": 1,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 5,
+    "fields": {
+      "text": "Brine me šta nosi budućnost.",
+      "order_number": 5,
+      "mental_state": 1,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 6,
+    "fields": {
+      "text": "Ponekad mi je teško da ostvarim inicijativu ili započnem nešto.",
+      "order_number": 6,
+      "mental_state": 4,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 7,
+    "fields": {
+      "text": "Nisam imao nikakvo lepo osećanje.",
+      "order_number": 7,
+      "mental_state": 4,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 8,
+    "fields": {
+      "text": "Osećam da nemam čemu da se nadam.",
+      "order_number": 8,
+      "mental_state": 4,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 9,
+    "fields": {
+      "text": "Osećam se tužno ili jadno.",
+      "order_number": 9,
+      "mental_state": 4,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 10,
+    "fields": {
+      "text": "Osećam da je život besmislen.",
+      "order_number": 10,
+      "mental_state": 4,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 11,
+    "fields": {
+      "text": "U nekim situacijama reagujem preterano.",
+      "order_number": 11,
+      "mental_state": 3,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 12,
+    "fields": {
+      "text": "Teško mi je da se opustim.",
+      "order_number": 12,
+      "mental_state": 3,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 13,
+    "fields": {
+      "text": "Ne volim kad me nešto prekida u radu.",
+      "order_number": 13,
+      "mental_state": 3,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 14,
+    "fields": {
+      "text": "Ponekad mi je teško da se smirim.",
+      "order_number": 14,
+      "mental_state": 3,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 15,
+    "fields": {
+      "text": "Ponekad sam preterano osetljiv/a.",
+      "order_number": 15,
+      "mental_state": 3,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 16,
+    "fields": {
+      "text": "Ponekad se teško nosim sa izazovima.",
+      "order_number": 16,
+      "mental_state": 2,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 17,
+    "fields": {
+      "text": "Ponekad mi je neprijatno da razmišljam o sebi.",
+      "order_number": 17,
+      "mental_state": 2,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 18,
+    "fields": {
+      "text": "Ponekad se osećam potpuno beskorisno.",
+      "order_number": 18,
+      "mental_state": 2,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 19,
+    "fields": {
+      "text": "Nisam zadovoljan/na sobom.",
+      "order_number": 19,
+      "mental_state": 2,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.question",
+    "pk": 20,
+    "fields": {
+      "text": "Nema mnogo toga čime bih se mogao/la ponositi.",
+      "order_number": 20,
+      "mental_state": 2,
+      "questionnaire": 1
+    }
+  }
+]

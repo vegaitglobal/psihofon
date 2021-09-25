@@ -1,9 +1,9 @@
 from modeltranslation.translator import register, TranslationOptions
 from psihofon.models import (
     Organization, MentalState, Question, Questionnaire,
-    SelfEmpowermentExercise, CrisisExercise, Answer
+    SelfEmpowermentExercise, CrisisExercise, Answer,
+    MentalStateExercise
 )
-from psihofon.models.mental_state_exercises import MentalStateExercise
 
 
 @register(Organization)
