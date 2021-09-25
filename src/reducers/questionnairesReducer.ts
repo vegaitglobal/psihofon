@@ -1,8 +1,9 @@
 import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import localQuestionnaires from '../../assets/data/questionnaire.json';
 import {AppDispatch} from '../store/store';
-import {Answer, Questionnaire} from '../models/Questionnaire';
+import {Answer, Question, Questionnaire} from '../models/Questionnaire';
 import {RootState} from './rootReducer';
+import {addInitialSurveyData} from './settingsReducer';
 
 export interface QuestionnaireState {
   isLoggedIn: boolean;
@@ -38,15 +39,27 @@ export const {
   getQuestionnaireSuccess,
 } = questionnaireSlice.actions;
 
-export const getQuestionnaire = () => async (dispatch: AppDispatch) => {
-  dispatch(getQuestionnaireStart());
-  try {
-    const questionnaires = localQuestionnaires;
-    dispatch(getQuestionnaireSuccess(questionnaires));
-  } catch (error) {
-    console.log(error);
-  }
-};
+export const getQuestionnaire =
+  () => async (dispatch: AppDispatch, getState: () => RootState) => {
+    dispatch(getQuestionnaireStart());
+    try {
+      const questionnaires = localQuestionnaires;
+      dispatch(getQuestionnaireSuccess(questionnaires));
+      if (!getState().settings.isSurveyFinished) {
+        const surveyData = questionnaires.questions.map(item => {
+          return {mentalStateId: item.mentalState.id, score: 0};
+        });
+        const uniqueAddresses = Array.from(
+          new Set(surveyData.map(a => a.mentalStateId)),
+        ).map(id => {
+          return surveyData.find(a => a.mentalStateId === id);
+        });
+        dispatch(addInitialSurveyData(uniqueAddresses));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 export const questionnarieAnswers = createSelector(
   (state: RootState) => ({
@@ -54,6 +67,55 @@ export const questionnarieAnswers = createSelector(
   }),
   ({answers}): Array<Answer> => {
     return answers;
+  },
+);
+
+export const questionnaireById = createSelector(
+  (state: RootState) => ({
+    questions: state.questionnaire.questionnaires.questions,
+  }),
+  ({questions}) =>
+    (id: number): Array<Question> => {
+      const result = questions.filter(item => item.mentalState.id === id)!;
+      return result;
+    },
+);
+
+export const anxietyQuestionnarie = createSelector(
+  (state: RootState) => ({
+    questions: state.questionnaire.questionnaires.questions,
+  }),
+  ({questions}): Array<Answer> => {
+    return questions.filter(item => item.mentalState.name === 'Anksioznost');
+  },
+);
+
+export const stressQuestionnarie = createSelector(
+  (state: RootState) => ({
+    questions: state.questionnaire.questionnaires.questions,
+  }),
+  ({questions}): Array<Answer> => {
+    return questions.filter(item => item.mentalState.name === 'Stres');
+  },
+);
+
+export const summertimeSadnnessQuestionnarie = createSelector(
+  (state: RootState) => ({
+    questions: state.questionnaire.questionnaires.questions,
+  }),
+  ({questions}): Array<Answer> => {
+    return questions.filter(item => item.mentalState.name === 'Tuga');
+  },
+);
+
+export const lowSelfesteemQuestionnarie = createSelector(
+  (state: RootState) => ({
+    questions: state.questionnaire.questionnaires.questions,
+  }),
+  ({questions}): Array<Answer> => {
+    return questions.filter(
+      item => item.mentalState.name === 'Nisko samopoštovanje',
+    );
   },
 );
 

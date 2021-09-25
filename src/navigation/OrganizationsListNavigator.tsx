@@ -5,7 +5,6 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
-import {DrawerNavigatorParams} from './DrawerNavigator';
 import {OrganizationsListScreen} from '../screens/organizationsList/OrganizationsListScreen';
 
 const Stack = createNativeStackNavigator();
@@ -47,7 +46,7 @@ export const OrganizationsListNavigator = (
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,
-        headerTitle: '',
+        title: '',
       }}>
       <Stack.Screen
         options={{gestureEnabled: false}}

@@ -93,12 +93,12 @@ export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
       />
     );
 
-    useHeader(navigation);
+    useHeader(navigation, true);
 
     useLayoutEffect(() => {
       navigation.setOptions({
         headerStyle: {
-          backgroundColor: Colors.GRAY_LIGHT,
+          backgroundColor: Colors.PALE_GREY,
         },
       });
     }, [navigation]);
