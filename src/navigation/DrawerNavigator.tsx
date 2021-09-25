@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import Close from '../../assets/icons/Close.svg';
 import {Colors} from '../styles/colors';
-import {Paddings} from '../constants/style';
+import {Paddings} from '../styles/paddings';
 import Logo from '../../assets/icons/Logo.svg';
 import {CustomText} from '../components/customText/CustomText';
 
@@ -125,7 +125,7 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
 
 const style = StyleSheet.create({
   drawerContent: {
-    paddingHorizontal: Paddings.XLARGE,
+    paddingHorizontal: Paddings.MEDIUM,
     flex: 1,
   } as ViewStyle,
   drawerContentContainer: {
