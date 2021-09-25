@@ -9,7 +9,6 @@ import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
 import {Title} from '../../components/title/Title';
 import {AnalyticsQuizResultsScreenProps} from '../../navigation/SecondExcercisesNavigator';
-import {Margins} from '../../styles/margins';
 import {Paddings} from '../../styles/paddings';
 import style from './style';
 
