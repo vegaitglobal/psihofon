@@ -2,12 +2,13 @@ import {StyleSheet, ViewStyle} from 'react-native';
 import {Colors} from '../../styles/colors';
 import {Paddings} from '../../styles/paddings';
 
-const SPLITTING_RADIUS = 70;
+const SPLITTING_RADIUS = 60;
 
 export default StyleSheet.create({
   root: {
     backgroundColor: Colors.WHITE,
     flex: 1,
+    // height: Dimensions.get('screen').height,
   } as ViewStyle,
   upperContent: {
     paddingTop: Paddings.MEDIUM,

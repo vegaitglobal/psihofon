@@ -10,6 +10,7 @@ import {IntroMenuScreen} from '../screens/introMenuScreen/IntroMenuScreen';
 import {Colors} from '../styles/colors';
 import {View} from 'react-native';
 import {OrganizationsListScreen} from '../screens/organizationsList/OrganizationsListScreen';
+import { BreatheExerciseScreen } from '../screens/breatheExerciseScreen/BreatheExerciseScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -43,7 +44,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
           },
         }}
         name={AppRoute.INTRO_MENU}
-        component={IntroMenuScreen}
+        component={BreatheExerciseScreen}
       />
       <Stack.Screen
         options={{headerShown: false, header: () => <View />}}
