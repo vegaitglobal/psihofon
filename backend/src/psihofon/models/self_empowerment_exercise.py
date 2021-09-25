@@ -23,6 +23,10 @@ class SelfEmpowermentExercise(models.Model):
     explanation = models.TextField(
         verbose_name=_('explanation'),
     )
+    duration_description = models.TextField(
+        verbose_name=_('duration description'),
+        default='',
+    )
 
     def __str__(self):
         return self.title
