@@ -1,0 +1,227 @@
+[
+  {
+    "model": "psihofon.organization",
+    "pk": 1,
+    "fields": {
+      "name": "Psihološki centar ProActiva",
+      "city": "Subotica",
+      "website_url": "https://proaktiva.rs/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Psihološko savetovalište za mlade - Novosadski humanitarni centar",
+      "city": "Novi Sad",
+      "website_url": "http://www.savetovaliste.nshc.org.rs/?fbclid=IwAR1q4nU04m1FHM0-J4aPS9n2wWD8m5ASF4QpMV6T_iFth5D4DjjzhFQj9GQ"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 3,
+    "fields": {
+      "name": "Sos ženski centar",
+      "city": "Novi Sad",
+      "website_url": "https://sosns.rs/?fbclid=IwAR3PqrwG3NXX_QPe3EK-iWXydK7a3e2gEp9muz7amCW8BAyZm7OcwE6aNss"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 4,
+    "fields": {
+      "name": "Psihološko savetovalište za mlade – Infopolis (EDIT Centar)",
+      "city": "Novi Sad",
+      "website_url": "http://infopolis.rs/psiholosko-savetovaliste/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 5,
+    "fields": {
+      "name": "Udruženje Crvena Linija",
+      "city": "Novi Sad",
+      "website_url": "http://www.crvenalinija.org/?fbclid=IwAR1W7X8XwzFLofEE6ltFdte6swHoDdwYyNZFwi4MHiCreoemebvBAGmPU3E"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 6,
+    "fields": {
+      "name": "Centar Srce",
+      "city": "Novi Sad",
+      "website_url": "https://www.centarsrce.org/?fbclid=IwAR0uh97z0YHTpd1z7NMIsPQMWdvZ4Spt9dX2GPhB2LleyaZg6BFdHw6afok"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 7,
+    "fields": {
+      "name": "Grupa IZAĐI",
+      "city": "Novi Sad",
+      "website_url": "https://izadji.rs/?fbclid=IwAR276YRfkQgs_verJk7z_FKPECuQBjOoLGy_zVOtOGJTGdu_MAiFpRYonSs"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 8,
+    "fields": {
+      "name": "Omladina JAZAS Novi Sad",
+      "city": "Novi Sad",
+      "website_url": "https://www.omladinajazas.rs/?fbclid=IwAR1E7SeMP6pY72ikVNsB7ypfFQPT11aa77fTqeybhiBBHv-MV930C9GXRx4"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 9,
+    "fields": {
+      "name": "Iz Kruga Vojvodine",
+      "city": "Novi Sad",
+      "website_url": "https://www.facebook.com/izkrugavojvodina"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 10,
+    "fields": {
+      "name": "Patrija",
+      "city": "Novi Sad",
+      "website_url": "http://www.patrija.com/psiholosko-savetovaliste/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 11,
+    "fields": {
+      "name": "Ubuntu centar",
+      "city": "Novi Sad",
+      "website_url": "https://www.ubuntucentar.com/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 12,
+    "fields": {
+      "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+      "city": "Novi Sad",
+      "website_url": "https://www.csrns.org.rs/savetovaliste-za-brak-i-porodicu/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 13,
+    "fields": {
+      "name": "Savetovalište za brak i porodicu - Centar za socijalni rad ",
+      "city": "Sremska Mitrovica",
+      "website_url": ""
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 14,
+    "fields": {
+      "name": "Psihološki centar Self",
+      "city": "Novi Sad, Sombor",
+      "website_url": "http://www.self.rs/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 15,
+    "fields": {
+      "name": "Porodični centar Paradigma",
+      "city": "Sombor",
+      "website_url": "https://www.facebook.com/Porodi%C4%8Dni-centar-Paradigma-107172971091965/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 16,
+    "fields": {
+      "name": "Bračno i porodično savetovalište “Rodinka”",
+      "city": "Bački Petrovac",
+      "website_url": ""
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 17,
+    "fields": {
+      "name": "Psihološko savetovanje i psihoterapija Centar “Poveži se”",
+      "city": "Kikinda",
+      "website_url": "https://povezise.weebly.com/?fbclid=IwAR3I9muTIRWSK_Ya_w2gQyijZ4nzcznLbJ75eqR57gGT_x8j_4A7p8VRcuI"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 18,
+    "fields": {
+      "name": "Centar za lični razvoj Spektrum",
+      "city": "Subotica, Bačka Topola",
+      "website_url": "https://www.centarspektrum.com/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 19,
+    "fields": {
+      "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+      "city": "Zrenjanin",
+      "website_url": "https://centarmostzr.rs/savetovaliste-za-brak-i-porodicu/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 20,
+    "fields": {
+      "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+      "city": "Stara Pazova",
+      "website_url": ""
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 21,
+    "fields": {
+      "name": "Savetovalište za brak i porodicu - Centar za socijalni rad",
+      "city": "Kula",
+      "website_url": "https://csrkula.org/savetovaliste-za-brak-i-porodicu/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 22,
+    "fields": {
+      "name": "Bračno i porodično savetovalište - Centar za socijalni rad",
+      "city": "Sombor",
+      "website_url": "https://www.csrsombor.org.rs/index.php?str=23&p=lat"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 23,
+    "fields": {
+      "name": "Centar za individualni razvoj i unapređenje društva - PSIHOZON",
+      "city": "Sombor",
+      "website_url": "https://www.facebook.com/psihozon/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 24,
+    "fields": {
+      "name": "Psihološki centar Tri",
+      "city": "Sremska Mitrovica",
+      "website_url": "https://psiholoskicentartri.org.rs/o-nama/"
+    }
+  },
+  {
+    "model": "psihofon.organization",
+    "pk": 25,
+    "fields": {
+      "name": "Centar za mentalno zdravlje Kikinda",
+      "city": "Kikinda",
+      "website_url": ""
+    }
+  }
+]
