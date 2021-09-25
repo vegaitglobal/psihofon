@@ -1,56 +1,58 @@
 import React from 'react';
 import {
-  Alert,
   FlatList,
   Linking,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
 import organizations from '../../../assets/data/organizations.json';
-import {CustomText} from '../../components/customText/CustomText';
-import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {Colors} from '../../constants/colors';
-import {useLightHeader} from '../../hooks/useLightHeader';
-import {OrganizationsListScreenProps} from '../../navigation/DrawerNavigator';
+import Globe from '../../../assets/icons/Globe.svg';
+import { CustomText } from '../../components/customText/CustomText';
+import { SolidBackground } from '../../components/solidBackground/SolidBackground';
+import { Colors } from '../../constants/colors';
+import { useLightHeader } from '../../hooks/useLightHeader';
+import { OrganizationsListScreenProps } from '../../navigation/DrawerNavigator';
 import style from './style';
 
-interface OrganizationLabelProps {
+interface OrganizationNameProps {
   name: string;
 }
 
-const OrganizationLabel: React.FC<OrganizationLabelProps> = ({name}) => {
+const OrganizationName: React.FC<OrganizationNameProps> = ({name}) => {
   return (
-    <View style={style.organziationLabel}>
+    <View style={style.nameContainer}>
       <Text>{name}</Text>
     </View>
   );
 };
 
-interface OrganizationLinkProps {
+interface OrganizationCityProps {
   city: string;
-  websiteUrl: string;
-  linkFontSize?: number;
 }
 
-const OrganizationLink: React.FC<OrganizationLinkProps> = ({
-  websiteUrl,
-  city,
-}) => {
+const OrganizationCity: React.FC<OrganizationCityProps> = ({city}) => {
+  return (
+    <View style={style.cityContainer}>
+      <Text style={style.city}>{city}</Text>
+    </View>
+  );
+};
+
+interface OrganizationLinkProps {
+  websiteUrl: string;
+}
+
+const OrganizationLink: React.FC<OrganizationLinkProps> = ({websiteUrl}) => {
   const handlePress = () =>
     Linking.canOpenURL(websiteUrl).then(canOpen => {
       canOpen && Linking.openURL(websiteUrl);
     });
 
-  return websiteUrl?.length ? (
-    <TouchableOpacity onPress={handlePress} style={style.organizationLink}>
-      <Text style={style.city}>{city}</Text>
-      <Text style={style.link}>Vebsajt</Text>
+  return (
+    <TouchableOpacity onPress={handlePress} style={style.linkContainer}>
+      <Globe />
     </TouchableOpacity>
-  ) : (
-    <View style={style.organizationLink}>
-      <Text style={style.city}>{city}</Text>
-    </View>
   );
 };
 
@@ -67,8 +69,9 @@ const OrganizationContainer: React.FC<OrganizationContainerProps> = ({
 }) => {
   return (
     <View style={style.organizationContainer}>
-      <OrganizationLabel name={name} />
-      <OrganizationLink city={city} websiteUrl={websiteUrl} />
+      <OrganizationName name={name} />
+      <OrganizationCity city={city} />
+      {!!websiteUrl?.length && <OrganizationLink websiteUrl={websiteUrl} />}
     </View>
   );
 };

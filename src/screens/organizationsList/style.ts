@@ -6,24 +6,35 @@ export default StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 15,
   } as ViewStyle,
-  organizationLink: {
+  linkContainer: {
     backgroundColor: Colors.DEFAULT,
+    width: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    marginLeft: 8,
+  } as ViewStyle,
+  cityContainer: {
+    borderColor: Colors.DEFAULT,
+    borderWidth: 1,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    paddingHorizontal: 5
   } as ViewStyle,
-  organziationLabel: {
+  nameContainer: {
     justifyContent: 'center',
     backgroundColor: Colors.WHITE,
     width: '60%',
-    height: 40,
+    height: 50,
     paddingLeft: 9,
     borderRadius: 10,
     marginRight: 8,
   } as ViewStyle,
   city: {
-    color: 'white',
+    color: Colors.DEFAULT,
+    textAlign: 'center',
     fontSize: 10,
     fontWeight: '400',
     lineHeight: 12,
@@ -33,7 +44,6 @@ export default StyleSheet.create({
     fontSize: 12,
     fontWeight: '500',
     lineHeight: 18,
-    // textDecorationLine: 'underline'
   } as TextStyle,
   title: {
     color: '#706F6F',
