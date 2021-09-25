@@ -8,14 +8,14 @@ import {
   View,
 } from 'react-native';
 import {useSelector} from 'react-redux';
+import {Organization} from '../../models/Organization';
+import {RootState} from '../../reducers/rootReducer';
 import Globe from '../../../assets/icons/Globe.svg';
 import {CustomText} from '../../components/customText/CustomText';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {Colors} from '../../constants/colors';
-import {useLightHeader} from '../../hooks/useLightHeader';
-import {Organization} from '../../models/Organization';
+import {Colors} from '../../styles/colors';
+import {useHeader} from '../../hooks/useHeader';
 import {OrganizationsListScreenProps} from '../../navigation/DrawerNavigator';
-import {RootState} from '../../reducers/rootReducer';
 import style from './style';
 
 interface OrganizationNameProps {
@@ -93,18 +93,18 @@ export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
       />
     );
 
-    useLightHeader(navigation);
+    useHeader(navigation);
 
     useLayoutEffect(() => {
       navigation.setOptions({
         headerStyle: {
-          backgroundColor: Colors.PALE_GRAY,
+          backgroundColor: Colors.GRAY_LIGHT,
         },
       });
     }, [navigation]);
 
     return (
-      <SolidBackground backgroundColor={Colors.PALE_GRAY}>
+      <SolidBackground backgroundColor={Colors.PALE_GREY}>
         <CustomText style={style.title}>Baza podataka organizacija</CustomText>
         <FlatList
           showsVerticalScrollIndicator={false}

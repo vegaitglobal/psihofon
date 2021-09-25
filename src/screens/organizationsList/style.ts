@@ -1,5 +1,5 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {Colors} from '../../constants/colors';
+import {Colors} from '../../styles/colors';
 
 export default StyleSheet.create({
   organizationContainer: {
@@ -7,7 +7,7 @@ export default StyleSheet.create({
     marginBottom: 15,
   } as ViewStyle,
   linkContainer: {
-    backgroundColor: Colors.DEFAULT,
+    backgroundColor: Colors.DARK_GREEN,
     width: 50,
     justifyContent: 'center',
     alignItems: 'center',
@@ -15,13 +15,13 @@ export default StyleSheet.create({
     marginLeft: 8,
   } as ViewStyle,
   cityContainer: {
-    borderColor: Colors.DEFAULT,
+    borderColor: Colors.DARK_GREEN,
     borderWidth: 1,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    paddingHorizontal: 5
+    paddingHorizontal: 5,
   } as ViewStyle,
   nameContainer: {
     justifyContent: 'center',
@@ -33,7 +33,7 @@ export default StyleSheet.create({
     marginRight: 8,
   } as ViewStyle,
   city: {
-    color: Colors.DEFAULT,
+    color: Colors.DARK_GREEN,
     textAlign: 'center',
     fontSize: 10,
     fontWeight: '400',
