@@ -8,13 +8,10 @@ import {
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
 import {Title} from '../../components/title/Title';
+import {AnalyticsQuizResultsScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {Margins} from '../../styles/margins';
 import {Paddings} from '../../styles/paddings';
 import style from './style';
-
-interface AnalyticsQuizResultsScreenProps {
-  scores: AnalyticsQuizResultItemModel[];
-}
 
 const scores: AnalyticsQuizResultItemModel[] = [
   {title: 'Anksioznost', percentage: '50%'},
@@ -24,9 +21,10 @@ const scores: AnalyticsQuizResultItemModel[] = [
 ];
 
 export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProps> =
-  () => {
+  ({navigation}: AnalyticsQuizResultsScreenProps) => {
+    //todo hook za useDarkHeader
     return (
-      <SolidBackground isDark={true} onPressMenu={() => console.log('test')}>
+      <SolidBackground isDark={true}>
         <View style={style.centerContainer}>
           <View style={{paddingHorizontal: Paddings.MEDIUM}}>
             <Title text="Analiza" />

@@ -5,4 +5,5 @@ export enum AppRoute {
   INTRO_MENU = 'Intro Menu',
   ORGANIZATIONS_LIST = 'Organizations List',
   ORGANIZATIONS_NAVIGATOR = 'Organizations Navigators',
+  ANALYTICS_QUIZ_RESULTS = 'Analytics Quiz Results',
 }
