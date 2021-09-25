@@ -5,7 +5,7 @@ import {
   AnalyticsQuizResultItem,
   AnalyticsQuizResultItemModel,
 } from '../../components/analyticsQuizResultItem/AnalyticsQuizResultItem';
-import {CustomButton} from '../../components/customButton/CustomButton';
+import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
 import {Title} from '../../components/title/Title';
 import {Margins} from '../../styles/margins';

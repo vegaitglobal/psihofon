@@ -5,7 +5,7 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
-import {MenuScreen} from '../screens/Menu/MenuScreen';
+import {MenuScreen} from '../screens/menu/MenuScreen';
 import {IntroMenuScreen} from '../screens/introMenuScreen/IntroMenuScreen';
 
 const Stack = createNativeStackNavigator();
