@@ -3,11 +3,10 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Alert,
   ScrollView,
   GestureResponderEvent,
 } from 'react-native';
-import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
+import {ComplexBackground} from '../../components/ComplexBackground/ComplexBackground';
 import style from './style';
 
 interface GeneralExerciseScreenProps {
