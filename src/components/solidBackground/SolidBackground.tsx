@@ -22,7 +22,10 @@ export const SolidBackground: React.FC<Props> = ({
   }
   return (
     <View style={[style.container, {backgroundColor}]}>
-      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
+      <StatusBar
+        barStyle={isDark ? 'light-content' : 'dark-content'}
+        backgroundColor={isDark ? Colors.DARK_GREEN : Colors.WHITE}
+      />
       {children}
     </View>
   );
