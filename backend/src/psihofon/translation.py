@@ -1,7 +1,8 @@
 from modeltranslation.translator import register, TranslationOptions
-from psihofon.models import Organization
-from psihofon.models import SelfEmpowermentExercise
-from psihofon.models import CrisisExercise
+from psihofon.models import (
+    Organization, MentalState, Question, Questionnaire,
+    SelfEmpowermentExercise, CrisisExercise, Answer
+)
 
 
 @register(Organization)
@@ -17,3 +18,23 @@ class SelfEmpowermentExerciseOptions(TranslationOptions):
 @register(CrisisExercise)
 class CrisisExerciseOptions(TranslationOptions):
     fields = ('title', 'description')
+
+
+@register(Answer)
+class AnswerOptions(TranslationOptions):
+    fields = ('text',)
+
+
+@register(MentalState)
+class MentalStateOptions(TranslationOptions):
+    fields = ('name', 'exercise_list_label',)
+
+
+@register(Question)
+class QuestionOptions(TranslationOptions):
+    fields = ('text',)
+
+
+@register(Questionnaire)
+class QuestionnaireOptions(TranslationOptions):
+    fields = ('description',)
