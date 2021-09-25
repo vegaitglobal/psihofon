@@ -33,9 +33,7 @@ export interface QuizScreenProps {
     SecondExcercisesNavigatorParams,
     AppRoute.QUIZ
   >;
-  route:
-    | RouteProp<DrawerNavigatorParams, AppRoute.QUIZ>
-    | RouteProp<SecondExcercisesNavigatorParams, AppRoute.QUIZ>;
+  route: RouteProp<SecondExcercisesNavigatorParams, AppRoute.QUIZ>;
 }
 
 export interface AnalyticsQuizResultsScreenProps {
