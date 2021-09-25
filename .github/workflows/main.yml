@@ -40,6 +40,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd ~/hakaton/psihofon/backend && git pull origin main && docker-compose up --build -d
+          script: cd ~/hakaton/psihofon/backend && git pull origin main && docker-compose up --build -d && docker exec -it psihofon-django sh -c 'python manage.py loaddata psihofon/fixtures/*.json'
+
+
           
         
