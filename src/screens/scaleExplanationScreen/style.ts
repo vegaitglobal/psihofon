@@ -1,10 +1,9 @@
-import {Margins} from '../../constants/style';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {Colors} from '../../constants/colors';
+import {Colors} from '../../styles/colors';
+import {Margins} from '../../styles/margins';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'red',
     flex: 1,
   } as ViewStyle,
   labelText: {
@@ -15,6 +14,22 @@ export default StyleSheet.create({
     color: Colors.WHITE,
   } as TextStyle,
   labelSpacing: {
-    marginLeft: Margins.HUGE,
+    marginLeft: 36,
+  } as ViewStyle,
+  descriptionText: {
+    fontWeight: '400',
+    fontStyle: 'normal',
+    fontSize: 14,
+    lineHeight: 22,
+    color: Colors.WHITE,
+  } as TextStyle,
+  scaleContainer: {
+    marginHorizontal: Margins.MEDIUM,
+  } as ViewStyle,
+  scaleSpacing: {
+    marginVertical: 18,
+  } as ViewStyle,
+  buttonSpacing: {
+    marginTop: Margins.MEDIUM,
   } as ViewStyle,
 });

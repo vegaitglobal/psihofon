@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style';
-import {Colors} from '../../../constants/colors';
+import {Colors} from '../../../styles/colors';
 import {ButtonTheme} from '../../../constants/enums';
 import {CustomText} from '../../customText/CustomText';
 import {Pressable, PressableProps, View, ViewStyle} from 'react-native';
@@ -28,7 +28,7 @@ export const BigButton: React.FC<Props & PressableProps> = ({
       break;
     case ButtonTheme.DEFAULT:
     default:
-      backgroundColor = Colors.GREEN;
+      backgroundColor = Colors.DARK_GREEN;
       textColor = Colors.WHITE;
   }
 

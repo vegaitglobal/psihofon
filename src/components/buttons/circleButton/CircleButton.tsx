@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style';
-import {Colors} from '../../../constants/colors';
+import {Colors} from '../../../styles/colors';
 import {CustomText} from '../../customText/CustomText';
 import {ButtonSizes, ButtonTheme} from '../../../constants/enums';
 import {Pressable, PressableProps, TextStyle, ViewStyle} from 'react-native';
@@ -35,7 +35,7 @@ export const CircleButton: React.FC<Props & PressableProps> = ({
     case ButtonTheme.WHITE_GREEN:
     default:
       backgroundColor = Colors.WHITE;
-      textColor = Colors.GREEN;
+      textColor = Colors.DARK_GREEN;
   }
 
   let buttonDimension;
@@ -74,7 +74,7 @@ export const CircleButton: React.FC<Props & PressableProps> = ({
     <Pressable
       style={[
         styles.container,
-        {backgroundColor: isPressed ? Colors.GREEN : backgroundColor},
+        {backgroundColor: isPressed ? Colors.DARK_GREEN : backgroundColor},
         buttonStyle,
         style,
       ]}

@@ -1,15 +1,18 @@
 import {verticalScale} from '../../utils/helpers';
 import {StyleSheet, ViewStyle} from 'react-native';
-import {Margins, Paddings} from '../../constants/style';
+import {Paddings} from '../../styles/paddings';
+import {Margins} from '../../styles/margins';
+import {Colors} from '../../styles/colors';
 
 export default StyleSheet.create({
   container: {
     height: '100%',
     width: '100%',
-    paddingHorizontal: Paddings.XXLARGE,
+    paddingHorizontal: Paddings.MEDIUM,
+    backgroundColor: Colors.LIGHT_BACKGROUND,
   } as ViewStyle,
   buttonSpacing: {
-    marginTop: Margins.LARGE,
+    marginTop: Margins.SMALL,
   } as ViewStyle,
   upperArea: {
     flex: 1,

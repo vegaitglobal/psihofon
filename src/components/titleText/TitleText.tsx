@@ -1,24 +1,26 @@
 import React from 'react';
+import styles from './style';
 import {ViewStyle} from 'react-native';
-import {Colors} from '../../constants/colors';
+import {Colors} from '../../styles/colors';
 import {CustomText} from '../customText/CustomText';
 
 interface Props {
-  title: string;
   isWhite?: boolean;
   style?: ViewStyle;
 }
 
 export const TitleText: React.FC<Props> = ({
-  title,
+  children,
   isWhite = true,
   style,
   ...props
 }) => {
-  const titleColor = isWhite ? Colors.WHITE : Colors.GREEN;
+  const titleColor = isWhite ? Colors.WHITE : Colors.DARK_GREEN;
   return (
-    <CustomText style={[{color: titleColor}, style]} {...props}>
-      {title}
+    <CustomText
+      style={[styles.titleText, {color: titleColor}, style]}
+      {...props}>
+      {children}
     </CustomText>
   );
 };

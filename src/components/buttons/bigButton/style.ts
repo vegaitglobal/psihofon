@@ -1,5 +1,5 @@
-import {Colors} from '../../../constants/colors';
-import {BorderRadiuses} from '../../../constants/style';
+import {Colors} from '../../../styles/colors';
+import {BorderRadiuses} from '../../../styles/borderRadiuses';
 import {isTinyDevice} from '../../../constants/constants';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {moderateVerticalScale} from './../../../utils/helpers';
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: Colors.GREEN,
+    backgroundColor: Colors.DARK_GREEN,
     borderRadius: BorderRadiuses.LARGE,
     height: isTinyDevice ? moderateVerticalScale(80, 0) : 80,
   } as ViewStyle,

@@ -1,20 +1,19 @@
-import {Colors} from '../../constants/colors';
+import {Colors} from '../../styles/colors';
 import {verticalScale} from './../../utils/helpers';
-import {Margins, Paddings} from '../../constants/style';
+import {Margins} from '../../styles/margins';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.GREEN,
-    paddingHorizontal: Paddings.XXLARGE,
+    backgroundColor: Colors.DARK_GREEN,
   } as ViewStyle,
   upperContainer: {
     flex: 1,
     justifyContent: 'flex-end',
   } as ViewStyle,
   buttonSpacing: {
-    marginTop: Margins.LARGE,
+    marginTop: Margins.SMALL,
   } as ViewStyle,
   lowerContainer: {
     flex: 1,
