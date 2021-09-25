@@ -18,7 +18,7 @@ export const SolidBackground: React.FC<Props> = ({
   if (backgroundColorProp) {
     backgroundColor = backgroundColorProp;
   } else {
-    backgroundColorProp = isDark ? Colors.DARK_GREEN : Colors.WHITE;
+    backgroundColor = isDark ? Colors.DARK_GREEN : Colors.WHITE;
   }
   return (
     <View style={[style.container, {backgroundColor}]}>
