@@ -42,8 +42,8 @@ class AnswerInline(TranslationStackedInline):
 @admin.register(Questionnaire)
 class QuestionnaireAdmin(TranslationAdmin):
     inlines = [
-        QuestionInline,
         AnswerInline,
+        QuestionInline,
     ]
 
 
