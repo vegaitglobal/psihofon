@@ -21,6 +21,7 @@ class MentalStateExercise(models.Model):
         to='psihofon.MentalState',
         verbose_name=_('mental state'),
         on_delete=models.CASCADE,
+        related_name='exercises'
     )
 
     def __str__(self):
