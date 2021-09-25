@@ -46,5 +46,5 @@ class MentalStateSerializer(serializers.ModelSerializer):
     class Meta:
         model = MentalState
         fields = [
-            'name', 'exerciseListLabel', 'exercises'
+            'id', 'name', 'exerciseListLabel', 'exercises'
         ]
