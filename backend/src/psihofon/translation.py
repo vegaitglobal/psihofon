@@ -3,6 +3,7 @@ from psihofon.models import (
     Organization, MentalState, Question, Questionnaire,
     SelfEmpowermentExercise, CrisisExercise, Answer
 )
+from psihofon.models.mental_state_exercises import MentalStateExercise
 
 
 @register(Organization)
@@ -38,3 +39,8 @@ class QuestionOptions(TranslationOptions):
 @register(Questionnaire)
 class QuestionnaireOptions(TranslationOptions):
     fields = ('description',)
+
+
+@register(MentalStateExercise)
+class MentalStateExerciseOptions(TranslationOptions):
+    fields = ('title', 'description', 'recommendation')
