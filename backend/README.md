@@ -21,4 +21,4 @@
 
 4. To load fixtures, run:
 
-        `python manage.py loaddata psihofon/fixtures/*.json`
+        `docker exec -it psihofon-django sh -c 'python manage.py loaddata psihofon/fixtures/*.json'`
