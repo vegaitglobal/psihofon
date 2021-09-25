@@ -2,16 +2,16 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from psihofon.models import (
     Organization, CrisisExercise, SelfEmpowermentExercise,
-    MentalState,
+    MentalState, Questionnaire,
 )
 from psihofon.serializers import (
     OrganizationSerializer, CrisisExerciseSerializer,
     SelfEmpowermentExerciseSerializer, MentalStateSerializer,
+    QuestionnaireSerializer,
 )
 
 
 class OrganizationAPIView(APIView):
-    serializer_class = OrganizationSerializer
 
     def get(self, request, format=None):
         organizations = Organization.objects.all()
@@ -20,7 +20,6 @@ class OrganizationAPIView(APIView):
 
 
 class CrisisExerciseAPIView(APIView):
-    serializer_class = CrisisExerciseSerializer
 
     def get(self, request, format=None):
         crisis_exercises = CrisisExercise.objects.all()
@@ -29,12 +28,12 @@ class CrisisExerciseAPIView(APIView):
 
 
 class SelfEmpowermentExerciseAPIView(APIView):
-    serializer_class = OrganizationSerializer
 
     def get(self, request, format=None):
         self_empowerment_exercises = SelfEmpowermentExercise.objects.all()
         serializer = SelfEmpowermentExerciseSerializer(self_empowerment_exercises, many=True)
         return Response(serializer.data)
+
 
 class MentalStateAPIView(APIView):
 
@@ -44,4 +43,12 @@ class MentalStateAPIView(APIView):
         """
         mental_states = MentalState.objects.all()
         serializer = MentalStateSerializer(mental_states, many=True)
+        return Response(serializer.data)
+
+
+class QuestionnaireAPIView(APIView):
+
+    def get(self, request, format=None):
+        questionnaire = Questionnaire.objects.first()
+        serializer = QuestionnaireSerializer(questionnaire)
         return Response(serializer.data)
