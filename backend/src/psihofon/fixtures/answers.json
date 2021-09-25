@@ -1,0 +1,47 @@
+[
+  {
+    "model": "psihofon.answer",
+    "pk": 1,
+    "fields": {
+      "text": "Uopšte nije karakteristično za mene",
+      "order_number": 1,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.answer",
+    "pk": 2,
+    "fields": {
+      "text": "Nije karakteristično za mene",
+      "order_number": 2,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.answer",
+    "pk": 3,
+    "fields": {
+      "text": "Ne znam, nemam mišljenje",
+      "order_number": 3,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.answer",
+    "pk": 4,
+    "fields": {
+      "text": "Delimično me opisuje",
+      "order_number": 4,
+      "questionnaire": 1
+    }
+  },
+  {
+    "model": "psihofon.answer",
+    "pk": 5,
+    "fields": {
+      "text": "U potpunosti me opisuje",
+      "order_number": 5,
+      "questionnaire": 1
+    }
+  }
+]
