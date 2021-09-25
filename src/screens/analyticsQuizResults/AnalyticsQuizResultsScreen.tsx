@@ -7,7 +7,7 @@ import {
 } from '../../components/analyticsQuizResultItem/AnalyticsQuizResultItem';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {Title} from '../../components/title/Title';
+import {TitleText} from '../../components/titleText/TitleText';
 import {useHeader} from '../../hooks/useHeader';
 import {AnalyticsQuizResultsScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {Paddings} from '../../styles/paddings';
@@ -27,7 +27,7 @@ export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProp
       <SolidBackground isDark={true}>
         <View style={style.centerContainer}>
           <View style={{paddingHorizontal: Paddings.MEDIUM}}>
-            <Title text="Analiza" />
+            <TitleText>{'Analiza'}</TitleText>
             {scores && (
               <FlatList
                 data={scores}
