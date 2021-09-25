@@ -40,7 +40,11 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
           <BigButton
             style={styles.buttonSpacing}
             text={'U krizi sam'}
-            onPress={() => console.log('Pressed U krizi sam.')}
+            onPress={() =>
+              navigation.navigate(AppRoute.DRAWER, {
+                screen: AppRoute.CRISIS,
+              })
+            }
           />
         </View>
         <View style={styles.bottomArea}>

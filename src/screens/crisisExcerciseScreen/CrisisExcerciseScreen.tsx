@@ -4,10 +4,13 @@ import {View} from 'react-native';
 import {CustomText} from '../../components/customText/CustomText';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-// import {useHeader} from '../../hooks/useHeader';
+import {useHeader} from '../../hooks/useHeader';
+import {CrisisExercisesScreenProps} from '../../navigation/CrisisNavigator';
 
-export const CrisisExcerciseScreen: React.FC = () => {
-  // useHeader(navigation, false);
+export const CrisisExercisesScreen: React.FC<CrisisExercisesScreenProps> = ({
+  navigation,
+}) => {
+  useHeader(navigation, false);
   return (
     <SolidBackground isDark={true}>
       <View style={styles.container}>
