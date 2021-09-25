@@ -9,7 +9,6 @@ services:
       dockerfile: django.Dockerfile
     env_file:
       - .env
-    tty: true
     ports:
       - "48100:8000"
     depends_on:
