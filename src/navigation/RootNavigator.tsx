@@ -46,7 +46,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
         component={IntroMenuScreen}
       />
       <Stack.Screen
-        options={{headerShown: true, header: () => <View />}}
+        options={{headerShown: false, header: () => <View />}}
         name={AppRoute.DRAWER}
         component={DrawerNavigator}
       />
