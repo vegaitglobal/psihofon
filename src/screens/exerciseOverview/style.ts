@@ -17,5 +17,5 @@ export default StyleSheet.create({
     textAlign: 'center',
     textDecorationLine: 'underline',
   } as ViewStyle,
-  bottomButton: {marginBottom: Margins.XLARGE} as ViewStyle,
+  bottomButton: {marginBottom: Margins.XLARGE},
 });

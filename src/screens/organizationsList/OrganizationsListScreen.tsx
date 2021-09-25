@@ -83,7 +83,7 @@ export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
     useHeader(navigation);
 
     return (
-      <SolidBackground backgroundColor={Colors.PALE_GREY}>
+      <SolidBackground backgroundColor={Colors.PALE_GRAY}>
         <CustomText style={style.title}>Baza podataka organizacija</CustomText>
         <FlatList
           showsVerticalScrollIndicator={false}
