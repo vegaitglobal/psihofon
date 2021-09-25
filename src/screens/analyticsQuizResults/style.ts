@@ -3,7 +3,7 @@ import {Colors} from '../../styles/colors';
 import {Margins} from '../../styles/margins';
 
 export default StyleSheet.create({
-  list: {marginVertical: Margins.XXLARGE},
+  list: {marginVertical: Margins.LARGE},
   separator: {
     height: 0.5,
     backgroundColor: Colors.WHITE,

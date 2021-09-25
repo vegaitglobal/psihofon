@@ -7,7 +7,7 @@ export default StyleSheet.create({
     alignContent: 'center',
     flex: 1,
   } as ViewStyle,
-  list: {marginTop: Margins.XXLARGE} as ViewStyle,
+  list: {marginTop: Margins.LARGE} as ViewStyle,
   separator: {marginVertical: Margins.SMALL} as ViewStyle,
   textButton: {
     color: 'white',
