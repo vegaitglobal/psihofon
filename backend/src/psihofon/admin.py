@@ -6,6 +6,7 @@ from psihofon.models import (
     CrisisExercise, Questionnaire, Question, MentalState
 )
 from psihofon.models.answer import Answer
+from psihofon.models.mental_state_exercises import MentalStateExercise
 
 
 @admin.register(Organization)
@@ -46,6 +47,13 @@ class QuestionnaireAdmin(TranslationAdmin):
     ]
 
 
+class MentalStateExerciseInline(TranslationStackedInline):
+    model = MentalStateExercise
+    extra = 1
+
+
 @admin.register(MentalState)
 class MentalStateAdmin(TranslationAdmin):
-    pass
+    inlines = [
+        MentalStateExerciseInline,
+    ]
