@@ -19,9 +19,10 @@ import {
 } from 'react-native';
 import Close from '../../assets/icons/Close.svg';
 import {Colors} from '../styles/colors';
-import {Paddings} from '../constants/style';
+import {Paddings} from '../styles/paddings';
 import Logo from '../../assets/icons/Logo.svg';
 import {CustomText} from '../components/customText/CustomText';
+import {CrisisNavigator} from './CrisisNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -31,6 +32,7 @@ export type DrawerNavigatorParams = {
   [AppRoute.SECOND_EXCERCISES]: undefined;
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ORGANIZATIONS_NAVIGATOR]: undefined;
+  [AppRoute.CRISIS]: undefined;
 };
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
@@ -93,7 +95,7 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
   return (
     <Drawer.Navigator
       {...props}
-      initialRouteName={AppRoute.QUIZ}
+      initialRouteName={AppRoute.CRISIS}
       drawerContent={drawerProps => <CustomDrawerContent {...drawerProps} />}
       screenOptions={{
         drawerType: 'front',
@@ -115,6 +117,11 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
         component={SecondExcercisesNavigator}
       />
       <Drawer.Screen
+        options={{gestureEnabled: false, headerShown: false}}
+        name={AppRoute.CRISIS}
+        component={CrisisNavigator}
+      />
+      <Drawer.Screen
         options={{gestureEnabled: false}}
         name={AppRoute.ORGANIZATIONS_NAVIGATOR}
         component={OrganizationsListNavigator}
@@ -125,7 +132,7 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
 
 const style = StyleSheet.create({
   drawerContent: {
-    paddingHorizontal: Paddings.XLARGE,
+    paddingHorizontal: Paddings.MEDIUM,
     flex: 1,
   } as ViewStyle,
   drawerContentContainer: {

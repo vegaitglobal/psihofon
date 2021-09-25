@@ -1,6 +1,10 @@
 export enum Colors {
   DARK_GREEN = '#005751',
-  WHITE = 'white',
-  LIGHT_BACKGROUND = '#F6F6F7',
-  GREY = '#706F6F',
+  WHITE = '#FFFFFF',
+  BLACK = '#000000',
+  BLACKISH_TEXT = '#0A0909',
+  GRAY = '#E5E5E5',
+  DARK_GRAY = '#706F6F',
+  GRAY_LIGHT = '#716F6F',
+  PALE_GRAY = '#F6F6F7',
 }

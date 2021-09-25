@@ -1,18 +1,12 @@
 import React from 'react';
-import {
-  FlatList,
-  Linking,
-  Text,
-  TouchableOpacity,
-  View
-} from 'react-native';
+import {FlatList, Linking, Text, TouchableOpacity, View} from 'react-native';
 import organizations from '../../../assets/data/organizations.json';
 import Globe from '../../../assets/icons/Globe.svg';
-import { CustomText } from '../../components/customText/CustomText';
-import { SolidBackground } from '../../components/solidBackground/SolidBackground';
-import { Colors } from '../../constants/colors';
-import { useLightHeader } from '../../hooks/useLightHeader';
-import { OrganizationsListScreenProps } from '../../navigation/DrawerNavigator';
+import {CustomText} from '../../components/customText/CustomText';
+import {SolidBackground} from '../../components/solidBackground/SolidBackground';
+import {Colors} from '../../styles/colors';
+import {useHeader} from '../../hooks/useHeader';
+import {OrganizationsListScreenProps} from '../../navigation/DrawerNavigator';
 import style from './style';
 
 interface OrganizationNameProps {
@@ -86,7 +80,7 @@ export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
       />
     );
 
-    useLightHeader(navigation);
+    useHeader(navigation);
 
     return (
       <SolidBackground backgroundColor={Colors.PALE_GRAY}>

@@ -1,13 +1,11 @@
 import React, {useLayoutEffect} from 'react';
-import {Pressable, StatusBar, View} from 'react-native';
-import {
-  BigButton,
-  ButtonTheme,
-} from '../../components/buttons/bigButton/BigButton';
+import styles from './style';
+import {Pressable, View, StatusBar} from 'react-native';
+import {ButtonTheme} from '../../constants/enums';
 import {CustomText} from '../../components/customText/CustomText';
 import {IntroMenuScreenProps} from '../../navigation/RootNavigator';
+import {BigButton} from '../../components/buttons/bigButton/BigButton';
 import Logo from '../../../assets/icons/Logo.svg';
-import styles from './style';
 import {AppRoute} from '../../navigation/routes';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
@@ -42,7 +40,11 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
           <BigButton
             style={styles.buttonSpacing}
             text={'U krizi sam'}
-            onPress={() => console.log('Pressed U krizi sam.')}
+            onPress={() =>
+              navigation.navigate(AppRoute.DRAWER, {
+                screen: AppRoute.CRISIS,
+              })
+            }
           />
         </View>
         <View style={styles.bottomArea}>

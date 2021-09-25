@@ -1,5 +1,12 @@
 import React, {ReactNode, useRef, useState} from 'react';
-import {View, Text, TouchableOpacity, Alert, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Alert,
+  ScrollView,
+  GestureResponderEvent,
+} from 'react-native';
 import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
 import style from './style';
 
@@ -8,7 +15,13 @@ interface GeneralExerciseScreenProps {
   lowerContent?: ReactNode;
 }
 
-const BackToBeginningButton = ({onPress}) => {
+interface BackToBeginningButtonProps {
+  onPress: (e: GestureResponderEvent) => void;
+}
+
+const BackToBeginningButton: React.FC<BackToBeginningButtonProps> = ({
+  onPress,
+}) => {
   return (
     <TouchableOpacity style={style.buttonContainer} onPress={onPress}>
       <Text style={style.buttonText}>Vrati se na početak</Text>

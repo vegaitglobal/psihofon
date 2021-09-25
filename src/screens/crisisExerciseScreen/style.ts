@@ -18,6 +18,6 @@ export default StyleSheet.create({
     fontWeight: '400',
     fontSize: 14,
     lineHeight: 22,
-    color: Colors.GREY,
+    color: Colors.DARK_GRAY,
   } as TextStyle,
 });

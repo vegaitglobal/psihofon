@@ -9,8 +9,6 @@ import {DrawerNavigator, DrawerNavigatorParams} from './DrawerNavigator';
 import {IntroMenuScreen} from '../screens/introMenuScreen/IntroMenuScreen';
 import {Colors} from '../styles/colors';
 import {View} from 'react-native';
-import {OrganizationsListScreen} from '../screens/organizationsList/OrganizationsListScreen';
-import { BreatheExerciseScreen } from '../screens/breatheExerciseScreen/BreatheExerciseScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,22 +27,19 @@ export interface RootNavigatorProps<Screen extends keyof RootNavigatorParams> {
 
 export type IntroMenuScreenProps = RootNavigatorProps<AppRoute.INTRO_MENU>;
 
-
-
 export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
   return (
     <Stack.Navigator {...props} initialRouteName={AppRoute.INTRO_MENU}>
       <Stack.Screen
         options={{
-          headerShadowVisible: false,
           gestureEnabled: false,
           title: '',
           headerStyle: {
-            backgroundColor: Colors.LIGHT_BACKGROUND,
+            backgroundColor: Colors.PALE_GRAY,
           },
         }}
         name={AppRoute.INTRO_MENU}
-        component={BreatheExerciseScreen}
+        component={IntroMenuScreen}
       />
       <Stack.Screen
         options={{headerShown: false, header: () => <View />}}

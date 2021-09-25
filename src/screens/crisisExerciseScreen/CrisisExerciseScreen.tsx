@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-native';
-import {useLightHeader} from '../../hooks/useLightHeader';
+import {useHeader} from '../../hooks/useHeader';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import style from './style';
 
@@ -40,8 +40,8 @@ const LowerExerciseContent = () => {
   );
 };
 
-export const BreatheExerciseScreen = ({navigation}) => {
-  useLightHeader(navigation);
+export const CrisisExerciseScreen = ({navigation}) => {
+  useHeader(navigation);
 
   return (
     <GeneralExerciseScreen
