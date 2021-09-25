@@ -16,6 +16,7 @@ type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
 export type SecondExcercisesNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ANALYTICS_QUIZ_RESULTS]: undefined;
+  [AppRoute.FIRST_TYPE_EXCERCISES]: undefined;
 };
 
 export interface SecondExcercisesNavigatorProps<
@@ -40,6 +41,17 @@ export interface AnalyticsQuizResultsScreenProps {
   navigation: NativeStackNavigationProp<
     SecondExcercisesNavigatorParams,
     AppRoute.ANALYTICS_QUIZ_RESULTS
+  >;
+  route: RouteProp<
+    SecondExcercisesNavigatorParams,
+    AppRoute.ANALYTICS_QUIZ_RESULTS
+  >;
+}
+
+export interface FirstTypeExcercieScreenProps {
+  navigation: NativeStackNavigationProp<
+    SecondExcercisesNavigatorParams,
+    AppRoute.FIRST_TYPE_EXCERCISES
   >;
   route: RouteProp<
     SecondExcercisesNavigatorParams,
