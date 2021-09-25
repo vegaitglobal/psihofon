@@ -1,12 +1,11 @@
 import React from 'react';
-import {CompositeNavigationProp, RouteProp} from '@react-navigation/native';
+import {RouteProp} from '@react-navigation/native';
 import {
   createNativeStackNavigator,
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
 import {QuizScreen} from '../screens/quiz/QuizScreen';
-import {DrawerNavigationProp} from '@react-navigation/drawer';
 import {DrawerNavigatorParams} from './DrawerNavigator';
 
 const Stack = createNativeStackNavigator();
@@ -17,7 +16,7 @@ export type SecondExcercisesNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
 };
 
-export interface RootNavigatorProps<
+export interface SecondExcercisesNavigatorProps<
   Screen extends keyof SecondExcercisesNavigatorParams,
 > {
   navigation: NativeStackNavigationProp<
@@ -27,12 +26,10 @@ export interface RootNavigatorProps<
   route: RouteProp<SecondExcercisesNavigatorParams, Screen>;
 }
 
-// export type QuizScreenProps = RootNavigatorProps<AppRoute.QUIZ>;
-
 export interface QuizScreenProps {
-  navigation: CompositeNavigationProp<
-    DrawerNavigationProp<DrawerNavigatorParams, AppRoute.QUIZ>,
-    NativeStackNavigationProp<SecondExcercisesNavigatorParams, AppRoute.QUIZ>
+  navigation: NativeStackNavigationProp<
+    SecondExcercisesNavigatorParams,
+    AppRoute.QUIZ
   >;
   route:
     | RouteProp<DrawerNavigatorParams, AppRoute.QUIZ>
@@ -43,9 +40,16 @@ export const SecondExcercisesNavigator = (
   props: Partial<StackNavigatorProps>,
 ) => {
   return (
-    <Stack.Navigator {...props} initialRouteName={AppRoute.QUIZ}>
+    <Stack.Navigator
+      {...props}
+      initialRouteName={AppRoute.QUIZ}
+      screenOptions={{
+        headerShadowVisible: false,
+        headerBackVisible: false,
+        headerTitle: '',
+      }}>
       <Stack.Screen
-        options={{gestureEnabled: false, headerShown: false}}
+        options={{gestureEnabled: false}}
         name={AppRoute.QUIZ}
         component={QuizScreen}
       />

@@ -6,8 +6,6 @@ export default StyleSheet.create({
     flex: 1,
     paddingHorizontal: Paddings.MEDIUM,
     justifyContent: 'flex-start',
-    width: '100%',
-    height: '100%',
   } as ViewStyle,
   header: {
     flexDirection: 'row',

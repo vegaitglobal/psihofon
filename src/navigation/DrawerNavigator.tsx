@@ -26,6 +26,7 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProps>) => {
           width: Dimensions.get('screen').width,
           justifyContent: 'center',
         },
+        headerShown: false,
       }}>
       <Drawer.Screen
         options={{gestureEnabled: false, headerShown: false}}
