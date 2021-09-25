@@ -5,14 +5,15 @@ import {
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
 import {AppRoute} from './routes';
-import {MenuScreen} from '../screens/menu/MenuScreen';
-import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/AnalyticsQuizResultsScreen';
+import {MenuScreen} from '../screens/Menu/MenuScreen';
+import {IntroMenuScreen} from '../screens/introMenuScreen/IntroMenuScreen';
 
 const Stack = createNativeStackNavigator();
 
 type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
 
 export type RootNavigatorParams = {
+  [AppRoute.INTRO_MENU]: undefined;
   [AppRoute.MENU]: undefined;
 };
 
@@ -22,14 +23,22 @@ export interface RootNavigatorProps<Screen extends keyof RootNavigatorParams> {
 }
 
 export type MenuScreenProps = RootNavigatorProps<AppRoute.MENU>;
+export type IntroMenuScreenProps = RootNavigatorProps<AppRoute.INTRO_MENU>;
 
 export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
   return (
-    <Stack.Navigator {...props} initialRouteName={AppRoute.MENU}>
+    <Stack.Navigator {...props} initialRouteName={AppRoute.INTRO_MENU}>
+      <Stack.Screen
+        options={{
+          gestureEnabled: false,
+        }}
+        name={AppRoute.INTRO_MENU}
+        component={IntroMenuScreen}
+      />
       <Stack.Screen
         options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.MENU}
-        component={AnalyticsQuizResultsScreen}
+        component={MenuScreen}
       />
     </Stack.Navigator>
   );
