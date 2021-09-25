@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Third party apps:
     'modeltranslation',
+    'rest_framework',
 
     # Local apps:
     'psihofon',
