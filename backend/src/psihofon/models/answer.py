@@ -17,4 +17,5 @@ class Answer(models.Model):
         to='psihofon.Questionnaire',
         verbose_name=_('questionnaire'),
         on_delete=models.CASCADE,
+        related_name='answers'
     )
