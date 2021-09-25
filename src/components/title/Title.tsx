@@ -1,5 +1,4 @@
 import React from 'react';
-import {Colors} from '../../styles/colors';
 import {CustomText} from '../customText/CustomText';
 import style from './style';
 
