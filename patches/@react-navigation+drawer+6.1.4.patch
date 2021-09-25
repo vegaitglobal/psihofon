@@ -1,0 +1,26 @@
+diff --git a/node_modules/@react-navigation/drawer/src/views/DrawerView.tsx b/node_modules/@react-navigation/drawer/src/views/DrawerView.tsx
+index 44e6951..24a70b1 100644
+--- a/node_modules/@react-navigation/drawer/src/views/DrawerView.tsx
++++ b/node_modules/@react-navigation/drawer/src/views/DrawerView.tsx
+@@ -191,6 +191,7 @@ function DrawerViewBase({
+     return (
+       <MaybeScreenContainer
+         enabled={detachInactiveScreens}
++        hasTwoStates
+         style={styles.content}
+       >
+         {state.routes.map((route, index) => {
+diff --git a/node_modules/@react-navigation/drawer/src/views/ScreenFallback.tsx b/node_modules/@react-navigation/drawer/src/views/ScreenFallback.tsx
+index 36789cf..2e19ecb 100644
+--- a/node_modules/@react-navigation/drawer/src/views/ScreenFallback.tsx
++++ b/node_modules/@react-navigation/drawer/src/views/ScreenFallback.tsx
+@@ -21,7 +21,8 @@ export const MaybeScreenContainer = ({
+   enabled,
+   ...rest
+ }: ViewProps & {
+-  enabled: boolean;
++    enabled: boolean;
++    hasTwoStates: boolean;
+   children: React.ReactNode;
+ }) => {
+   if (Screens?.screensEnabled?.()) {
