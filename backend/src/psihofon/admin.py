@@ -3,10 +3,9 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from modeltranslation.admin import TranslationAdmin, TranslationStackedInline
 from psihofon.models import (
     Organization, User, SelfEmpowermentExercise,
-    CrisisExercise, Questionnaire, Question, MentalState
+    CrisisExercise, Questionnaire, Question, MentalState,
+    MentalStateExercise, Answer
 )
-from psihofon.models.answer import Answer
-from psihofon.models.mental_state_exercises import MentalStateExercise
 
 
 @admin.register(Organization)
