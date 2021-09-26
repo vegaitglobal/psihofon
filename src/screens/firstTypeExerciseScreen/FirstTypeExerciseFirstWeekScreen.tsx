@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import {ComplexBackground} from '../../components/ComplexBackground/ComplexBackground';
+import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
 import {CustomText} from '../../components/customText/CustomText';
 import {RecommendationBox} from '../../components/recommendationBox/RecommendationBox';
 import {useHeader} from '../../hooks/useHeader';
@@ -8,6 +8,7 @@ import {FirstTypeExerciseFirstWeekProps} from '../../navigation/FirstExcercisesN
 import {Colors} from '../../styles/colors';
 import TimerIcon from '../../../assets/icons/Timer.svg';
 import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
+import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
@@ -73,14 +74,17 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
         lowerContent={
           <View>
             <ExerciseDescription />
-            {/* Placeholder for explanation box*/}
-            <View style={{height: 120}} />
+            <ExplanationBox>
+              <CustomText>12342qfsaddsadsaf</CustomText>
+            </ExplanationBox>
             <RecommendationBox
               icon={<TimerIcon />}
               title={'asdadfad'}
               content={'fdssdf'}
             />
-            <BackToBeginningButton />
+            <BackToBeginningButton
+              onPress={() => console.log('Here we should scroll to top')}
+            />
           </View>
         }
       />
