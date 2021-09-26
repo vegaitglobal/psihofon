@@ -13,9 +13,14 @@ wait_for_postgres() {
 }
 
 wait_for_postgres
+
+echo "Starting Django project..."
+
+echo "Running migrations"
+python3 manage.py migrate
+
 echo "Updating fixtures"
 python3 manage.py loaddata psihofon/fixtures/*.json
 
-echo "Starting Django project..."
-python3 manage.py migrate
+echo "Running development web server"
 python3 manage.py runserver 0.0.0.0:8000
