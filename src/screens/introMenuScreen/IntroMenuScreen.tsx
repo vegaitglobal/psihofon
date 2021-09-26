@@ -15,6 +15,9 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => <Logo />,
+      headerStyle: {
+        backgroundColor: Colors.PALE_GREY,
+      },
       headerShadowVisible: false,
     });
   }, [navigation]);
@@ -35,7 +38,7 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
             text={'Vežbe za: anksioznost, tugu, stres i nisko samopouzdanje'}
             onPress={() =>
               navigation.navigate(AppRoute.DRAWER, {
-                screen: AppRoute.QUIZ,
+                screen: AppRoute.SECOND_EXCERCISES,
               })
             }
           />

@@ -1,20 +1,21 @@
-import {MentalState} from './mentalState';
-
 export interface Questionnaire {
   description: string;
   questions: Array<Question>;
-  answer?: Answer;
+  answers: Array<Answer>;
 }
 
 export interface Question {
   id: number;
   text: string;
   orderNumber: number;
-  mentalState: MentalState;
+  mentalState: {
+    id: number;
+    name: string;
+  };
 }
 
 export interface Answer {
   id: number;
   text: string;
-  order_number: number;
+  orderNumber: number;
 }

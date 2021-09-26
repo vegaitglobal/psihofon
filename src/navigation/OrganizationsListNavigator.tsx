@@ -46,7 +46,7 @@ export const OrganizationsListNavigator = (
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,
-        headerTitle: '',
+        title: '',
       }}>
       <Stack.Screen
         options={{gestureEnabled: false}}

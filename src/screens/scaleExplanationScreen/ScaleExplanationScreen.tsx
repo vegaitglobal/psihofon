@@ -1,28 +1,33 @@
-import React from 'react';
-import {View} from 'react-native';
+import React, {useEffect} from 'react';
+import {FlatList, View} from 'react-native';
+import {useSelector} from 'react-redux';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {CustomText} from '../../components/customText/CustomText';
 import {ScaleExplanationItem} from '../../components/scaleExplanationItem/ScaleExplanationItem';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
 import {TitleText} from '../../components/titleText/TitleText';
-// import {useHeader} from '../../hooks/useHeader';
-import {IntroMenuScreenProps} from '../../navigation/RootNavigator';
+import {useHeader} from '../../hooks/useHeader';
+import {AppRoute} from '../../navigation/routes';
+import {ScaleExplanationScreenProps} from '../../navigation/SecondExcercisesNavigator';
+import {
+  getQuestionnaire,
+  questionnarieAnswers,
+} from '../../reducers/questionnairesReducer';
+import {useAppDispatch} from '../../store/store';
 import styles from './style';
 
-export const ScaleExplanationScreen: React.FC<IntroMenuScreenProps> = (
-  {
-    // navigation,
-  },
-) => {
-  // useHeader(navigation);
+export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
+  navigation,
+}) => {
+  useHeader(navigation);
+  const dispatch = useAppDispatch();
 
-  const scaleLabelText = [
-    'Uopšte nije karakteristično za mene',
-    'Nije karakteristično za mene',
-    'Ne znam, nemam mišljenje',
-    'Delimično me opisuje',
-    'U potpunosti me opisuje',
-  ];
+  const scaleGrades = useSelector(questionnarieAnswers);
+
+  useEffect(() => {
+    dispatch(getQuestionnaire());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <SolidBackground isDark={true}>
@@ -34,19 +39,23 @@ export const ScaleExplanationScreen: React.FC<IntroMenuScreenProps> = (
           način:
         </CustomText>
         <View style={styles.scaleContainer}>
-          {scaleLabelText.map((scaleInstructionItem, index) => (
-            <ScaleExplanationItem
-              style={styles.scaleSpacing}
-              buttonText={(index + 1).toString()}
-              labelText={scaleInstructionItem}
-            />
-          ))}
+          <FlatList
+            data={scaleGrades}
+            keyExtractor={({id}) => id.toString()}
+            renderItem={({item}) => (
+              <ScaleExplanationItem
+                style={styles.scaleSpacing}
+                buttonText={item.orderNumber.toString()}
+                labelText={item.text}
+              />
+            )}
+          />
         </View>
         <CustomButton
           style={styles.buttonSpacing}
           text={'Nastavi'}
           isDark={false}
-          onPress={() => console.log('Pressed Nastavi')}
+          onPress={() => navigation.navigate(AppRoute.QUIZ)}
         />
       </View>
     </SolidBackground>

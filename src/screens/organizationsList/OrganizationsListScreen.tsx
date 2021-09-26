@@ -1,6 +1,15 @@
-import React from 'react';
-import {FlatList, Linking, Text, TouchableOpacity, View} from 'react-native';
-import organizations from '../../../assets/data/organizations.json';
+import React, {useLayoutEffect} from 'react';
+import {
+  FlatList,
+  Linking,
+  ListRenderItemInfo,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {useSelector} from 'react-redux';
+import {Organization} from '../../models/Organization';
+import {RootState} from '../../reducers/rootReducer';
 import Globe from '../../../assets/icons/Globe.svg';
 import {CustomText} from '../../components/customText/CustomText';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
@@ -72,7 +81,11 @@ const OrganizationContainer: React.FC<OrganizationContainerProps> = ({
 
 export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
   ({navigation}) => {
-    const renderItem = ({item}) => (
+    const {organizations} = useSelector(
+      (state: RootState) => state.organizations,
+    );
+
+    const renderItem = ({item}: ListRenderItemInfo<Organization>) => (
       <OrganizationContainer
         name={item.name}
         city={item.city}
@@ -81,6 +94,14 @@ export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
     );
 
     useHeader(navigation, true);
+
+    useLayoutEffect(() => {
+      navigation.setOptions({
+        headerStyle: {
+          backgroundColor: Colors.PALE_GREY,
+        },
+      });
+    }, [navigation]);
 
     return (
       <SolidBackground backgroundColor={Colors.PALE_GREY}>
