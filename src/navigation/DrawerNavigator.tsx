@@ -30,11 +30,11 @@ const Drawer = createDrawerNavigator();
 type DrawerNavigatorProperties = React.ComponentProps<typeof Drawer.Navigator>;
 
 export type DrawerNavigatorParams = {
-  [AppRoute.FIRST_TYPE_EXERCISE_NAVIGATOR]: undefined;
   [AppRoute.SECOND_EXCERCISES]: undefined;
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ORGANIZATIONS_NAVIGATOR]: undefined;
   [AppRoute.CRISIS]: undefined;
+  [AppRoute.SELF_EMPOWERMENT_NAVIGATOR]: undefined;
 };
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
@@ -115,11 +115,6 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
       }}>
       <Drawer.Screen
         options={{gestureEnabled: false, headerShown: false}}
-        name={AppRoute.FIRST_TYPE_EXERCISE_NAVIGATOR}
-        component={FirstExcercisesNavigator}
-      />
-      <Drawer.Screen
-        options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.SECOND_EXCERCISES}
         component={SecondExcercisesNavigator}
       />
@@ -132,6 +127,11 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
         options={{gestureEnabled: false}}
         name={AppRoute.ORGANIZATIONS_NAVIGATOR}
         component={OrganizationsListNavigator}
+      />
+      <Drawer.Screen
+        options={{gestureEnabled: false}}
+        name={AppRoute.SELF_EMPOWERMENT_NAVIGATOR}
+        component={FirstExcercisesNavigator}
       />
     </Drawer.Navigator>
   );

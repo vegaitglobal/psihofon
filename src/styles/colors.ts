@@ -9,4 +9,5 @@ export enum Colors {
   PALE_GREY = '#F6F6F7',
   VERY_DARK_GREEN = '#00423E',
   GREEN_LIGHT = '#A6CBB9',
+  LIGHT_GREEN = '#A6CBB9',
 }

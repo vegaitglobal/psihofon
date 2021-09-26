@@ -8,7 +8,6 @@ export default StyleSheet.create({
   root: {
     backgroundColor: Colors.WHITE,
     flex: 1,
-    // height: Dimensions.get('screen').height,
   } as ViewStyle,
   upperContent: {
     paddingTop: Paddings.MEDIUM,
@@ -28,6 +27,7 @@ export default StyleSheet.create({
     borderTopStartRadius: SPLITTING_RADIUS,
     width: '100%',
     height: '100%',
+    flex: 1,
   } as ViewStyle,
   lowerContentContainer: {
     width: '100%',
