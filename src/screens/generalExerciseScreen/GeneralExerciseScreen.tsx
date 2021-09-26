@@ -37,6 +37,7 @@ export const GeneralExerciseScreen: React.FC<GeneralExerciseScreenProps> = ({
         scrollEnabled
         contentContainerStyle={{flexGrow: 1}}
         style={style.scrollView}
+        showsVerticalScrollIndicator={false}
         bounces={false}>
         <ComplexBackground
           upperContent={upperContent}

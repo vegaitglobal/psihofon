@@ -10,7 +10,6 @@ import {MentalState} from '../../models/MentalState';
 import {AppRoute} from '../../navigation/routes';
 import {AnalyticsQuizResultsScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {RootState} from '../../reducers/rootReducer';
-import {Paddings} from '../../styles/paddings';
 import style from './style';
 
 const ListItem = ({item}: {item: MentalState}) => {
@@ -45,8 +44,8 @@ export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProp
 
     return (
       <SolidBackground isDark={true}>
-        <View style={style.centerContainer}>
-          <View style={{paddingHorizontal: Paddings.MEDIUM}}>
+        <View style={style.upperArea}>
+          <View>
             <TitleText>{'Analiza'}</TitleText>
             <FlatList
               data={mentalStates}
@@ -57,6 +56,8 @@ export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProp
               renderItem={({item}) => <ListItem item={item} />}
             />
           </View>
+        </View>
+        <View style={style.lowerArea}>
           <CustomButton
             isDark={false}
             onPress={() => navigation.navigate(AppRoute.EXCERCISE_OVERVIEW)}
