@@ -1,5 +1,6 @@
 import React, {useLayoutEffect} from 'react';
 import {
+  BackHandler,
   FlatList,
   Linking,
   ListRenderItemInfo,
@@ -17,6 +18,7 @@ import {Colors} from '../../styles/colors';
 import {useHeader} from '../../hooks/useHeader';
 import {OrganizationsListScreenProps} from '../../navigation/DrawerNavigator';
 import style from './style';
+import {useFocusEffect} from '@react-navigation/native';
 
 interface OrganizationNameProps {
   name: string;
@@ -102,6 +104,21 @@ export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
         },
       });
     }, [navigation]);
+
+    useFocusEffect(
+      React.useCallback(() => {
+        const onBackPress = () => {
+          navigation.goBack();
+          navigation.goBack();
+          return true;
+        };
+
+        BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+        return () =>
+          BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      }, [navigation]),
+    );
 
     return (
       <SolidBackground backgroundColor={Colors.PALE_GREY}>
