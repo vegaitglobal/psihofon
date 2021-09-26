@@ -3,6 +3,7 @@ import localSelfEmpowermentExcercises from '../../assets/data/selfEmpowermentExe
 import {AppDispatch} from '../store/store';
 import {SelfEmpowermentExercise} from '../models/SelfEmpowermentExercise';
 import {RootState} from './rootReducer';
+import SelfEmpowermentExcerciseService from '../services/SelfEmpowermentExcerciseService';
 
 export interface SelfEmpowermentExcercisesState {
   isLoggedIn: boolean;
@@ -41,10 +42,10 @@ export const {
   getSelfEmpowermentExcercisesSuccess,
 } = selfEmpowermentExcercisesSlice.actions;
 
-export const getOrganizations = () => async (dispatch: AppDispatch) => {
+export const getSelfEmpowermentExercises = () => async (dispatch: AppDispatch) => {
   dispatch(getSelfEmpowermentExcercisesStart());
   try {
-    const selfEmpowermentExcercises = localSelfEmpowermentExcercises;
+    const selfEmpowermentExcercises = await SelfEmpowermentExcerciseService.fetchSelfEmpowermentExcercises();
     dispatch(getSelfEmpowermentExcercisesSuccess(selfEmpowermentExcercises));
   } catch (error) {
     console.log(error);

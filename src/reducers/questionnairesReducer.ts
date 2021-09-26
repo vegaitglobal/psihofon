@@ -4,6 +4,7 @@ import {AppDispatch} from '../store/store';
 import {Answer, Question, Questionnaire} from '../models/Questionnaire';
 import {RootState} from './rootReducer';
 import {addInitialSurveyData} from './settingsReducer';
+import QuestionnaireService from '../services/QuestionnaireService';
 
 export interface QuestionnaireState {
   isLoggedIn: boolean;
@@ -43,7 +44,7 @@ export const getQuestionnaire =
   () => async (dispatch: AppDispatch, getState: () => RootState) => {
     dispatch(getQuestionnaireStart());
     try {
-      const questionnaires = localQuestionnaires;
+      const questionnaires = await QuestionnaireService.fetchQuestionnaire();
       dispatch(getQuestionnaireSuccess(questionnaires));
       if (!getState().settings.isSurveyFinished) {
         const surveyData = questionnaires.questions.map(item => {

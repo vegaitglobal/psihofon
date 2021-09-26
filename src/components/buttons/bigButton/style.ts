@@ -11,7 +11,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: Colors.DARK_GREEN,
     borderRadius: BorderRadiuses.LARGE,
-    height: isTinyDevice ? moderateVerticalScale(80, 0) : 80,
+    minHeight: isTinyDevice ? moderateVerticalScale(80, 0) : 80,
   } as ViewStyle,
   text: {
     fontSize: 16,

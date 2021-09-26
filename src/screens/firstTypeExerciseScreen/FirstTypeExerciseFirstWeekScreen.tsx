@@ -1,26 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import {View} from 'react-native';
-import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
+import React, {useEffect} from 'react';
+import {BackHandler, View} from 'react-native';
 import {CustomText} from '../../components/customText/CustomText';
 import {RecommendationBox} from '../../components/recommendationBox/RecommendationBox';
 import {useHeader} from '../../hooks/useHeader';
 import {FirstTypeExerciseFirstWeekProps} from '../../navigation/FirstExcercisesNavigator';
 import {Colors} from '../../styles/colors';
 import TimerIcon from '../../../assets/icons/Timer.svg';
-import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
 import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
-import {
-  excerciseById,
-  exerciseByWeekNumber,
-} from '../../reducers/selfEmpowermentExercises';
+import {exerciseByWeekNumber} from '../../reducers/selfEmpowermentExercises';
 import {useAppDispatch} from '../../store/store';
 import {
   setFirstUsageDate,
   setLastUsedExerciseWeek,
 } from '../../reducers/settingsReducer';
+import {useFocusEffect} from '@react-navigation/native';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
@@ -59,6 +55,21 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
       dispatch(setLastUsedExerciseWeek(exercise?.weekNumber ?? 0));
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    useFocusEffect(
+      React.useCallback(() => {
+        const onBackPress = () => {
+          navigation.goBack();
+          navigation.goBack();
+          return true;
+        };
+
+        BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+        return () =>
+          BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      }, [navigation]),
+    );
 
     const GeneralInfoWithWeekIndicator = () => {
       return (

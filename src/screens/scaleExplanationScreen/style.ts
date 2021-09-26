@@ -1,6 +1,7 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Colors} from '../../styles/colors';
 import {Margins} from '../../styles/margins';
+import {verticalScale} from '../../utils/helpers';
 
 export default StyleSheet.create({
   container: {
@@ -23,13 +24,16 @@ export default StyleSheet.create({
     lineHeight: 22,
     color: Colors.WHITE,
   } as TextStyle,
-  scaleContainer: {
+  scaleItemContainer: {
     marginHorizontal: Margins.MEDIUM,
   } as ViewStyle,
   scaleSpacing: {
-    marginVertical: 18,
+    marginVertical: verticalScale(18),
   } as ViewStyle,
   buttonSpacing: {
-    marginTop: Margins.MEDIUM,
+    marginVertical: Margins.MEDIUM,
+  } as ViewStyle,
+  headerArea: {
+    marginVertical: 5,
   } as ViewStyle,
 });
