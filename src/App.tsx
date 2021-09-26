@@ -22,15 +22,6 @@ import { getOrganizations } from './reducers/organizationsSlice';
 enableScreens(false);
 
 const App = () => {
-  
-  useEffect(() =>{
-    getOrganizations();
-    getSelfEmpowermentExercises();
-    getMentalStates();
-    getCrisisExercises();
-    getQuestionnaire();
-  }, []);
-
   useEffect(() => {
     SplashScreen.hide();
   });
