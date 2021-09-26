@@ -37,6 +37,7 @@ export const RootNavigator = (props: Partial<StackNavigatorProps>) => {
           headerStyle: {
             backgroundColor: Colors.PALE_GREY,
           },
+          headerShadowVisible: false,
         }}
         name={AppRoute.INTRO_MENU}
         component={IntroMenuScreen}

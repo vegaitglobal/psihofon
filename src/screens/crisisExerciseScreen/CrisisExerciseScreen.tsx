@@ -1,5 +1,6 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 import {useHeader} from '../../hooks/useHeader';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import style from './style';

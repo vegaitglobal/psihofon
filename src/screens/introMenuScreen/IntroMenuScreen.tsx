@@ -7,6 +7,7 @@ import {IntroMenuScreenProps} from '../../navigation/RootNavigator';
 import {BigButton} from '../../components/buttons/bigButton/BigButton';
 import Logo from '../../../assets/icons/Logo.svg';
 import {AppRoute} from '../../navigation/routes';
+import {Colors} from '../../styles/colors';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
@@ -14,12 +15,16 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => <Logo />,
+      headerStyle: {
+        backgroundColor: Colors.PALE_GREY,
+      },
+      headerShadowVisible: false,
     });
   }, [navigation]);
 
   return (
     <>
-      <StatusBar barStyle={'dark-content'} />
+      <StatusBar barStyle={'dark-content'} backgroundColor={Colors.PALE_GREY} />
       <View style={styles.container}>
         <View style={styles.upperArea}>
           <BigButton
@@ -37,7 +42,7 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
             text={'Vežbe za: anksioznost, tugu, stres i nisko samopouzdanje'}
             onPress={() =>
               navigation.navigate(AppRoute.DRAWER, {
-                screen: AppRoute.QUIZ,
+                screen: AppRoute.SECOND_EXCERCISES,
               })
             }
           />

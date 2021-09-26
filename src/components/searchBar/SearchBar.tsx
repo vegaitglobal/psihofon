@@ -6,17 +6,19 @@ import {TitleText} from '../titleText/TitleText';
 import Search from '../../../assets/icons/Search.svg';
 import {TextInput} from 'react-native-gesture-handler';
 import CloseIcon from '../../../assets/icons/Close.svg';
-import {Animated, Dimensions, Pressable, View} from 'react-native';
+import {Animated, Dimensions, Keyboard, Pressable, View} from 'react-native';
 
 interface Props {
   placeholder: string;
+  setSearchText: (inputText: string) => void;
 }
 
-export const SearchBar: React.FC<Props> = ({placeholder}) => {
+export const SearchBar: React.FC<Props> = ({placeholder, setSearchText}) => {
   const screenWidth = Dimensions.get('window').width;
   const [placeholderWidth, setPlaceholderWidth] = useState(0);
   const positionXPlaceholder = useRef(new Animated.Value(0)).current;
   const positionXSearchBar = useRef(new Animated.Value(screenWidth)).current;
+  const textInputRef = useRef<any>(null);
 
   const animateInComponents = () => {
     Animated.parallel([
@@ -58,7 +60,10 @@ export const SearchBar: React.FC<Props> = ({placeholder}) => {
         </Animated.View>
         <Pressable
           style={styles.searchButton}
-          onPress={() => animateInComponents()}>
+          onPress={() => {
+            textInputRef.current.focus();
+            animateInComponents();
+          }}>
           <Search />
         </Pressable>
       </View>
@@ -70,10 +75,17 @@ export const SearchBar: React.FC<Props> = ({placeholder}) => {
         <TextInput
           selectionColor={Colors.DARK_GREEN}
           style={styles.textInput}
+          onChangeText={e => setSearchText(e)}
+          ref={textInputRef}
         />
         <Pressable
           style={styles.closeIcon}
-          onPress={() => animateOutComponents()}>
+          onPress={() => {
+            setSearchText('');
+            textInputRef.current.clear();
+            Keyboard.dismiss();
+            animateOutComponents();
+          }}>
           <CloseIcon
             height={20}
             width={20}
