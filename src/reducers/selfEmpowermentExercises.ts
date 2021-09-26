@@ -1,7 +1,8 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import localSelfEmpowermentExcercises from '../../assets/data/selfEmpowermentExercises.json';
 import {AppDispatch} from '../store/store';
 import {SelfEmpowermentExercise} from '../models/SelfEmpowermentExercise';
+import {RootState} from './rootReducer';
 
 export interface SelfEmpowermentExcercisesState {
   isLoggedIn: boolean;
@@ -49,5 +50,16 @@ export const getOrganizations = () => async (dispatch: AppDispatch) => {
     console.log(error);
   }
 };
+
+export const excerciseById = createSelector(
+  (state: RootState) => ({
+    selfEmpowermentExcercises: state.selfEmpowerment.selfEmpowermentExcercises,
+  }),
+  ({selfEmpowermentExcercises}) =>
+    (id: number): SelfEmpowermentExercise => {
+      const result = selfEmpowermentExcercises.find(item => item.id === id)!;
+      return result;
+    },
+);
 
 export default selfEmpowermentExcercisesSlice.reducer;

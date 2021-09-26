@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import styles from './style';
 import {Pressable, View, StatusBar} from 'react-native';
 import {ButtonTheme} from '../../constants/enums';
@@ -8,10 +8,27 @@ import {BigButton} from '../../components/buttons/bigButton/BigButton';
 import Logo from '../../../assets/icons/Logo.svg';
 import {AppRoute} from '../../navigation/routes';
 import {Colors} from '../../styles/colors';
+import {useAppDispatch} from '../../store/store';
+import {useSelector} from 'react-redux';
+import {RootState} from '../../reducers/rootReducer';
+import {
+  setFirstUsageDate,
+  toggleIsFirstUsage,
+} from '../../reducers/settingsReducer';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
 }) => {
+  const dispatch = useAppDispatch();
+  const {isFirstUsafe} = useSelector((state: RootState) => state.settings);
+  useEffect(() => {
+    if (isFirstUsafe) {
+      dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
+      dispatch(toggleIsFirstUsage(false));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => <Logo />,
@@ -30,7 +47,11 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
           <BigButton
             theme={ButtonTheme.INVERTED}
             text={'Vežbe za samoosnaživanje'}
-            onPress={() => console.log('Pressed samoosnizavanje.')}
+            onPress={() =>
+              navigation.navigate(AppRoute.DRAWER, {
+                screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
+              })
+            }
           />
           <BigButton
             theme={ButtonTheme.INVERTED}

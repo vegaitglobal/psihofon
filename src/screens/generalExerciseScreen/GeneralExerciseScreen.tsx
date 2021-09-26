@@ -7,26 +7,13 @@ import {
   GestureResponderEvent,
 } from 'react-native';
 import { ComplexBackground } from '../../components/complexBackground/ComplexBackground';
+import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
 import style from './style';
 
 interface GeneralExerciseScreenProps {
   upperContent: ReactNode;
   lowerContent?: ReactNode;
 }
-
-interface BackToBeginningButtonProps {
-  onPress: (e: GestureResponderEvent) => void;
-}
-
-const BackToBeginningButton: React.FC<BackToBeginningButtonProps> = ({
-  onPress,
-}) => {
-  return (
-    <TouchableOpacity style={style.buttonContainer} onPress={onPress}>
-      <Text style={style.buttonText}>Vrati se na početak</Text>
-    </TouchableOpacity>
-  );
-};
 
 export const GeneralExerciseScreen: React.FC<GeneralExerciseScreenProps> = ({
   upperContent,
@@ -54,7 +41,8 @@ export const GeneralExerciseScreen: React.FC<GeneralExerciseScreenProps> = ({
         onScrollBeginDrag={handleScroll}
         ref={scrollRef}
         scrollEnabled
-        style={style.root}
+        contentContainerStyle={{flexGrow: 1}}
+        style={style.scrollView}
         bounces={false}>
         <ComplexBackground
           upperContent={upperContent}

@@ -1,5 +1,5 @@
 import {Colors} from '../../styles/colors';
-import {verticalScale} from './../../utils/helpers';
+import {verticalScale} from '../../utils/helpers';
 import {Margins} from '../../styles/margins';
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
@@ -31,4 +31,7 @@ export default StyleSheet.create({
     fontStyle: 'normal',
     color: Colors.WHITE,
   } as TextStyle,
+  separtor: {
+    height: Margins.SMALL,
+  } as ViewStyle,
 });

@@ -1,14 +1,7 @@
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {Colors} from '../../styles/colors';
+import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import { Colors } from '../../styles/colors';
 
 export default StyleSheet.create({
-  root: {
-    flex: 1,
-    backgroundColor: Colors.WHITE,
-  } as ViewStyle,
-  scrollView: {
-    flex: 1,
-  } as ViewStyle,
   buttonContainer: {
     backgroundColor: Colors.WHITE,
     width: '100%',
