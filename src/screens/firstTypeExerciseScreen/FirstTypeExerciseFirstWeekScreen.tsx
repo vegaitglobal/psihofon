@@ -9,6 +9,7 @@ import {Colors} from '../../styles/colors';
 import TimerIcon from '../../../assets/icons/Timer.svg';
 import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
 import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
+import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
@@ -32,11 +33,6 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
           <CustomText style={{fontSize: 14, color: Colors.WHITE}}>
             123Pre nego što započnete sa programom, odvojte jednu svesku ili
             beležnicu u koju ćete beležiti sve što bude potrebno dok radite na
-            sebi. Važno je da zadatke radite tačno prema uputstvu da bi oni
-            imali efekta. Za sve zadatke koje se nalaze u ovom program postoje
-            naučni dokazi da doprinose poboljšanju Vašeg mentalnog zdravlja
-            ukoliko se rade prema uputstvu. Nemojte preskakati korake u radu i
-            radite ih po utvrđenom redosledu123.
           </CustomText>
         </View>
       );
@@ -69,21 +65,46 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
     };
 
     return (
-      <ComplexBackground
+      // <ComplexBackground
+      //   upperContent={<GeneralInfoWithWeekIndicator />}
+      //   lowerContent={
+      //     <View>
+      //       <ExerciseDescription />
+      //       <ExplanationBox
+      //         title={'Pojašnjenja'}
+      //         text={
+      //           'Dozvolite sebi da istažite određeni događaj o kome pišete do kraja i to kako je uticao na Vas. Ovo mogu biti neka iskustva iz detinjstva, odnos sa roditeljima, ljudima koje ste voleli ili volite, Vaša karijera...'
+      //         }
+      //       />
+      //       <RecommendationBox
+      //         icon={<TimerIcon />}
+      //         title={'asdadfad'}
+      //         content={'fdssdf'}
+      //       />
+      //       <BackToBeginningButton
+      //         onPress={() => console.log('Here we should scroll to top')}
+      //       />
+      //     </View>
+      //   }
+      // />
+
+      <GeneralExerciseScreen
         upperContent={<GeneralInfoWithWeekIndicator />}
         lowerContent={
           <View>
             <ExerciseDescription />
-            <ExplanationBox>
-              <CustomText>12342qfsaddsadsaf</CustomText>
-            </ExplanationBox>
+            <ExplanationBox
+              style={{marginTop: 28}}
+              title={'Pojašnjenja'}
+              text={
+                'Dozvolite sebi da istažite određeni događaj o kome pišete do kraja i to kako je uticao na Vas. Ovo mogu biti neka iskustva iz detinjstva, odnos sa roditeljima, ljudima koje ste voleli ili volite, Vaša karijera...'
+              }
+            />
             <RecommendationBox
+              //TODONF STYLE HERE
               icon={<TimerIcon />}
               title={'asdadfad'}
               content={'fdssdf'}
-            />
-            <BackToBeginningButton
-              onPress={() => console.log('Here we should scroll to top')}
             />
           </View>
         }
