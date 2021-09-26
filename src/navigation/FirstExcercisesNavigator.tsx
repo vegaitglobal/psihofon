@@ -6,6 +6,7 @@ import {
 import {AppRoute} from './routes';
 import {RouteProp} from '@react-navigation/native';
 import {FirstTypeExcerciseCheckScreen} from '../screens/firstTypeExcerciseCheck/FirstTypeExcerciseCheckScreen';
+import {FirstTypeExerciseFirstWeekScreen} from '../screens/firstTypeExerciseScreen/FirstTypeExerciseFirstWeekScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,7 @@ type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
 
 export type FirstExcercisesNavigatorParams = {
   [AppRoute.FIRST_TYPE_EXCERCISE_CHECK]: undefined;
+  [AppRoute.FIRST_TYPE_EXERCISE_FIRST_WEEK]: undefined;
 };
 
 export interface FirstExcercisesNavigatorProps<
@@ -33,13 +35,24 @@ export interface FirstTypeExcerciseCheckScreenProps {
   >;
 }
 
+export interface FirstTypeExerciseFirstWeekProps {
+  navigation: NativeStackNavigationProp<
+    FirstExcercisesNavigatorParams,
+    AppRoute.FIRST_TYPE_EXERCISE_FIRST_WEEK
+  >;
+  route: RouteProp<
+    FirstExcercisesNavigatorParams,
+    AppRoute.FIRST_TYPE_EXERCISE_FIRST_WEEK
+  >;
+}
+
 export const FirstExcercisesNavigator = (
   props: Partial<StackNavigatorProps>,
 ) => {
   return (
     <Stack.Navigator
       {...props}
-      initialRouteName={AppRoute.FIRST_TYPE_EXCERCISE_CHECK}
+      initialRouteName={AppRoute.FIRST_TYPE_EXERCISE_FIRST_WEEK}
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,
@@ -49,6 +62,11 @@ export const FirstExcercisesNavigator = (
         options={{gestureEnabled: false, title: ''}}
         name={AppRoute.FIRST_TYPE_EXCERCISE_CHECK}
         component={FirstTypeExcerciseCheckScreen}
+      />
+      <Stack.Screen
+        options={{title: ''}}
+        name={AppRoute.FIRST_TYPE_EXERCISE_FIRST_WEEK}
+        component={FirstTypeExerciseFirstWeekScreen}
       />
     </Stack.Navigator>
   );

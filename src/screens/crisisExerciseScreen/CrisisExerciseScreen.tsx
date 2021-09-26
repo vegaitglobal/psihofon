@@ -3,10 +3,10 @@ import {View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {CustomText} from '../../components/customText/CustomText';
 import {useHeader} from '../../hooks/useHeader';
-import {CrisisExerciseScreenProps} from '../../navigation/CrisisNavigator';
 import {crisisExerciseById} from '../../reducers/crisisExcercisesReducer';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import style from './style';
+import {CrisisExerciseScreenProps} from '../../navigation/CrisisNavigator';
 
 export interface CrisisExerciseScreenParams {
   id: number;
