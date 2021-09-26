@@ -2,6 +2,7 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 import {Organization} from '../models/Organization';
 import localOrganizations from '../../assets/data/organizations.json';
 import {AppDispatch} from '../store/store';
+import OrganizationService from '../services/OrganizationService';
 
 export interface OrganizationsState {
   isLoggedIn: boolean;
@@ -43,7 +44,7 @@ export const {
 export const getOrganizations = () => async (dispatch: AppDispatch) => {
   dispatch(getOrganizationsStart());
   try {
-    const organizations = localOrganizations;
+    const organizations = await OrganizationService.fetchOrganizations();
     dispatch(getOrganizationsSuccess(organizations));
   } catch (error) {
     console.log(error);

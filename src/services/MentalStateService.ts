@@ -1,4 +1,5 @@
 import { MentalState } from "../models/MentalState";
+import { isConnected } from "./apiUtils";
 import axiosInstance from "./axiosInstance";
 
 interface MentalStateService {
@@ -7,6 +8,9 @@ interface MentalStateService {
 
 class MentalStateAxiosService implements MentalStateService {
     fetchMentalStates(): Promise<Array<MentalState>> {
+        if (!isConnected()) {
+            return Promise.reject("no connection");
+        }
         return axiosInstance
             .get('/mental-states')
             .then((res) => res.data)
