@@ -69,7 +69,13 @@ const QuestionItem = ({
   );
 };
 
-const ViewPagerItem = ({item}: {item: MentalState}) => {
+const ViewPagerItem = ({
+  item,
+  onPress,
+}: {
+  item: MentalState;
+  onPress: (id: number, isEverythingAnswered: boolean) => void;
+}) => {
   const questions = useSelector(questionnaireById);
   const questionnarie = questions(item.id);
 
@@ -98,7 +104,13 @@ const ViewPagerItem = ({item}: {item: MentalState}) => {
       return questionScorePair;
     });
 
+    const invaliditem = questionsScore.find(questionScorePair => {
+      if (questionScorePair.score === 0) {
+        return questionScorePair;
+      }
+    });
     dispatch(addSurveyData({mentalStateId: item.id, score: finalScore}));
+    onPress(item.id, invaliditem === undefined);
     setQuestionsScore(result);
   };
 
@@ -151,6 +163,13 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
   const {surveyData} = useSelector((state: RootState) => state.settings);
   const {mentalStates} = useSelector((state: RootState) => state.mentalStates);
   const dispatch = useAppDispatch();
+  const [satisfiedAnswers, setSatisfiedAnswers] = useState<
+    {mentalStateId: number; isFullAnswered: boolean}[]
+  >(
+    mentalStates.map(item => {
+      return {mentalStateId: item.id, isFullAnswered: false};
+    }),
+  );
 
   useHeader(navigation, true);
 
@@ -163,7 +182,10 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
   }, []);
 
   const navigatePage = () => {
-    if (pageNum < mentalStates.length - 1 || surveyData[pageNum].score >= 5) {
+    if (
+      pageNum < mentalStates.length - 1 &&
+      satisfiedAnswers[pageNum].isFullAnswered
+    ) {
       setPageNum(pageNum + 1);
     }
   };
@@ -172,6 +194,17 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
     ref.current?.scrollToIndex({index: pageNum});
   }, [pageNum]);
 
+  const handleOnPress = (id: number, isEverythinAnswered: boolean) => {
+    const result = satisfiedAnswers.map(item => {
+      if (item.mentalStateId === id) {
+        item.isFullAnswered = isEverythinAnswered;
+      }
+
+      return item;
+    });
+    setSatisfiedAnswers(result);
+  };
+  console.log(JSON.stringify(surveyData));
   return (
     <SolidBackground isDark={false}>
       <View style={styles.container}>
@@ -195,7 +228,9 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
           )}
           horizontal
           pagingEnabled
-          renderItem={({item}) => <ViewPagerItem item={item} />}
+          renderItem={({item}) => (
+            <ViewPagerItem item={item} onPress={handleOnPress} />
+          )}
           keyExtractor={(item: MentalState) => item.id.toString()}
         />
         <CustomButton text="Nastavi" onPress={navigatePage} isDark={true} />

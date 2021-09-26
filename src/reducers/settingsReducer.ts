@@ -24,8 +24,6 @@ export const settingsSlice = createSlice({
       state,
       {payload}: PayloadAction<{mentalStateId: number; score: number}>,
     ) => {
-      debugger;
-
       state.surveyData = state.surveyData.map(item => {
         if (item.mentalStateId === payload.mentalStateId) {
           item.score = payload.score;
@@ -37,7 +35,6 @@ export const settingsSlice = createSlice({
       state,
       {payload}: PayloadAction<Array<{mentalStateId: number; score: number}>>,
     ) => {
-      debugger;
       state.surveyData = payload;
     },
   },
