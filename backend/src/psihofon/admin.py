@@ -1,11 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import Group
 from modeltranslation.admin import TranslationAdmin, TranslationStackedInline
 from psihofon.models import (
     Organization, User, SelfEmpowermentExercise,
     CrisisExercise, Questionnaire, Question, MentalState,
     MentalStateExercise, Answer
 )
+
+admin.site.unregister(Group)
 
 
 @admin.register(Organization)
