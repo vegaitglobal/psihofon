@@ -91,17 +91,18 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
       <GeneralExerciseScreen
         upperContent={<GeneralInfoWithWeekIndicator />}
         lowerContent={
-          <View>
-            <ExerciseDescription />
-            <ExplanationBox
-              style={{marginTop: 28}}
-              title={'Pojašnjenja'}
-              text={
-                'Dozvolite sebi da istažite određeni događaj o kome pišete do kraja i to kako je uticao na Vas. Ovo mogu biti neka iskustva iz detinjstva, odnos sa roditeljima, ljudima koje ste voleli ili volite, Vaša karijera...'
-              }
-            />
+          <View style={{flex: 1, justifyContent: 'space-between'}}>
+            <View>
+              <ExerciseDescription />
+              <ExplanationBox
+                style={{marginTop: 28}}
+                title={'Pojašnjenja'}
+                text={
+                  'Dozvolite sebi da istažite određeni događaj o kome pišete do kraja i to kako je uticao na Vas. Ovo mogu biti neka iskustva iz detinjstva, odnos sa roditeljima, ljudima koje ste voleli ili volite, Vaša karijera...'
+                }
+              />
+            </View>
             <RecommendationBox
-              //TODONF STYLE HERE
               icon={<TimerIcon />}
               title={'asdadfad'}
               content={'fdssdf'}

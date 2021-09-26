@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, ViewStyle} from 'react-native';
-import {View} from 'react-native';
 import {Colors} from '../../styles/colors';
 import {CustomText} from '../customText/CustomText';
 import style from './style';
