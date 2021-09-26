@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style';
-import {View} from 'react-native';
+import {BackHandler, View} from 'react-native';
 import {CustomText} from '../../components/customText/CustomText';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
@@ -9,6 +9,7 @@ import {CrisisExercisesScreenProps as CrisisExercisesListScreenProps} from '../.
 import {AppRoute} from '../../navigation/routes';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
+import {useFocusEffect} from '@react-navigation/native';
 
 export const CrisisExercisesListScreen: React.FC<CrisisExercisesListScreenProps> =
   ({navigation}) => {
@@ -16,6 +17,22 @@ export const CrisisExercisesListScreen: React.FC<CrisisExercisesListScreenProps>
       (state: RootState) => state.crisisExcercises,
     );
     useHeader(navigation, false);
+
+    useFocusEffect(
+      React.useCallback(() => {
+        const onBackPress = () => {
+          navigation.goBack();
+          navigation.goBack();
+          return true;
+        };
+
+        BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+        return () =>
+          BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      }, [navigation]),
+    );
+
     return (
       <SolidBackground isDark={true}>
         <View style={styles.container}>
