@@ -1,5 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework.schemas.openapi import AutoSchema
 from psihofon.models import (
     Organization, CrisisExercise, SelfEmpowermentExercise,
     MentalState, Questionnaire,
@@ -46,7 +47,28 @@ class MentalStateAPIView(APIView):
         return Response(serializer.data)
 
 
+class QuestionnaireAPIViewSchema(AutoSchema):
+
+    def get_responses(self, path, method):
+        return {
+            '200': {
+                'content': {
+                    'application/json': {
+                        'schema': {}
+                    }
+                },
+            }
+        }
+
+    def get_operation_id(self, path, method):
+        return 'retrieveQuestionnaire'
+
+
 class QuestionnaireAPIView(APIView):
+    """
+    Returns a single Questionnaire object (the only one)
+    """
+    schema = QuestionnaireAPIViewSchema()
 
     def get(self, request, format=None):
         questionnaire = Questionnaire.load()

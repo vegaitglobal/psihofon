@@ -17,7 +17,10 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.urls import path, include
 
+api_urlpatterns = [
+    path('api/v1/', include(('psihofon.urls', 'psihofon'), namespace='psihofon_api')),
+]
+
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
-    path('api/v1/', include(('psihofon.urls', 'psihofon'), namespace='psihofon_api')),
-)
+) + api_urlpatterns
