@@ -13,7 +13,7 @@
     "model": "psihofon.question",
     "pk": 2,
     "fields": {
-      "text": "Ponekad osećam da mi srce “lupa” ili “preskače” iako se nisam fizički umorio/la.",
+      "text": "Ponekad osećam da mi srce \"lupa\" ili \"preskače\" iako se nisam fizički umorio/la.",
       "order_number": 2,
       "mental_state": 1,
       "questionnaire": 1
@@ -33,7 +33,7 @@
     "model": "psihofon.question",
     "pk": 4,
     "fields": {
-      "text": "Osećam da sam često na “ivici nerava”.",
+      "text": "Osećam da sam često na \"ivici nerava\".",
       "order_number": 4,
       "mental_state": 1,
       "questionnaire": 1
