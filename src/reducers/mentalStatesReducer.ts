@@ -54,7 +54,6 @@ export const mentalStateExercisesByIdAndQuery = createSelector(
           return item;
         }
       })!;
-
       const result = mentalState.exercises!.filter(exercise => {
         if (query.length === 0 || exercise.title.includes(query)) {
           return exercise;
@@ -73,6 +72,17 @@ export const mentalStateExercisesById = createSelector(
       const result = mentalStates
         .find(item => item.id === mentalStateId)!
         .exercises?.find(exercise => exercise.id === exerciseId)!;
+      return result;
+    },
+);
+
+export const mentalStateById = createSelector(
+  (state: RootState) => ({
+    mentalStates: state.mentalStates.mentalStates,
+  }),
+  ({mentalStates}) =>
+    (mentalStateId: number): MentalState => {
+      const result = mentalStates.find(item => item.id === mentalStateId)!;
       return result;
     },
 );

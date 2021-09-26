@@ -1,6 +1,6 @@
 import React, {ReactNode, useRef, useState} from 'react';
-import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
 import {View, ScrollView} from 'react-native';
+import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
 import {ComplexBackground} from '../../components/ComplexBackground/ComplexBackground';
 import style from './style';
 

@@ -11,7 +11,7 @@ export default StyleSheet.create({
     fontWeight: '600',
     fontSize: 21,
     lineHeight: 36,
-    textTransform: 'uppercase',
+    // textTransform: 'uppercase',
     color: Colors.WHITE,
   } as TextStyle,
   lowerContentText: {
