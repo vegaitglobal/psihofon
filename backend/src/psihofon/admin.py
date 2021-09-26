@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import Group
 from modeltranslation.admin import TranslationAdmin, TranslationStackedInline
+from simple_history.admin import SimpleHistoryAdmin
 from psihofon.models import (
     Organization, User, SelfEmpowermentExercise,
     CrisisExercise, Questionnaire, Question, MentalState,
@@ -11,23 +12,23 @@ from psihofon.models import (
 admin.site.unregister(Group)
 
 
-@admin.register(Organization)
-class OrganizationAdmin(TranslationAdmin):
+@admin.register(User)
+class UserAdmin(BaseUserAdmin, SimpleHistoryAdmin):
     pass
 
 
-@admin.register(User)
-class UserAdmin(BaseUserAdmin):
+@admin.register(Organization)
+class OrganizationAdmin(TranslationAdmin, SimpleHistoryAdmin):
     pass
 
 
 @admin.register(SelfEmpowermentExercise)
-class SelfEmpowermentExerciseAdmin(TranslationAdmin):
+class SelfEmpowermentExerciseAdmin(TranslationAdmin, SimpleHistoryAdmin):
     pass
 
 
 @admin.register(CrisisExercise)
-class CrisisExerciseAdmin(TranslationAdmin):
+class CrisisExerciseAdmin(TranslationAdmin, SimpleHistoryAdmin):
     pass
 
 
@@ -45,7 +46,7 @@ class AnswerInline(TranslationStackedInline):
 
 
 @admin.register(Questionnaire)
-class QuestionnaireAdmin(TranslationAdmin):
+class QuestionnaireAdmin(TranslationAdmin, SimpleHistoryAdmin):
     inlines = [
         AnswerInline,
         QuestionInline,
@@ -62,7 +63,7 @@ class MentalStateExerciseInline(TranslationStackedInline):
 
 
 @admin.register(MentalState)
-class MentalStateAdmin(TranslationAdmin):
+class MentalStateAdmin(TranslationAdmin, SimpleHistoryAdmin):
     inlines = [
         MentalStateExerciseInline,
     ]
