@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
 import {CustomText} from '../../components/customText/CustomText';
@@ -12,43 +12,59 @@ import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
-import {excerciseById} from '../../reducers/selfEmpowermentExercises';
+import {
+  excerciseById,
+  exerciseByWeekNumber,
+} from '../../reducers/selfEmpowermentExercises';
 import {useAppDispatch} from '../../store/store';
-import {setLastUsageExercise} from '../../reducers/settingsReducer';
+import {
+  setFirstUsageDate,
+  setLastUsedExerciseWeek,
+} from '../../reducers/settingsReducer';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
-    const {dateOfTheFirstUsage, lastUsedExerciseId} = useSelector(
+    const {dateOfTheFirstUsage, lastUsedWeekNumber} = useSelector(
       (state: RootState) => state.settings,
-    );
-
-    const {selfEmpowermentExcercises} = useSelector(
-      (state: RootState) => state.selfEmpowerment,
     );
 
     const dispatch = useAppDispatch();
 
-    const exerciseSelector = useSelector(excerciseById);
+    const checkForNextExercise = () => {
+      const firstDate = new Date(dateOfTheFirstUsage ?? '');
+      firstDate.setDate(firstDate.getDate() + 7);
 
-    const exerciseId =
-      lastUsedExerciseId !== undefined
-        ? lastUsedExerciseId
-        : selfEmpowermentExcercises[0].id;
+      if (firstDate && firstDate >= new Date()) {
+        console.log('lastWeekNR: ' + lastUsedWeekNumber);
+        const sdfgsdf = lastUsedWeekNumber + 1;
+        dispatch(setLastUsedExerciseWeek(sdfgsdf));
+        dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
+        console.log('nextWE: ' + sdfgsdf);
+      }
+    };
 
-    const exercise = exerciseSelector(exerciseId);
+    useEffect(() => {
+      checkForNextExercise();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    console.log('WEEEEK: ' + lastUsedWeekNumber);
+    const exerciseSelector = useSelector(exerciseByWeekNumber);
+
+    const exercise = exerciseSelector(lastUsedWeekNumber);
 
     useHeader(navigation, false);
 
     useEffect(() => {
-      dispatch(setLastUsageExercise(exercise.id));
+      dispatch(setLastUsedExerciseWeek(exercise?.weekNumber ?? 0));
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const GeneralInfoWithWeekIndicator = () => {
       return (
-        <View style={{}}>
+        <View>
           <CustomText style={{fontSize: 14, color: Colors.GREEN_LIGHT}}>
-            {exercise.weekNumber} nedelja
+            {exercise?.weekNumber} nedelja
           </CustomText>
           <CustomText
             style={{
@@ -57,10 +73,10 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
               color: Colors.WHITE,
               fontWeight: '600',
             }}>
-            {exercise.title}
+            {exercise?.title}
           </CustomText>
           <CustomText style={{fontSize: 14, color: Colors.WHITE}}>
-            {exercise.preparation}
+            {exercise?.preparation}
           </CustomText>
         </View>
       );
@@ -83,7 +99,7 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
               paddingTop: 13,
               color: Colors.DARK_GRAY,
             }}>
-            {exercise.description}
+            {exercise?.description}
           </CustomText>
         </View>
       );
@@ -99,13 +115,13 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
               <ExplanationBox
                 style={{marginTop: 28}}
                 title={'Pojašnjenja'}
-                text={exercise.explanation}
+                text={exercise?.explanation ?? ''}
               />
             </View>
             <RecommendationBox
               icon={<TimerIcon />}
               title={'Učestalost rada'}
-              content={exercise.durationDescription}
+              content={exercise?.durationDescription ?? ''}
             />
           </View>
         }

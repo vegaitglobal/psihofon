@@ -20,7 +20,9 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
 }) => {
   const dispatch = useAppDispatch();
-  const {isFirstUsafe} = useSelector((state: RootState) => state.settings);
+  const {isFirstUsafe, dateOfTheFirstUsage} = useSelector(
+    (state: RootState) => state.settings,
+  );
   useEffect(() => {
     if (isFirstUsafe) {
       dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
@@ -47,11 +49,24 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
           <BigButton
             theme={ButtonTheme.INVERTED}
             text={'Vežbe za samoosnaživanje'}
-            onPress={() =>
+            onPress={() => {
+              const firstDate = new Date(dateOfTheFirstUsage ?? '');
+              firstDate.setDate(firstDate.getDate() + 7);
+              console.log('FirstD: ' + firstDate);
+              console.log('Today: ' + new Date());
+              if (firstDate && firstDate >= new Date()) {
+                navigation.navigate(AppRoute.DRAWER, {
+                  screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
+                  params: {
+                    screen: AppRoute.FIRST_TYPE_EXCERCISE_CHECK,
+                  },
+                });
+                return;
+              }
               navigation.navigate(AppRoute.DRAWER, {
                 screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
-              })
-            }
+              });
+            }}
           />
           <BigButton
             theme={ButtonTheme.INVERTED}

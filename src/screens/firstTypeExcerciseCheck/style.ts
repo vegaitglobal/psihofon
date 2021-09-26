@@ -6,7 +6,7 @@ export default StyleSheet.create({
   title: {
     fontWeight: '600',
     fontSize: 20,
-    color: Colors.PALE_GRAY,
+    color: Colors.WHITE,
     marginBottom: Margins.LARGE,
   },
   centerContainer: {

@@ -8,7 +8,8 @@ export interface SettingsState {
   }>;
   isFirstUsafe: boolean;
   dateOfTheFirstUsage: string | undefined;
-  lastUsedExerciseId: number | undefined;
+  //lastUsedExerciseId: number | undefined;
+  lastUsedWeekNumber: number;
 }
 
 const initialState: SettingsState = {
@@ -16,7 +17,8 @@ const initialState: SettingsState = {
   surveyData: [],
   dateOfTheFirstUsage: undefined,
   isFirstUsafe: true,
-  lastUsedExerciseId: undefined,
+  //lastUsedExerciseId: undefined,
+  lastUsedWeekNumber: 1,
 };
 
 export const settingsSlice = createSlice({
@@ -29,11 +31,14 @@ export const settingsSlice = createSlice({
     toggleIsFirstUsage: (state, action: PayloadAction<boolean>) => {
       state.isFirstUsafe = action.payload;
     },
-    setFirstUsageDate: (state, action: PayloadAction<string>) => {
+    setFirstUsageDate: (state, action: PayloadAction<string | undefined>) => {
       state.dateOfTheFirstUsage = action.payload;
     },
-    setLastUsageExercise: (state, action: PayloadAction<number>) => {
-      state.lastUsedExerciseId = action.payload;
+    // setLastUsageExercise: (state, action: PayloadAction<number>) => {
+    //   state.lastUsedExerciseId = action.payload;
+    // },
+    setLastUsedExerciseWeek: (state, action: PayloadAction<number>) => {
+      state.lastUsedWeekNumber = action.payload;
     },
     addSurveyData: (
       state,
@@ -61,7 +66,8 @@ export const {
   addInitialSurveyData,
   toggleIsFirstUsage,
   setFirstUsageDate,
-  setLastUsageExercise,
+  //setLastUsageExercise,
+  setLastUsedExerciseWeek,
 } = settingsSlice.actions;
 
 export default settingsSlice.reducer;
