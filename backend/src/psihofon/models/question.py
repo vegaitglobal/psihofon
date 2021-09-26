@@ -26,4 +26,4 @@ class Question(models.Model):
     )
 
     def __str__(self):
-        return str(_(f"Pitanje {self.order_number}"))
+        return f"{_('Pitanje')} {self.order_number}"

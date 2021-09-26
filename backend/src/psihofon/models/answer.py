@@ -27,7 +27,7 @@ class Answer(models.Model):
     )
 
     def __str__(self):
-        return str(_(f"Odgovor {self.order_number}"))
+        return f"{_('Odgovor')} {self.order_number}"
 
 
     def clean(self):
