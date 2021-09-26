@@ -1,7 +1,7 @@
 import React, {ReactNode, useRef, useState} from 'react';
 import {View, ScrollView} from 'react-native';
 import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
-import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
+import {ComplexBackground} from '../../components/ComplexBackground/ComplexBackground';
 import style from './style';
 
 interface GeneralExerciseScreenProps {

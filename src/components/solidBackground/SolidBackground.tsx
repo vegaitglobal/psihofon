@@ -25,7 +25,7 @@ export const SolidBackground: React.FC<Props> = ({
     <View style={[style.container, {backgroundColor}]} {...props}>
       <StatusBar
         barStyle={isDark ? 'light-content' : 'dark-content'}
-        backgroundColor={isDark ? Colors.DARK_GREEN : Colors.WHITE}
+        backgroundColor={isDark ? Colors.DARK_GREEN : Colors.PALE_GREY}
       />
       {children}
     </View>
