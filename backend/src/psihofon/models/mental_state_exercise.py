@@ -16,6 +16,8 @@ class MentalStateExercise(models.Model):
     )
     recommendation = models.TextField(
         verbose_name=_('preporuka'),
+        blank=True,
+        default='',
     )
     mental_state = models.ForeignKey(
         to='psihofon.MentalState',

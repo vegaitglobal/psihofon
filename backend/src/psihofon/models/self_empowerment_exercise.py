@@ -22,6 +22,8 @@ class SelfEmpowermentExercise(models.Model):
     )
     explanation = models.TextField(
         verbose_name=_('objašnjenje'),
+        blank=True,
+        default='',
     )
     duration_description = models.TextField(
         verbose_name=_('učestalost rada'),
