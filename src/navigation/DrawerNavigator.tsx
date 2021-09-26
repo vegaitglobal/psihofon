@@ -49,7 +49,12 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
       <Pressable
         style={style.closeIcon}
         onPress={() => props.navigation.closeDrawer()}>
-        <Close fill={Colors.BLACK} color={Colors.BLACK} />
+        <Close
+          fill={Colors.BLACK}
+          color={Colors.BLACK}
+          width={20}
+          height={20}
+        />
       </Pressable>
       <View style={style.content}>
         <View style={style.menu}>

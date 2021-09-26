@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View} from 'react-native';
+import {BackHandler, View} from 'react-native';
 import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
 import {CustomText} from '../../components/customText/CustomText';
 import {RecommendationBox} from '../../components/recommendationBox/RecommendationBox';
@@ -15,6 +15,7 @@ import {RootState} from '../../reducers/rootReducer';
 import {excerciseById} from '../../reducers/selfEmpowermentExercises';
 import {useAppDispatch} from '../../store/store';
 import {setLastUsageExercise} from '../../reducers/settingsReducer';
+import {useFocusEffect} from '@react-navigation/native';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
@@ -43,6 +44,21 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
       dispatch(setLastUsageExercise(exercise.id));
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    useFocusEffect(
+      React.useCallback(() => {
+        const onBackPress = () => {
+          navigation.goBack();
+          navigation.goBack();
+          return true;
+        };
+
+        BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+        return () =>
+          BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      }, [navigation]),
+    );
 
     const GeneralInfoWithWeekIndicator = () => {
       return (

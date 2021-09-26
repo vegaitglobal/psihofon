@@ -3,6 +3,7 @@ import localMentalStates from '../../assets/data/mentalStates.json';
 import {AppDispatch} from '../store/store';
 import {MentalState, MentalStateExercise} from '../models/MentalState';
 import {RootState} from './rootReducer';
+import MentalStateService from '../services/MentalStateService';
 
 export interface MentalStatesState {
   mentalStates: Array<MentalState>;
@@ -36,7 +37,7 @@ export const {getMentalStatesStart, getMentalStatesSuccess} =
 export const getMentalStates = () => async (dispatch: AppDispatch) => {
   dispatch(getMentalStatesStart());
   try {
-    const mentalStates = localMentalStates;
+    const mentalStates = await MentalStateService.fetchMentalStates();
     dispatch(getMentalStatesSuccess(mentalStates));
   } catch (error) {
     console.log(error);

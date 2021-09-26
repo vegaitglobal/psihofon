@@ -1,5 +1,6 @@
+import {useFocusEffect} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import {FlatList, View} from 'react-native';
+import {BackHandler, FlatList, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {CustomText} from '../../components/customText/CustomText';

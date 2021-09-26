@@ -1,5 +1,7 @@
 import React, {useLayoutEffect} from 'react';
 import {
+  Alert,
+  BackHandler,
   FlatList,
   Linking,
   ListRenderItemInfo,
@@ -17,6 +19,7 @@ import {Colors} from '../../styles/colors';
 import {useHeader} from '../../hooks/useHeader';
 import {OrganizationsListScreenProps} from '../../navigation/DrawerNavigator';
 import style from './style';
+import {useFocusEffect} from '@react-navigation/native';
 
 interface OrganizationNameProps {
   name: string;
@@ -48,9 +51,15 @@ interface OrganizationLinkProps {
 
 const OrganizationLink: React.FC<OrganizationLinkProps> = ({websiteUrl}) => {
   const handlePress = () =>
-    Linking.canOpenURL(websiteUrl).then(canOpen => {
-      canOpen && Linking.openURL(websiteUrl);
-    });
+    Linking.canOpenURL(websiteUrl)
+      .then(canOpen => {
+        if (canOpen) {
+          Linking.openURL(websiteUrl);
+        }
+      })
+      .catch(() => {
+        Alert.alert('Ne mogu da otvorim link');
+      });
 
   return (
     <TouchableOpacity onPress={handlePress} style={style.linkContainer}>
@@ -102,6 +111,21 @@ export const OrganizationsListScreen: React.FC<OrganizationsListScreenProps> =
         },
       });
     }, [navigation]);
+
+    useFocusEffect(
+      React.useCallback(() => {
+        const onBackPress = () => {
+          navigation.goBack();
+          navigation.goBack();
+          return true;
+        };
+
+        BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+        return () =>
+          BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      }, [navigation]),
+    );
 
     return (
       <SolidBackground backgroundColor={Colors.PALE_GREY}>

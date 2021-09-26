@@ -15,6 +15,11 @@ import {
   setFirstUsageDate,
   toggleIsFirstUsage,
 } from '../../reducers/settingsReducer';
+import { getOrganizations } from '../../reducers/organizationsSlice';
+import { getMentalStates } from '../../reducers/mentalStatesReducer';
+import { getCrisisExercises } from '../../reducers/crisisExcercisesReducer';
+import { getQuestionnaire } from '../../reducers/questionnairesReducer';
+import { getSelfEmpowermentExercises } from '../../reducers/selfEmpowermentExercises';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
@@ -26,6 +31,13 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
       dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
       dispatch(toggleIsFirstUsage(false));
     }
+
+    dispatch(getOrganizations());
+    dispatch(getSelfEmpowermentExercises());
+    dispatch(getMentalStates());
+    dispatch(getCrisisExercises());
+    dispatch(getQuestionnaire());
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

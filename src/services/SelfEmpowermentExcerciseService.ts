@@ -1,4 +1,5 @@
 import { SelfEmpowermentExercise } from "../models/SelfEmpowermentExercise";
+import { isConnected } from "./apiUtils";
 import axiosInstance from "./axiosInstance";
 
 interface SelfEmpowermentExcerciseService {
@@ -6,7 +7,10 @@ interface SelfEmpowermentExcerciseService {
 }
 
 class SelfEmpowermentAxiosService implements SelfEmpowermentExcerciseService {
-    fetchSelfEmpowermentExcercises(): Promise<Array<SelfEmpowermentExercise> {
+    fetchSelfEmpowermentExcercises(): Promise<Array<SelfEmpowermentExercise>> {
+        if (!isConnected()) {
+            return Promise.reject("no connection");
+        }
         return axiosInstance
             .get('/self-empowerment-exercises')
             .then((response) => response.data)
@@ -14,3 +18,5 @@ class SelfEmpowermentAxiosService implements SelfEmpowermentExcerciseService {
             .catch((error) => Promise.reject(error));            
     }    
 }
+
+export default new SelfEmpowermentAxiosService() as SelfEmpowermentExcerciseService;

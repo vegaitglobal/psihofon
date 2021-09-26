@@ -1,18 +1,13 @@
+import { NavigationContainer } from '@react-navigation/native';
+import React, { useEffect } from 'react';
 import 'react-native-gesture-handler';
-import React, {useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {Provider, useSelector} from 'react-redux';
-import {RootNavigator} from './navigation/RootNavigator';
-import {persistor, store, useAppDispatch} from './store/store';
-import {PersistGate} from 'redux-persist/integration/react';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {enableScreens} from 'react-native-screens';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { enableScreens } from 'react-native-screens';
 import SplashScreen from 'react-native-splash-screen';
-import {RootState} from './reducers/rootReducer';
-import {
-  setFirstUsageDate,
-  toggleIsFirstUsage,
-} from './reducers/settingsReducer';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { RootNavigator } from './navigation/RootNavigator';
+import { persistor, store } from './store/store';
 
 enableScreens(false);
 
