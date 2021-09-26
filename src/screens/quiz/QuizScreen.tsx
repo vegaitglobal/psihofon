@@ -14,7 +14,10 @@ import {Paddings} from '../../styles/paddings';
 import {questionnaireById} from '../../reducers/questionnairesReducer';
 import {CustomText} from '../../components/customText/CustomText';
 import {CircleButton} from '../../components/buttons/circleButton/CircleButton';
-import {addSurveyData} from '../../reducers/settingsReducer';
+import {
+  addSurveyData,
+  toggleIsSurveyFinished,
+} from '../../reducers/settingsReducer';
 import {Question} from '../../models/Questionnaire';
 import {ButtonTheme} from '../../constants/enums';
 import {AppRoute} from '../../navigation/routes';
@@ -173,7 +176,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
       return {mentalStateId: item.id, isFullAnswered: false};
     }),
   );
-
+  const dispatch = useAppDispatch();
   useHeader(navigation, true);
 
   useLayoutEffect(() => {
@@ -198,6 +201,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
       pageNum === mentalStates.length - 1 &&
       satisfiedAnswers[pageNum].isFullAnswered
     ) {
+      dispatch(toggleIsSurveyFinished(true));
       navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS);
     }
   };

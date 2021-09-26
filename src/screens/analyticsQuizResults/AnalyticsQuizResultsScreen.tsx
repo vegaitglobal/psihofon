@@ -7,6 +7,7 @@ import {SolidBackground} from '../../components/solidBackground/SolidBackground'
 import {TitleText} from '../../components/titleText/TitleText';
 import {useHeader} from '../../hooks/useHeader';
 import {MentalState} from '../../models/MentalState';
+import {AppRoute} from '../../navigation/routes';
 import {AnalyticsQuizResultsScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {RootState} from '../../reducers/rootReducer';
 import {Paddings} from '../../styles/paddings';
@@ -58,7 +59,7 @@ export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProp
           </View>
           <CustomButton
             isDark={false}
-            onPress={() => console.log('Pogledaj vežbe')}
+            onPress={() => navigation.navigate(AppRoute.EXCERCISE_OVERVIEW)}
             text="Pogledaj vežbe"
           />
         </View>
