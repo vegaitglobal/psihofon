@@ -1,6 +1,7 @@
 import {StyleSheet, ViewStyle} from 'react-native';
 import {isTinyDevice} from '../../constants/constants';
 import {Margins} from '../../styles/margins';
+import {verticalScale} from '../../utils/helpers';
 
 export default StyleSheet.create({
   header: {
@@ -15,5 +16,14 @@ export default StyleSheet.create({
   iconAlign: {
     left: 14,
     padding: 10,
+  } as ViewStyle,
+  separator: {
+    height: 10,
+  } as ViewStyle,
+  list: {
+    marginTop: verticalScale(Margins.MIDLARGE),
+  } as ViewStyle,
+  listContainer: {
+    paddingBottom: verticalScale(90),
   } as ViewStyle,
 });

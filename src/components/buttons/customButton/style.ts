@@ -7,11 +7,12 @@ export default StyleSheet.create({
     borderRadius: 10,
     width: '100%',
     height: 40,
+    alignItems: 'center',
   } as ViewStyle,
   pressable: {
     flex: 1,
     justifyContent: 'center',
-    width: '100%',
+    width: '90%',
     alignItems: 'center',
   },
   darkBorder: {
@@ -23,6 +24,7 @@ export default StyleSheet.create({
   text: {
     fontSize: 12,
     fontWeight: '600',
+    textAlign: 'center',
   } as TextStyle,
   darkText: {
     color: Colors.DARK_GREEN,

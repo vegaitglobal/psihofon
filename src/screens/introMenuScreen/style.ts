@@ -9,7 +9,7 @@ export default StyleSheet.create({
     height: '100%',
     width: '100%',
     paddingHorizontal: Paddings.MEDIUM,
-    backgroundColor: Colors.PALE_GRAY,
+    backgroundColor: Colors.PALE_GREY,
   } as ViewStyle,
   buttonSpacing: {
     marginTop: Margins.SMALL,
