@@ -46,7 +46,12 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
       <Pressable
         style={style.closeIcon}
         onPress={() => props.navigation.closeDrawer()}>
-        <Close fill={Colors.BLACK} color={Colors.BLACK} />
+        <Close
+          fill={Colors.BLACK}
+          color={Colors.BLACK}
+          width={20}
+          height={20}
+        />
       </Pressable>
       <View style={style.content}>
         <View style={style.menu}>
@@ -168,6 +173,7 @@ const style = StyleSheet.create({
     marginTop: '20%',
   } as ViewStyle,
   closeIcon: {
+    paddingTop: 15,
     alignSelf: 'flex-end',
   } as ViewStyle,
 });
