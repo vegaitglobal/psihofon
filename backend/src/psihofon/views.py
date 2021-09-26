@@ -49,6 +49,6 @@ class MentalStateAPIView(APIView):
 class QuestionnaireAPIView(APIView):
 
     def get(self, request, format=None):
-        questionnaire = Questionnaire.objects.first()
+        questionnaire = Questionnaire.load()
         serializer = QuestionnaireSerializer(questionnaire)
         return Response(serializer.data)

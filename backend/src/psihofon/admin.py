@@ -50,6 +50,9 @@ class QuestionnaireAdmin(TranslationAdmin):
         QuestionInline,
     ]
 
+    def has_add_permission(self, request):
+        return not Questionnaire.exists()
+
 
 class MentalStateExerciseInline(TranslationStackedInline):
     model = MentalStateExercise
