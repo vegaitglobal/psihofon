@@ -18,7 +18,7 @@ export const AnalyticsQuizResultItem: React.FC<AnalyticsQuizResultItemProps> =
         <Text style={[style.text, style.bold]}>
           {analyticsQuizResultItem.title}
         </Text>
-        <Text style={style.text}>{analyticsQuizResultItem.percentage}</Text>
+        <Text style={style.text}>{analyticsQuizResultItem.percentage} %</Text>
       </View>
     );
   };

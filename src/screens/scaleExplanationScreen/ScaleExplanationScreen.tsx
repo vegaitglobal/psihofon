@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {FlatList, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
@@ -9,15 +9,25 @@ import {TitleText} from '../../components/titleText/TitleText';
 import {useHeader} from '../../hooks/useHeader';
 import {AppRoute} from '../../navigation/routes';
 import {ScaleExplanationScreenProps} from '../../navigation/SecondExcercisesNavigator';
-import {questionnarieAnswers} from '../../reducers/questionnairesReducer';
+import {
+  getQuestionnaire,
+  questionnarieAnswers,
+} from '../../reducers/questionnairesReducer';
+import {useAppDispatch} from '../../store/store';
 import styles from './style';
 
 export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
   navigation,
 }) => {
   useHeader(navigation);
+  const dispatch = useAppDispatch();
 
   const scaleGrades = useSelector(questionnarieAnswers);
+
+  useEffect(() => {
+    dispatch(getQuestionnaire());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <SolidBackground isDark={true}>

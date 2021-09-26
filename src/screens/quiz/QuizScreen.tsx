@@ -1,12 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {
-  Animated,
-  Dimensions,
-  FlatList,
-  ScrollView,
-  Text,
-  View,
-} from 'react-native';
+import React, {useEffect, useLayoutEffect, useState} from 'react';
+import {Animated, Dimensions, FlatList, ScrollView, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
 import {useHeader} from '../../hooks/useHeader';
@@ -18,15 +11,13 @@ import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {Colors} from '../../styles/colors';
 import {MentalState} from '../../models/MentalState';
 import {Paddings} from '../../styles/paddings';
-import {
-  getQuestionnaire,
-  questionnaireById,
-} from '../../reducers/questionnairesReducer';
+import {questionnaireById} from '../../reducers/questionnairesReducer';
 import {CustomText} from '../../components/customText/CustomText';
 import {CircleButton} from '../../components/buttons/circleButton/CircleButton';
 import {addSurveyData} from '../../reducers/settingsReducer';
 import {Question} from '../../models/Questionnaire';
 import {ButtonTheme} from '../../constants/enums';
+import {AppRoute} from '../../navigation/routes';
 
 const QuestionItem = ({
   question,
@@ -49,7 +40,9 @@ const QuestionItem = ({
 
   return (
     <View style={styles.question}>
-      <CustomText>{question.text}</CustomText>
+      <CustomText style={{fontSize: 16, fontWeight: '500', marginBottom: 18}}>
+        {question.text}
+      </CustomText>
       <View
         style={{
           flexDirection: 'row',
@@ -62,8 +55,22 @@ const QuestionItem = ({
             onPress={() => onPressHandle(answer.orderNumber)}
             isPressed={questionScore === answer.orderNumber}
             theme={ButtonTheme.GRAY_BLACK}
+            key={answer.id}
           />
         ))}
+      </View>
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginTop: 8,
+        }}>
+        <CustomText style={{fontSize: 8, width: 60}}>
+          {answers[0].text}
+        </CustomText>
+        <CustomText style={{fontSize: 8, width: 60, textAlign: 'right'}}>
+          {answers[answers.length - 1].text}
+        </CustomText>
       </View>
     </View>
   );
@@ -157,12 +164,8 @@ const Circle = ({scrollX, index}: {index: number; scrollX: Animated.Value}) => {
 };
 
 export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
-  const {isLoggedIn} = useSelector(
-    (state: RootState) => state.questionnaire.questionnaires,
-  );
   const {surveyData} = useSelector((state: RootState) => state.settings);
   const {mentalStates} = useSelector((state: RootState) => state.mentalStates);
-  const dispatch = useAppDispatch();
   const [satisfiedAnswers, setSatisfiedAnswers] = useState<
     {mentalStateId: number; isFullAnswered: boolean}[]
   >(
@@ -173,13 +176,17 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
 
   useHeader(navigation, true);
 
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerStyle: {
+        backgroundColor: Colors.WHITE,
+      },
+    });
+  });
+
   const [pageNum, setPageNum] = useState(0);
   const ref = React.useRef<FlatList>(null);
   const scrollOffsetAnimatedValue = React.useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    dispatch(getQuestionnaire());
-  }, []);
 
   const navigatePage = () => {
     if (
@@ -187,6 +194,11 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
       satisfiedAnswers[pageNum].isFullAnswered
     ) {
       setPageNum(pageNum + 1);
+    } else if (
+      pageNum === mentalStates.length - 1 &&
+      satisfiedAnswers[pageNum].isFullAnswered
+    ) {
+      navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS);
     }
   };
 
