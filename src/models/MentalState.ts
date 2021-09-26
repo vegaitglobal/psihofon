@@ -1,7 +1,8 @@
 export interface MentalState {
   id: number;
   name: string;
-  exercise?: Array<MentalStateExercise>;
+  exerciseListLabel: string;
+  exercises?: Array<MentalStateExercise>;
 }
 
 export interface MentalStateExercise {

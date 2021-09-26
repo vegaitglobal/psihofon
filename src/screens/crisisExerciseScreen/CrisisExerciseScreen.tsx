@@ -1,52 +1,48 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import {useSelector} from 'react-redux';
+import {CustomText} from '../../components/customText/CustomText';
 import {useHeader} from '../../hooks/useHeader';
+import {crisisExerciseById} from '../../reducers/crisisExcercisesReducer';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import style from './style';
+import {CrisisExerciseScreenProps} from '../../navigation/CrisisNavigator';
 
-const UpperExerciseContent = () => {
+export interface CrisisExerciseScreenParams {
+  id: number;
+}
+
+const UpperExerciseContent: React.FC<{title: string}> = ({title}) => {
   return (
     <View>
-      <Text style={style.title}>Dišite duboko</Text>
+      <CustomText style={style.title}>{title}</CustomText>
     </View>
   );
 };
 
-const LowerExerciseContent = () => {
+const LowerExerciseContent: React.FC<{description: string}> = ({
+  description,
+}) => {
   return (
     <View style={style.lowerContentContainer}>
-      <Text style={style.lowerContentText}>
-        Svakog dana zapišite tri dobre stvari koje su Vam se desile tog dana,
-        kao i objašnjenje zašto je to dobro. To Usmerite svu svoju pažnju na
-        disanje. Dišite duboko i sporije.
-        {'\n\n'}
-        Stavite ruku na svoj stomak, udahnite kroz nos što dublje možete dok
-        brojite do 10.
-        {'\n\n'}
-        Zadržite disanje 5 sekundi.
-        {'\n\n'}
-        Potom, izdišite vazduh polako, kroz nos, brojeći do 10. Osetite kako vam
-        se pluća pune vazduhom i kako vam se stomak podiže.
-        {'\n\n'}
-        Ponovite ovaj postupak više puta. Ponovite ga sve dok ne osetite da vam
-        se unutrašnjost tela smiruje. Kontrola disanja je veoma važna u
-        smirivanju anksioznog napada. Dajte događajima naslov. Napišite šta se
-        tačno desilo, što detaljnije, šta ste Vi rekli, šta su rekli drugi
-        učesnici. Navedite kako ste se osećali zbog događaja kada se dogodio i
-        kako ste se osećali kasnije i sada. Razmotrite šta je izazvao ovaj
-        događaj i kako je došlo do toga da bude izabran.
-      </Text>
+      <CustomText style={style.lowerContentText}>{description}</CustomText>
     </View>
   );
 };
 
-export const CrisisExerciseScreen = ({navigation}) => {
+export const CrisisExerciseScreen: React.FC<CrisisExerciseScreenProps> = ({
+  navigation,
+  route,
+}) => {
   useHeader(navigation);
+  const crisisExcerciseSelector = useSelector(crisisExerciseById);
+
+  const item = crisisExcerciseSelector(route.params.id);
 
   return (
     <GeneralExerciseScreen
-      upperContent={<UpperExerciseContent />}
-      lowerContent={<LowerExerciseContent />}
+      upperContent={<UpperExerciseContent title={item.title} />}
+      lowerContent={<LowerExerciseContent description={item.description} />}
     />
   );
 };

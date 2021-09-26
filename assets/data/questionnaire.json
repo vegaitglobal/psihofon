@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "text": "Ponekad osećam da mi srce “lupa” ili “preskače” iako se nisam fizički umorio/la.",
+      "text": "Ponekad osećam da mi srce \"lupa\" ili \"preskače\" iako se nisam fizički umorio/la.",
       "orderNumber": 2,
       "mentalState": {
         "id": 1,
@@ -30,7 +30,7 @@
     },
     {
       "id": 4,
-      "text": "Osećam da sam često na “ivici nerava”.",
+      "text": "Osećam da sam često na \"ivici nerava\".",
       "orderNumber": 4,
       "mentalState": {
         "id": 1,

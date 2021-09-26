@@ -1,23 +1,20 @@
 import React from 'react';
 import style from './style';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {Text, View} from 'react-native';
+import {FlatList, Pressable, Text, View} from 'react-native';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
-import {FlatList} from 'react-native-gesture-handler';
 import {ExcerciseOverviewScreenProps} from '../../navigation/SecondExcercisesNavigator';
 import {useHeader} from '../../hooks/useHeader';
 import {AppRoute} from '../../navigation/routes';
 import {TitleText} from '../../components/titleText/TitleText';
-
-const buttonsList = [
-  {id: 1, title: 'Vežbe za anksioznost'},
-  {id: 2, title: 'Vežbe za tugu'},
-  {id: 3, title: 'Antistres vežbe'},
-  {id: 4, title: 'Vežbe za nisko samopoštovanje'},
-];
+import {useSelector} from 'react-redux';
+import {RootState} from '../../reducers/rootReducer';
 
 export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
   ({navigation}: ExcerciseOverviewScreenProps) => {
+    const {mentalStates} = useSelector(
+      (state: RootState) => state.mentalStates,
+    );
     useHeader(navigation);
 
     return (
@@ -26,16 +23,16 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
           <View>
             <TitleText>{'Spisak vežbi'}</TitleText>
             <FlatList
-              data={buttonsList}
+              data={mentalStates}
               style={style.list}
               showsVerticalScrollIndicator={false}
-              // keyExtractor={(item: string) => item}
+              keyExtractor={item => item.id.toString()}
               ItemSeparatorComponent={() => <View style={style.separator} />}
               renderItem={({item}) => (
                 <CustomButton
                   key={item.id}
                   isDark={false}
-                  text={item.title}
+                  text={item.exerciseListLabel}
                   onPress={() =>
                     navigation.navigate(AppRoute.EXERCISE_LIST, {
                       id: item.id,
@@ -44,9 +41,14 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
                 />
               )}
             />
-            <Text style={style.textButton}>
-              Pogledaj prethodne rezultate testa
-            </Text>
+            <Pressable
+              onPress={() =>
+                navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
+              }>
+              <Text style={style.textButton}>
+                Pogledaj prethodne rezultate testa
+              </Text>
+            </Pressable>
           </View>
         </View>
         <View style={style.lowerArea}>
@@ -54,7 +56,7 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
             isDark={false}
             style={style.bottomButton}
             text="Želim ponovo da radim test!"
-            onPress={() => console.log('Želim ponovo da radim test!')}
+            onPress={() => navigation.navigate(AppRoute.SCALE_EXPLANATION)}
           />
         </View>
       </SolidBackground>

@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flex: 2,
   } as ViewStyle,
   list: {marginTop: verticalScale(Margins.LARGE)} as ViewStyle,
-  separator: {marginVertical: verticalScale(Margins.SMALL)} as ViewStyle,
+  separator: {marginBottom: verticalScale(Margins.SMALL)} as ViewStyle,
   textButton: {
     color: 'white',
     fontSize: 12,

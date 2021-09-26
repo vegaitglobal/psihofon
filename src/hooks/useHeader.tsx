@@ -13,7 +13,7 @@ export const useHeader = (navigation: any, isLight: boolean = false) => {
       headerLeft: () => (isLight ? <Logo /> : <LogoLight />),
       headerShadowVisible: false,
       headerStyle: {
-        backgroundColor: isLight ? Colors.PALE_GRAY : Colors.DARK_GREEN,
+        backgroundColor: isLight ? Colors.PALE_GREY : Colors.DARK_GREEN,
       },
 
       headerRight: () => (

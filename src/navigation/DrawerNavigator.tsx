@@ -23,6 +23,7 @@ import {Paddings} from '../styles/paddings';
 import Logo from '../../assets/icons/Logo.svg';
 import {CustomText} from '../components/customText/CustomText';
 import {CrisisNavigator} from './CrisisNavigator';
+import {FirstExcercisesNavigator} from './FirstExcercisesNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -33,6 +34,7 @@ export type DrawerNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ORGANIZATIONS_NAVIGATOR]: undefined;
   [AppRoute.CRISIS]: undefined;
+  [AppRoute.SELF_EMPOWERMENT_NAVIGATOR]: undefined;
 };
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
@@ -44,11 +46,14 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
       <Pressable
         style={style.closeIcon}
         onPress={() => props.navigation.closeDrawer()}>
-        <Close />
+        <Close fill={Colors.BLACK} color={Colors.BLACK} />
       </Pressable>
       <View style={style.content}>
         <View style={style.menu}>
-          <Pressable>
+          <Pressable
+            onPress={() =>
+              props.navigation.navigate(AppRoute.SELF_EMPOWERMENT_NAVIGATOR)
+            }>
             <CustomText style={style.menuItem}>
               Vežbe za samoosnaživanje
             </CustomText>
@@ -61,7 +66,7 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
               Vežbe za: anksioznost, tugu, stres i nisko samopouzdanje
             </CustomText>
           </Pressable>
-          <Pressable>
+          <Pressable onPress={() => props.navigation.navigate(AppRoute.CRISIS)}>
             <CustomText style={style.menuItem}>U krizi sam</CustomText>
           </Pressable>
           <Pressable
@@ -125,6 +130,11 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
         options={{gestureEnabled: false}}
         name={AppRoute.ORGANIZATIONS_NAVIGATOR}
         component={OrganizationsListNavigator}
+      />
+      <Drawer.Screen
+        options={{gestureEnabled: false}}
+        name={AppRoute.SELF_EMPOWERMENT_NAVIGATOR}
+        component={FirstExcercisesNavigator}
       />
     </Drawer.Navigator>
   );

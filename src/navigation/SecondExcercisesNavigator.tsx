@@ -7,11 +7,18 @@ import {
 import {AppRoute} from './routes';
 import {QuizScreen} from '../screens/quiz/QuizScreen';
 import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/AnalyticsQuizResultsScreen';
+import {useSelector} from 'react-redux';
+import {RootState} from '../reducers/rootReducer';
+import {ScaleExplanationScreen} from '../screens/scaleExplanationScreen/ScaleExplanationScreen';
 import {ExcerciseOverviewScreen} from '../screens/exerciseOverview/ExcerciseOverviewScreen';
 import {
   ExerciseListScreen,
   ExerciseListScreenParams,
 } from '../screens/exerciseListScreen/ExerciseListScreen';
+import {
+  SecondTypeEcerciseScreen,
+  SecondTypeEcerciseScreenParams,
+} from '../screens/SecondTypeExercise/SecondTypeExerciseScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,7 +27,9 @@ type StackNavigatorProps = React.ComponentProps<typeof Stack.Navigator>;
 export type SecondExcercisesNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ANALYTICS_QUIZ_RESULTS]: undefined;
+  [AppRoute.SCALE_EXPLANATION]: undefined;
   [AppRoute.EXCERCISE_OVERVIEW]: undefined;
+  [AppRoute.SECOND_EXCERCISE_SCREEN]: SecondTypeEcerciseScreenParams;
   [AppRoute.EXERCISE_LIST]: ExerciseListScreenParams;
 };
 
@@ -64,40 +73,50 @@ export interface ExcerciseOverviewScreenProps {
   >;
 }
 
+export type ScaleExplanationScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.SCALE_EXPLANATION>;
+
 export type ExerciseListScreenProps =
   SecondExcercisesNavigatorProps<AppRoute.EXERCISE_LIST>;
+
+export type SecondTypeEcerciseScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.SECOND_EXCERCISE_SCREEN>;
 
 export const SecondExcercisesNavigator = (
   props: Partial<StackNavigatorProps>,
 ) => {
+  const {isSurveyFinished} = useSelector((state: RootState) => state.settings);
   return (
     <Stack.Navigator
       {...props}
-      initialRouteName={AppRoute.EXCERCISE_OVERVIEW}
+      initialRouteName={
+        isSurveyFinished ? AppRoute.QUIZ : AppRoute.SCALE_EXPLANATION
+      }
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,
-        headerTitle: '',
+        title: '',
       }}>
+      <Stack.Screen name={AppRoute.QUIZ} component={QuizScreen} />
       <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
-        name={AppRoute.QUIZ}
-        component={QuizScreen}
-      />
-      <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
         name={AppRoute.ANALYTICS_QUIZ_RESULTS}
         component={AnalyticsQuizResultsScreen}
       />
       <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
+        name={AppRoute.SCALE_EXPLANATION}
+        component={ScaleExplanationScreen}
+      />
+      <Stack.Screen
         name={AppRoute.EXCERCISE_OVERVIEW}
         component={ExcerciseOverviewScreen}
       />
       <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
         name={AppRoute.EXERCISE_LIST}
         component={ExerciseListScreen}
+      />
+      <Stack.Screen
+        name={AppRoute.SECOND_EXCERCISE_SCREEN}
+        component={SecondTypeEcerciseScreen}
       />
     </Stack.Navigator>
   );

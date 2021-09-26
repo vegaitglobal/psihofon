@@ -6,6 +6,9 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.WHITE,
   } as ViewStyle,
+  scrollView: {
+    flex: 1,
+  } as ViewStyle,
   buttonContainer: {
     backgroundColor: Colors.WHITE,
     width: '100%',
