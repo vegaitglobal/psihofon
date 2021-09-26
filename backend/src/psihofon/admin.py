@@ -33,11 +33,13 @@ class CrisisExerciseAdmin(TranslationAdmin):
 
 class QuestionInline(TranslationStackedInline):
     model = Question
+    classes = ['collapse']
     extra = 1
 
 
 class AnswerInline(TranslationStackedInline):
     model = Answer
+    classes = ['collapse']
     extra = 1
 
 
@@ -51,6 +53,7 @@ class QuestionnaireAdmin(TranslationAdmin):
 
 class MentalStateExerciseInline(TranslationStackedInline):
     model = MentalStateExercise
+    classes = ['collapse']
     extra = 1
 
 
