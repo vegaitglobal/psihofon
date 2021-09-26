@@ -6,7 +6,7 @@ import {
   ScrollView,
   GestureResponderEvent,
 } from 'react-native';
-import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
+import { ComplexBackground } from '../../components/complexBackground/ComplexBackground';
 import style from './style';
 
 interface GeneralExerciseScreenProps {
