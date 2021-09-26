@@ -9,7 +9,7 @@ api_schema_path = path('', get_schema_view(
     title='Psihofon API',
     description='Psihofon API documentation',
     version='1',
-), name='openapi_schema'),
+), name='openapi_schema')
 
 urlpatterns = [
     api_schema_path,
