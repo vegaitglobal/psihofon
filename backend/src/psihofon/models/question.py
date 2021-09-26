@@ -24,3 +24,6 @@ class Question(models.Model):
     order_number = models.SmallIntegerField(
         verbose_name=_('redni broj'),
     )
+
+    def __str__(self):
+        return f"{_('Pitanje')} {self.order_number}"
