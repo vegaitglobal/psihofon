@@ -18,12 +18,13 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
       headerStyle: {
         backgroundColor: Colors.PALE_GREY,
       },
+      headerShadowVisible: false,
     });
   }, [navigation]);
 
   return (
     <>
-      <StatusBar barStyle={'dark-content'} />
+      <StatusBar barStyle={'dark-content'} backgroundColor={Colors.PALE_GREY} />
       <View style={styles.container}>
         <View style={styles.upperArea}>
           <BigButton
