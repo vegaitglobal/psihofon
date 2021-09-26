@@ -23,12 +23,14 @@ import {Paddings} from '../styles/paddings';
 import Logo from '../../assets/icons/Logo.svg';
 import {CustomText} from '../components/customText/CustomText';
 import {CrisisNavigator} from './CrisisNavigator';
+import {FirstExcercisesNavigator} from './FirstExcercisesNavigator';
 
 const Drawer = createDrawerNavigator();
 
 type DrawerNavigatorProperties = React.ComponentProps<typeof Drawer.Navigator>;
 
 export type DrawerNavigatorParams = {
+  [AppRoute.FIRST_TYPE_EXERCISE_NAVIGATOR]: undefined;
   [AppRoute.SECOND_EXCERCISES]: undefined;
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ORGANIZATIONS_NAVIGATOR]: undefined;
@@ -111,6 +113,11 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
           justifyContent: 'center',
         },
       }}>
+      <Drawer.Screen
+        options={{gestureEnabled: false, headerShown: false}}
+        name={AppRoute.FIRST_TYPE_EXERCISE_NAVIGATOR}
+        component={FirstExcercisesNavigator}
+      />
       <Drawer.Screen
         options={{gestureEnabled: false, headerShown: false}}
         name={AppRoute.SECOND_EXCERCISES}
