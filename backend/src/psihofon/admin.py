@@ -40,6 +40,7 @@ class QuestionInline(TranslationStackedInline):
 class AnswerInline(TranslationStackedInline):
     model = Answer
     classes = ['collapse']
+    max_num = 5
     extra = 1
 
 
