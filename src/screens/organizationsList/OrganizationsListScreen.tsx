@@ -1,5 +1,6 @@
 import React, {useLayoutEffect} from 'react';
 import {
+  Alert,
   BackHandler,
   FlatList,
   Linking,
@@ -50,9 +51,15 @@ interface OrganizationLinkProps {
 
 const OrganizationLink: React.FC<OrganizationLinkProps> = ({websiteUrl}) => {
   const handlePress = () =>
-    Linking.canOpenURL(websiteUrl).then(canOpen => {
-      canOpen && Linking.openURL(websiteUrl);
-    });
+    Linking.canOpenURL(websiteUrl)
+      .then(canOpen => {
+        if (canOpen) {
+          Linking.openURL(websiteUrl);
+        }
+      })
+      .catch(() => {
+        Alert.alert('Ne mogu da otvorim link');
+      });
 
   return (
     <TouchableOpacity onPress={handlePress} style={style.linkContainer}>
