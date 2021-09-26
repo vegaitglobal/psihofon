@@ -1,5 +1,6 @@
 import {Dimensions, StyleSheet, ViewStyle} from 'react-native';
 import {Paddings} from '../../styles/paddings';
+import {verticalScale} from '../../utils/helpers';
 
 export default StyleSheet.create({
   container: {
@@ -29,6 +30,9 @@ export default StyleSheet.create({
     marginTop: 30,
   } as ViewStyle,
   question: {
-    marginTop: 20,
+    marginTop: 0,
+  } as ViewStyle,
+  questionItem: {
+    marginBottom: verticalScale(30),
   } as ViewStyle,
 });

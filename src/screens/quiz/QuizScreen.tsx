@@ -126,9 +126,11 @@ const ViewPagerItem = ({
 
   return (
     <View key={item.id} style={[styles.item, {width}]}>
-      <ScrollView style={styles.content}>
+      <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {questionnarie.map(question => (
-          <QuestionItem question={question} onPress={onPressHandle} />
+          <View style={styles.questionItem}>
+            <QuestionItem question={question} onPress={onPressHandle} />
+          </View>
         ))}
       </ScrollView>
     </View>

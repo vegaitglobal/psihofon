@@ -24,6 +24,9 @@ import Logo from '../../assets/icons/Logo.svg';
 import {CustomText} from '../components/customText/CustomText';
 import {CrisisNavigator} from './CrisisNavigator';
 import {FirstExcercisesNavigator} from './FirstExcercisesNavigator';
+import {verticalScale} from 'react-native-size-matters';
+import {Margins} from '../styles/margins';
+import {isTinyDevice} from '../constants/constants';
 
 const Drawer = createDrawerNavigator();
 
@@ -51,29 +54,34 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
       <View style={style.content}>
         <View style={style.menu}>
           <Pressable
+            style={style.menuItem}
             onPress={() =>
               props.navigation.navigate(AppRoute.SELF_EMPOWERMENT_NAVIGATOR)
             }>
-            <CustomText style={style.menuItem}>
+            <CustomText style={style.itemTextContainer}>
               Vežbe za samoosnaživanje
             </CustomText>
           </Pressable>
           <Pressable
+            style={style.menuItem}
             onPress={() =>
               props.navigation.navigate(AppRoute.SECOND_EXCERCISES)
             }>
-            <CustomText style={style.menuItem}>
+            <CustomText style={style.itemTextContainer}>
               Vežbe za: anksioznost, tugu, stres i nisko samopouzdanje
             </CustomText>
           </Pressable>
-          <Pressable onPress={() => props.navigation.navigate(AppRoute.CRISIS)}>
-            <CustomText style={style.menuItem}>U krizi sam</CustomText>
+          <Pressable
+            style={style.menuItem}
+            onPress={() => props.navigation.navigate(AppRoute.CRISIS)}>
+            <CustomText style={style.itemTextContainer}>U krizi sam</CustomText>
           </Pressable>
           <Pressable
+            style={style.menuItem}
             onPress={() =>
               props.navigation.navigate(AppRoute.ORGANIZATIONS_NAVIGATOR)
             }>
-            <CustomText style={style.menuItem}>
+            <CustomText style={style.itemTextContainer}>
               Baza podataka organizacija
             </CustomText>
           </Pressable>
@@ -146,28 +154,37 @@ const style = StyleSheet.create({
     flex: 1,
   } as ViewStyle,
   drawerContentContainer: {
+    flex: 1,
     alignItems: 'center',
   } as ViewStyle,
   logo: {
-    position: 'absolute',
-    bottom: '25%',
     alignSelf: 'center',
+    justifyContent: 'flex-start',
+    marginBottom: verticalScale(80),
   } as ViewStyle,
   menuItem: {
+    alignItems: 'center',
+    padding: 10,
+    marginVertical: 10,
+  } as TextStyle,
+  itemTextContainer: {
+    width: '90%',
     fontWeight: '500',
     fontSize: 15,
-  } as TextStyle,
+  } as ViewStyle,
   menu: {
-    width: '70%',
-    height: '30%',
+    width: '100%',
     justifyContent: 'space-between',
   } as ViewStyle,
   content: {
-    flex: 1,
-    height: Dimensions.get('screen').height,
-    marginTop: '20%',
+    flexGrow: 1,
+    width: '100%',
+    justifyContent: 'space-between',
+    marginTop: verticalScale(Margins.MIDLARGE),
   } as ViewStyle,
   closeIcon: {
+    top: isTinyDevice ? 10 : 0,
+    padding: 10,
     alignSelf: 'flex-end',
   } as ViewStyle,
 });

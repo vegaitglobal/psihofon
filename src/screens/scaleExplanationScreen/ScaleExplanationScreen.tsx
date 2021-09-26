@@ -31,33 +31,39 @@ export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
 
   return (
     <SolidBackground isDark={true}>
-      <View style={styles.container}>
-        <TitleText>Skala odgovora</TitleText>
-        <CustomText style={styles.descriptionText}>
-          U sledećim pitanjima odgovore dajete prema skali koja definiše meru u
-          kojoj vas opisuju navedene situacije. Skalu smo definisali na sledeći
-          način:
-        </CustomText>
-        <View style={styles.scaleContainer}>
-          <FlatList
-            data={scaleGrades}
-            keyExtractor={({id}) => id.toString()}
-            renderItem={({item}) => (
-              <ScaleExplanationItem
-                style={styles.scaleSpacing}
-                buttonText={item.orderNumber.toString()}
-                labelText={item.text}
-              />
-            )}
+      <FlatList
+        bounces={false}
+        showsVerticalScrollIndicator={false}
+        data={scaleGrades}
+        ListHeaderComponent={
+          <View style={styles.headerArea}>
+            <TitleText>Skala odgovora</TitleText>
+            <CustomText style={styles.descriptionText}>
+              U sledećim pitanjima odgovore dajete prema skali koja definiše
+              meru u kojoj vas opisuju navedene situacije. Skalu smo definisali
+              na sledeći način:
+            </CustomText>
+          </View>
+        }
+        ListFooterComponent={
+          <CustomButton
+            style={styles.buttonSpacing}
+            text={'Nastavi'}
+            isDark={false}
+            onPress={() => navigation.push(AppRoute.QUIZ)}
           />
-        </View>
-        <CustomButton
-          style={styles.buttonSpacing}
-          text={'Nastavi'}
-          isDark={false}
-          onPress={() => navigation.navigate(AppRoute.QUIZ)}
-        />
-      </View>
+        }
+        keyExtractor={({id}) => id.toString()}
+        renderItem={({item}) => (
+          <View style={styles.scaleItemContainer}>
+            <ScaleExplanationItem
+              style={styles.scaleSpacing}
+              buttonText={item.orderNumber.toString()}
+              labelText={item.text}
+            />
+          </View>
+        )}
+      />
     </SolidBackground>
   );
 };

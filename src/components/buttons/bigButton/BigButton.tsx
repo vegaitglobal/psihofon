@@ -37,7 +37,9 @@ export const BigButton: React.FC<Props & PressableProps> = ({
       style={[styles.container, {backgroundColor: backgroundColor}, style]}
       onPress={onPress}>
       <View style={styles.textContainer}>
-        <CustomText style={[styles.text, {color: textColor}]}>
+        <CustomText
+          allowFontScaling={true}
+          style={[styles.text, {color: textColor}]}>
           {text}
         </CustomText>
       </View>
