@@ -15,6 +15,10 @@ import {
   ExerciseListScreen,
   ExerciseListScreenParams,
 } from '../screens/exerciseListScreen/ExerciseListScreen';
+import {
+  SecondTypeEcerciseScreen,
+  SecondTypeEcerciseScreenParams,
+} from '../screens/SecondTypeExercise/SecondTypeExerciseScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +29,7 @@ export type SecondExcercisesNavigatorParams = {
   [AppRoute.ANALYTICS_QUIZ_RESULTS]: undefined;
   [AppRoute.SCALE_EXPLANATION]: undefined;
   [AppRoute.EXCERCISE_OVERVIEW]: undefined;
+  [AppRoute.SECOND_EXCERCISE_SCREEN]: SecondTypeEcerciseScreenParams;
   [AppRoute.EXERCISE_LIST]: ExerciseListScreenParams;
 };
 
@@ -74,6 +79,9 @@ export type ScaleExplanationScreenProps =
 export type ExerciseListScreenProps =
   SecondExcercisesNavigatorProps<AppRoute.EXERCISE_LIST>;
 
+export type SecondTypeEcerciseScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.SECOND_EXCERCISE_SCREEN>;
+
 export const SecondExcercisesNavigator = (
   props: Partial<StackNavigatorProps>,
 ) => {
@@ -103,9 +111,12 @@ export const SecondExcercisesNavigator = (
         component={ExcerciseOverviewScreen}
       />
       <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
         name={AppRoute.EXERCISE_LIST}
         component={ExerciseListScreen}
+      />
+      <Stack.Screen
+        name={AppRoute.SECOND_EXCERCISE_SCREEN}
+        component={SecondTypeEcerciseScreen}
       />
     </Stack.Navigator>
   );

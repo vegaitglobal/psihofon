@@ -30,7 +30,11 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
           <BigButton
             theme={ButtonTheme.INVERTED}
             text={'Vežbe za samoosnaživanje'}
-            onPress={() => console.log('Pressed samoosnizavanje.')}
+            onPress={() =>
+              navigation.navigate(AppRoute.DRAWER, {
+                screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
+              })
+            }
           />
           <BigButton
             theme={ButtonTheme.INVERTED}

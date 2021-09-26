@@ -15,7 +15,7 @@ export const AdjustableFontText: React.FC<AdjustableFontTextProps> = ({
   children,
   style,
 }) => {
-  const [fontSize, setFontSize] = useState(style?.fontSize | 12);
+  const [fontSize, setFontSize] = useState(style?.fontSize || 12);
 
   const onTextLayout = (e: NativeSyntheticEvent<TextLayoutEventData>) => {
     const {lines} = e.nativeEvent;

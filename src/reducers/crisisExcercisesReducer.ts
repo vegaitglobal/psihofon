@@ -1,7 +1,8 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {createSelector, createSlice, PayloadAction} from '@reduxjs/toolkit';
 import localCrisisExcercises from '../../assets/data/crisisExcercises.json';
 import {AppDispatch} from '../store/store';
 import {CrisisExercise} from '../models/CrisisExercise';
+import {RootState} from './rootReducer';
 
 export interface CrisisExcerciseState {
   crisisExcercises: Array<CrisisExercise>;
@@ -41,5 +42,16 @@ export const getOrganizations = () => async (dispatch: AppDispatch) => {
     console.log(error);
   }
 };
+
+export const crisisExerciseById = createSelector(
+  (state: RootState) => ({
+    crisicExercises: state.crisisExcercises.crisisExcercises,
+  }),
+  ({crisicExercises}) =>
+    (id: number): CrisisExercise => {
+      const result = crisicExercises.find(item => item.id === id)!;
+      return result;
+    },
+);
 
 export default crisisExcercisesSlice.reducer;

@@ -17,6 +17,14 @@ import rootReducer, {RootState} from '../reducers/rootReducer';
 const persistConfig: PersistConfig<CombinedState<RootState>> = {
   key: 'root',
   storage: AsyncStorage,
+  blacklist: [
+    'settings',
+    'organizations',
+    'questionnaire',
+    'crisisExcercises',
+    'mentalStates',
+    'selfEmpowerment',
+  ],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

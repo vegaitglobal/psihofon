@@ -23,6 +23,7 @@ import {Paddings} from '../styles/paddings';
 import Logo from '../../assets/icons/Logo.svg';
 import {CustomText} from '../components/customText/CustomText';
 import {CrisisNavigator} from './CrisisNavigator';
+import {FirstExcercisesNavigator} from './FirstExcercisesNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -33,6 +34,7 @@ export type DrawerNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ORGANIZATIONS_NAVIGATOR]: undefined;
   [AppRoute.CRISIS]: undefined;
+  [AppRoute.SELF_EMPOWERMENT_NAVIGATOR]: undefined;
 };
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
@@ -125,6 +127,11 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
         options={{gestureEnabled: false}}
         name={AppRoute.ORGANIZATIONS_NAVIGATOR}
         component={OrganizationsListNavigator}
+      />
+      <Drawer.Screen
+        options={{gestureEnabled: false}}
+        name={AppRoute.SELF_EMPOWERMENT_NAVIGATOR}
+        component={FirstExcercisesNavigator}
       />
     </Drawer.Navigator>
   );
