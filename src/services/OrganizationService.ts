@@ -1,4 +1,5 @@
 import { Organization } from '../models/Organization';
+import { isConnected } from './apiUtils';
 import axiosInstance from './axiosInstance';
 
 interface OrganziationService {
@@ -7,6 +8,9 @@ interface OrganziationService {
 
 class OrganizationAxiosService implements OrganziationService{
     fetchOrganizations(): Promise<Array<Organization>> {
+        if (!isConnected()) {
+            return Promise.reject("no connection");
+        }
         return axiosInstance
                 .get('/organizations')
                 .then((res) => res.data)

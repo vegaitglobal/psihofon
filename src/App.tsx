@@ -12,10 +12,24 @@ import {
   setFirstUsageDate,
   toggleIsFirstUsage,
 } from './reducers/settingsReducer';
+import { getCrisisExercises } from './reducers/crisisExcercisesReducer';
+import { getSelfEmpowermentExercises } from './reducers/selfEmpowermentExercises';
+import { getMentalStates } from './reducers/mentalStatesReducer';
+import { getQuestionnaire } from './reducers/questionnairesReducer';
+import { getOrganizations } from './reducers/organizationsSlice';
 
 enableScreens(false);
 
 const App = () => {
+
+  useEffect(() =>{
+    getOrganizations();
+    getSelfEmpowermentExercises();
+    getMentalStates();
+    getCrisisExercises();
+    getQuestionnaire();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <NavigationContainer>

@@ -3,6 +3,7 @@ import localCrisisExcercises from '../../assets/data/crisisExcercises.json';
 import {AppDispatch} from '../store/store';
 import {CrisisExercise} from '../models/CrisisExercise';
 import {RootState} from './rootReducer';
+import CrisisExcerciceService from '../services/CrisisExcerciceService';
 
 export interface CrisisExcerciseState {
   crisisExcercises: Array<CrisisExercise>;
@@ -33,10 +34,10 @@ export const crisisExcercisesSlice = createSlice({
 export const {getCrisisExcerciseStart, getCrisisExcerciseSuccess} =
   crisisExcercisesSlice.actions;
 
-export const getOrganizations = () => async (dispatch: AppDispatch) => {
+export const getCrisisExercises = () => async (dispatch: AppDispatch) => {
   dispatch(getCrisisExcerciseStart());
   try {
-    const crisisExcercises = localCrisisExcercises;
+    const crisisExcercises = await CrisisExcerciceService.fetchCrisisExercices();
     dispatch(getCrisisExcerciseSuccess(crisisExcercises));
   } catch (error) {
     console.log(error);
