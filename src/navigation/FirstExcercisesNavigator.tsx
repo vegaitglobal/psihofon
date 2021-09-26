@@ -56,15 +56,13 @@ export const FirstExcercisesNavigator = (
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,
-        headerTitle: '',
+        title: '',
       }}>
       <Stack.Screen
-        options={{gestureEnabled: false, title: ''}}
         name={AppRoute.FIRST_TYPE_EXCERCISE_CHECK}
         component={FirstTypeExcerciseCheckScreen}
       />
       <Stack.Screen
-        options={{title: ''}}
         name={AppRoute.FIRST_TYPE_EXERCISE_FIRST_WEEK}
         component={FirstTypeExerciseFirstWeekScreen}
       />

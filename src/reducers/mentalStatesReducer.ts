@@ -76,4 +76,15 @@ export const mentalStateExercisesById = createSelector(
     },
 );
 
+export const mentalStateById = createSelector(
+  (state: RootState) => ({
+    mentalStates: state.mentalStates.mentalStates,
+  }),
+  ({mentalStates}) =>
+    (mentalStateId: number): MentalState => {
+      const result = mentalStates.find(item => item.id === mentalStateId)!;
+      return result;
+    },
+);
+
 export default mentalStatesSlice.reducer;
