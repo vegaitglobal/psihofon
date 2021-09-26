@@ -6,7 +6,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'row',
     width: '100%',
-    // height: 71,
+    marginTop: 20,
     padding: 10,
   } as ViewStyle,
   textContainer: {
@@ -18,7 +18,7 @@ export default StyleSheet.create({
     color: 'white',
     fontWeight: '600',
     fontSize: 14,
-    lineHeight: 21,
+    lineHeight: 16,
     textTransform: 'uppercase',
   } as TextStyle,
   textContent: {

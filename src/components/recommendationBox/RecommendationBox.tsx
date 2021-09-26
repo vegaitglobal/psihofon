@@ -22,6 +22,7 @@ export const RecommendationBox: React.FC<RecommendationBoxProps> = ({
           padding: 5,
           backgroundColor: Colors.LIGHT_GREEN,
           width: 50,
+          height: 50,
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: 10,
