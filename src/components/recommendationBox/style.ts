@@ -6,11 +6,12 @@ export default StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'row',
     width: '100%',
-    height: 71,
+    // height: 71,
     padding: 10,
   } as ViewStyle,
   textContainer: {
     paddingHorizontal: 16,
+    width: '95%',
     justifyContent: 'center',
   } as ViewStyle,
   title: {
@@ -26,6 +27,6 @@ export default StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     marginRight: 10,
-    width: '70%',
+    width: '95%',
   } as TextStyle,
 });
