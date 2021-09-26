@@ -5,6 +5,6 @@ export default StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: Colors.PALE_GREY,
+    color: Colors.PALE_GRAY,
   },
 });

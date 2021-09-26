@@ -11,4 +11,6 @@ export enum AppRoute {
   CRISIS = 'Crisis',
   SCALE_EXPLANATION = 'Scale Explanation',
   CRISIS_EXERCISES = 'Crisis Exercises',
+  EXERCISE_LIST = 'Exercise List',
+  CRISIS_EXERCISE_SCREEN = 'Crisis Exercise Screen',
 }

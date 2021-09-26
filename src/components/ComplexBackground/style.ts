@@ -8,6 +8,7 @@ export default StyleSheet.create({
   root: {
     backgroundColor: Colors.WHITE,
     flex: 1,
+    // height: Dimensions.get('screen').height,
   } as ViewStyle,
   upperContent: {
     paddingTop: Paddings.MEDIUM,

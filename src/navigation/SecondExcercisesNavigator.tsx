@@ -11,6 +11,10 @@ import {useSelector} from 'react-redux';
 import {RootState} from '../reducers/rootReducer';
 import {ScaleExplanationScreen} from '../screens/scaleExplanationScreen/ScaleExplanationScreen';
 import {ExcerciseOverviewScreen} from '../screens/exerciseOverview/ExcerciseOverviewScreen';
+import {
+  ExerciseListScreen,
+  ExerciseListScreenParams,
+} from '../screens/exerciseListScreen/ExerciseListScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +25,7 @@ export type SecondExcercisesNavigatorParams = {
   [AppRoute.ANALYTICS_QUIZ_RESULTS]: undefined;
   [AppRoute.SCALE_EXPLANATION]: undefined;
   [AppRoute.EXCERCISE_OVERVIEW]: undefined;
+  [AppRoute.EXERCISE_LIST]: ExerciseListScreenParams;
 };
 
 export interface SecondExcercisesNavigatorProps<
@@ -66,6 +71,9 @@ export interface ExcerciseOverviewScreenProps {
 export type ScaleExplanationScreenProps =
   SecondExcercisesNavigatorProps<AppRoute.SCALE_EXPLANATION>;
 
+export type ExerciseListScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.EXERCISE_LIST>;
+
 export const SecondExcercisesNavigator = (
   props: Partial<StackNavigatorProps>,
 ) => {
@@ -93,6 +101,11 @@ export const SecondExcercisesNavigator = (
       <Stack.Screen
         name={AppRoute.EXCERCISE_OVERVIEW}
         component={ExcerciseOverviewScreen}
+      />
+      <Stack.Screen
+        options={{gestureEnabled: false, title: ''}}
+        name={AppRoute.EXERCISE_LIST}
+        component={ExerciseListScreen}
       />
     </Stack.Navigator>
   );

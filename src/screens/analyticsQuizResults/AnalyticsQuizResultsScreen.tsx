@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 import {AnalyticsQuizResultItem} from '../../components/analyticsQuizResultItem/AnalyticsQuizResultItem';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
-import {Title} from '../../components/title/Title';
+import {TitleText} from '../../components/titleText/TitleText';
 import {useHeader} from '../../hooks/useHeader';
 import {MentalState} from '../../models/MentalState';
 import {AnalyticsQuizResultsScreenProps} from '../../navigation/SecondExcercisesNavigator';
@@ -46,7 +46,7 @@ export const AnalyticsQuizResultsScreen: React.FC<AnalyticsQuizResultsScreenProp
       <SolidBackground isDark={true}>
         <View style={style.centerContainer}>
           <View style={{paddingHorizontal: Paddings.MEDIUM}}>
-            <Title text="Analiza" />
+            <TitleText>{'Analiza'}</TitleText>
             <FlatList
               data={mentalStates}
               showsVerticalScrollIndicator={false}

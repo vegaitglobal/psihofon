@@ -1,6 +1,5 @@
 import React, {ReactNode} from 'react';
 import {StatusBar, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {Colors} from '../../styles/colors';
 import style from './style';
 
@@ -14,7 +13,7 @@ export const ComplexBackground: React.FC<Props> = ({
   lowerContent,
 }) => {
   return (
-    <SafeAreaView style={style.root}>
+    <View style={style.root}>
       <StatusBar animated={false} backgroundColor={Colors.DARK_GREEN} />
       <View style={style.upperContentContainer}>
         <View style={style.upperContent}>{upperContent}</View>
@@ -22,6 +21,6 @@ export const ComplexBackground: React.FC<Props> = ({
       <View style={style.lowerContentContainer}>
         <View style={style.lowerContent}>{lowerContent}</View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };

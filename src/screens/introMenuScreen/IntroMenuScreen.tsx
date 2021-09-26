@@ -7,6 +7,7 @@ import {IntroMenuScreenProps} from '../../navigation/RootNavigator';
 import {BigButton} from '../../components/buttons/bigButton/BigButton';
 import Logo from '../../../assets/icons/Logo.svg';
 import {AppRoute} from '../../navigation/routes';
+import {Colors} from '../../styles/colors';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
@@ -14,6 +15,9 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   useLayoutEffect(() => {
     navigation.setOptions({
       headerLeft: () => <Logo />,
+      headerStyle: {
+        backgroundColor: Colors.PALE_GREY,
+      },
     });
   }, [navigation]);
 
