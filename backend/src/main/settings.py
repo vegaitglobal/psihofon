@@ -122,7 +122,7 @@ LANGUAGES = (
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'sr-latn'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Belgrade'
 
 USE_I18N = True
 
