@@ -12,8 +12,7 @@ services:
     ports:
       - "48100:8000"
     depends_on:
-      postgres:
-        condition: service_healthy
+      - postgres
     volumes:
       - ./src:/app/src
 
