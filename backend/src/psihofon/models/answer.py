@@ -8,7 +8,6 @@ class Answer(models.Model):
     class Meta:
         verbose_name = _('Odgovor')
         verbose_name_plural = _('Odgovori')
-        unique_together = ['questionnaire', 'order_number']
 
     text = models.TextField(
         verbose_name=_('tekst'),
@@ -26,6 +25,10 @@ class Answer(models.Model):
         on_delete=models.CASCADE,
         related_name='answers'
     )
+
+    def __str__(self):
+        return str(_(f"Odgovor {self.order_number}"))
+
 
     def clean(self):
         # limit order number by number of answer objects in questionnaire
