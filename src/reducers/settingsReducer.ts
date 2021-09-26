@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {SelfEmpowermentExercise} from '../models/SelfEmpowermentExercise';
 
 export interface SettingsState {
   isSurveyFinished: boolean;
@@ -9,7 +8,7 @@ export interface SettingsState {
   }>;
   isFirstUsafe: boolean;
   dateOfTheFirstUsage: string | undefined;
-  lastUsedExercise: SelfEmpowermentExercise | undefined;
+  lastUsedExerciseId: number | undefined;
 }
 
 const initialState: SettingsState = {
@@ -17,7 +16,7 @@ const initialState: SettingsState = {
   surveyData: [],
   dateOfTheFirstUsage: undefined,
   isFirstUsafe: true,
-  lastUsedExercise: undefined,
+  lastUsedExerciseId: undefined,
 };
 
 export const settingsSlice = createSlice({
@@ -33,11 +32,8 @@ export const settingsSlice = createSlice({
     setFirstUsageDate: (state, action: PayloadAction<string>) => {
       state.dateOfTheFirstUsage = action.payload;
     },
-    setLastUsageExercise: (
-      state,
-      action: PayloadAction<SelfEmpowermentExercise>,
-    ) => {
-      state.lastUsedExercise = action.payload;
+    setLastUsageExercise: (state, action: PayloadAction<number>) => {
+      state.lastUsedExerciseId = action.payload;
     },
     addSurveyData: (
       state,

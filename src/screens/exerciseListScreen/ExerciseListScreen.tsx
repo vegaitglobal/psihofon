@@ -8,7 +8,10 @@ import {ExerciseListScreenProps} from '../../navigation/SecondExcercisesNavigato
 import {SearchBar} from '../../components/searchBar/SearchBar';
 import {FadeAnimation} from '../../components/fadeAnimation/FadeAnimation';
 import {useSelector} from 'react-redux';
-import {mentalStateExercisesByIdAndQuery} from '../../reducers/mentalStatesReducer';
+import {
+  mentalStateById,
+  mentalStateExercisesByIdAndQuery,
+} from '../../reducers/mentalStatesReducer';
 import {AppRoute} from '../../navigation/routes';
 
 export interface ExerciseListScreenParams {
@@ -19,14 +22,20 @@ export const ExerciseListScreen: React.FC<ExerciseListScreenProps> = ({
   navigation,
   route,
 }) => {
+  const {id} = route.params;
+
   const exerciseSelector = useSelector(mentalStateExercisesByIdAndQuery);
 
-  const {id} = route.params;
+  const exerciseSelect = useSelector(mentalStateById);
+
+  const exercise = exerciseSelect(id);
+
   const [searchText, setSearchText] = useState('');
 
   const data = exerciseSelector(id, searchText);
 
   useHeader(navigation);
+
   return (
     <SolidBackground
       isDark={true}
@@ -35,7 +44,10 @@ export const ExerciseListScreen: React.FC<ExerciseListScreenProps> = ({
         Keyboard.dismiss();
       }}>
       <View style={styles.header}>
-        <SearchBar placeholder={''} setSearchText={setSearchText} />
+        <SearchBar
+          placeholder={exercise.exerciseListLabel}
+          setSearchText={setSearchText}
+        />
       </View>
       <FadeAnimation>
         <FlatList

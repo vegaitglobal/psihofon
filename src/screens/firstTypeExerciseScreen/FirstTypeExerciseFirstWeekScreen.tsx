@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View} from 'react-native';
 import {ComplexBackground} from '../../components/complexBackground/ComplexBackground';
 import {CustomText} from '../../components/customText/CustomText';
@@ -13,20 +13,36 @@ import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScr
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
 import {excerciseById} from '../../reducers/selfEmpowermentExercises';
+import {useAppDispatch} from '../../store/store';
+import {setLastUsageExercise} from '../../reducers/settingsReducer';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
-    const {dateOfTheFirstUsage, lastUsedExercise} = useSelector(
+    const {dateOfTheFirstUsage, lastUsedExerciseId} = useSelector(
       (state: RootState) => state.settings,
     );
 
+    const {selfEmpowermentExcercises} = useSelector(
+      (state: RootState) => state.selfEmpowerment,
+    );
+
+    const dispatch = useAppDispatch();
+
     const exerciseSelector = useSelector(excerciseById);
 
-    const exerciseId = lastUsedExercise !== undefined ? lastUsedExercise.id : 1;
+    const exerciseId =
+      lastUsedExerciseId !== undefined
+        ? lastUsedExerciseId
+        : selfEmpowermentExcercises[0].id;
 
     const exercise = exerciseSelector(exerciseId);
 
     useHeader(navigation, false);
+
+    useEffect(() => {
+      dispatch(setLastUsageExercise(exercise.id));
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     const GeneralInfoWithWeekIndicator = () => {
       return (
@@ -74,29 +90,6 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
     };
 
     return (
-      // <ComplexBackground
-      //   upperContent={<GeneralInfoWithWeekIndicator />}
-      //   lowerContent={
-      //     <View>
-      //       <ExerciseDescription />
-      //       <ExplanationBox
-      //         title={'Pojašnjenja'}
-      //         text={
-      //           'Dozvolite sebi da istažite određeni događaj o kome pišete do kraja i to kako je uticao na Vas. Ovo mogu biti neka iskustva iz detinjstva, odnos sa roditeljima, ljudima koje ste voleli ili volite, Vaša karijera...'
-      //         }
-      //       />
-      //       <RecommendationBox
-      //         icon={<TimerIcon />}
-      //         title={'asdadfad'}
-      //         content={'fdssdf'}
-      //       />
-      //       <BackToBeginningButton
-      //         onPress={() => console.log('Here we should scroll to top')}
-      //       />
-      //     </View>
-      //   }
-      // />
-
       <GeneralExerciseScreen
         upperContent={<GeneralInfoWithWeekIndicator />}
         lowerContent={
