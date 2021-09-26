@@ -16,7 +16,7 @@ class Organization(models.Model):
         max_length=255,
     )
     website_url = models.URLField(
-        verbose_name=_('website URL'),
+        verbose_name=_('link do sajta'),
     )
 
     def __str__(self):
