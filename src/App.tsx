@@ -7,6 +7,7 @@ import {persistor, store, useAppDispatch} from './store/store';
 import {PersistGate} from 'redux-persist/integration/react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {enableScreens} from 'react-native-screens';
+import SplashScreen from 'react-native-splash-screen';
 import {RootState} from './reducers/rootReducer';
 import {
   setFirstUsageDate,
@@ -16,6 +17,10 @@ import {
 enableScreens(false);
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  });
+
   return (
     <SafeAreaProvider>
       <NavigationContainer>

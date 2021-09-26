@@ -1,13 +1,7 @@
 import React, {ReactNode, useRef, useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  GestureResponderEvent,
-} from 'react-native';
-import { ComplexBackground } from '../../components/complexBackground/ComplexBackground';
+import {View, ScrollView} from 'react-native';
 import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
+import {ComplexBackground} from '../../components/ComplexBackground/ComplexBackground';
 import style from './style';
 
 interface GeneralExerciseScreenProps {
