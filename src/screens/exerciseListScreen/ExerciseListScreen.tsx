@@ -35,10 +35,7 @@ export const ExerciseListScreen: React.FC<ExerciseListScreenProps> = ({
         Keyboard.dismiss();
       }}>
       <View style={styles.header}>
-        <SearchBar
-          placeholder={'Vezbe za anksioznost'}
-          setSearchText={setSearchText}
-        />
+        <SearchBar placeholder={''} setSearchText={setSearchText} />
       </View>
       <FadeAnimation>
         <FlatList

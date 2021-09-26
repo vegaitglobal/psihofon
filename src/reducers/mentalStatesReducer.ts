@@ -54,7 +54,6 @@ export const mentalStateExercisesByIdAndQuery = createSelector(
           return item;
         }
       })!;
-
       const result = mentalState.exercises!.filter(exercise => {
         if (query.length === 0 || exercise.title.includes(query)) {
           return exercise;

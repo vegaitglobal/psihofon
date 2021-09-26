@@ -10,16 +10,29 @@ import TimerIcon from '../../../assets/icons/Timer.svg';
 import {BackToBeginningButton} from '../../components/backToBeggingingButtion/BackToBegginingButton';
 import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
+import {useSelector} from 'react-redux';
+import {RootState} from '../../reducers/rootReducer';
+import {excerciseById} from '../../reducers/selfEmpowermentExercises';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
+    const {dateOfTheFirstUsage, lastUsedExercise} = useSelector(
+      (state: RootState) => state.settings,
+    );
+
+    const exerciseSelector = useSelector(excerciseById);
+
+    const exerciseId = lastUsedExercise !== undefined ? lastUsedExercise.id : 1;
+
+    const exercise = exerciseSelector(exerciseId);
+
     useHeader(navigation, false);
 
     const GeneralInfoWithWeekIndicator = () => {
       return (
         <View style={{}}>
           <CustomText style={{fontSize: 14, color: Colors.GREEN_LIGHT}}>
-            1123123
+            {exercise.weekNumber} nedelja
           </CustomText>
           <CustomText
             style={{
@@ -28,11 +41,10 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
               color: Colors.WHITE,
               fontWeight: '600',
             }}>
-            sdfsdfsdfgdg
+            {exercise.title}
           </CustomText>
           <CustomText style={{fontSize: 14, color: Colors.WHITE}}>
-            123Pre nego što započnete sa programom, odvojte jednu svesku ili
-            beležnicu u koju ćete beležiti sve što bude potrebno dok radite na
+            {exercise.preparation}
           </CustomText>
         </View>
       );
@@ -47,7 +59,7 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
               fontWeight: '700',
               color: Colors.BLACKISH_TEXT,
             }}>
-            Onsaousa adsasd
+            Opis zadatka
           </CustomText>
           <CustomText
             style={{
@@ -55,10 +67,7 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
               paddingTop: 13,
               color: Colors.DARK_GRAY,
             }}>
-            aafksasdjasdaskdfasl; asdl;as;lkasdkasd askad;as;l ndaksdkl
-            jasdljaskld akkladklasj klas background: #0A0909;background: {'\n'}
-            {'\n'}#0A0909;background: #0A0909;background: #0A0909; background:
-            #0A0909;background: #0A0909;background: #0A0909;background: #0A0909;
+            {exercise.description}
           </CustomText>
         </View>
       );
@@ -97,15 +106,13 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
               <ExplanationBox
                 style={{marginTop: 28}}
                 title={'Pojašnjenja'}
-                text={
-                  'Dozvolite sebi da istažite određeni događaj o kome pišete do kraja i to kako je uticao na Vas. Ovo mogu biti neka iskustva iz detinjstva, odnos sa roditeljima, ljudima koje ste voleli ili volite, Vaša karijera...'
-                }
+                text={exercise.explanation}
               />
             </View>
             <RecommendationBox
               icon={<TimerIcon />}
-              title={'asdadfad'}
-              content={'fdssdf'}
+              title={'Učestalost rada'}
+              content={exercise.durationDescription}
             />
           </View>
         }
