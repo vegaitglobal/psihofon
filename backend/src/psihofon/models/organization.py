@@ -17,6 +17,8 @@ class Organization(models.Model):
     )
     website_url = models.URLField(
         verbose_name=_('link do sajta'),
+        blank=True,
+        default='',
     )
 
     def __str__(self):
