@@ -15,11 +15,11 @@ import {
   setFirstUsageDate,
   toggleIsFirstUsage,
 } from '../../reducers/settingsReducer';
-import { getOrganizations } from '../../reducers/organizationsSlice';
-import { getMentalStates } from '../../reducers/mentalStatesReducer';
-import { getCrisisExercises } from '../../reducers/crisisExcercisesReducer';
-import { getQuestionnaire } from '../../reducers/questionnairesReducer';
-import { getSelfEmpowermentExercises } from '../../reducers/selfEmpowermentExercises';
+import {getOrganizations} from '../../reducers/organizationsSlice';
+import {getMentalStates} from '../../reducers/mentalStatesReducer';
+import {getCrisisExercises} from '../../reducers/crisisExcercisesReducer';
+import {getQuestionnaire} from '../../reducers/questionnairesReducer';
+import {getSelfEmpowermentExercises} from '../../reducers/selfEmpowermentExercises';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
