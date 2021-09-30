@@ -64,7 +64,7 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
       return (
         <View style={{}}>
           <CustomText style={{fontSize: 14, color: Colors.GREEN_LIGHT}}>
-            {exercise.weekNumber} nedelja
+            {exercise.weekNumber}. nedelja
           </CustomText>
           <CustomText
             style={{
