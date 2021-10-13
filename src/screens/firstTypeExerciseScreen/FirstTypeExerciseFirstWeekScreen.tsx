@@ -4,7 +4,6 @@ import {CustomText} from '../../components/customText/CustomText';
 import {RecommendationBox} from '../../components/recommendationBox/RecommendationBox';
 import {useHeader} from '../../hooks/useHeader';
 import {FirstTypeExerciseFirstWeekProps} from '../../navigation/FirstExcercisesNavigator';
-import {Colors} from '../../styles/colors';
 import TimerIcon from '../../../assets/icons/Timer.svg';
 import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
@@ -15,6 +14,7 @@ import {
 } from '../../reducers/selfEmpowermentExercises';
 import {useAppDispatch} from '../../store/store';
 import {useFocusEffect} from '@react-navigation/native';
+import style from './style';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
@@ -60,19 +60,11 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
     const GeneralInfoWithWeekIndicator = () => {
       return (
         <View>
-          <CustomText style={{fontSize: 14, color: Colors.GREEN_LIGHT}}>
+          <CustomText style={style.weekNumber}>
             {exercise?.weekNumber}. nedelja
           </CustomText>
-          <CustomText
-            style={{
-              paddingTop: 8,
-              fontSize: 24,
-              color: Colors.WHITE,
-              fontWeight: '600',
-            }}>
-            {exercise?.title}
-          </CustomText>
-          <CustomText style={{fontSize: 14, color: Colors.WHITE}}>
+          <CustomText style={style.exerciseTitle}>{exercise?.title}</CustomText>
+          <CustomText style={style.preparationInformation}>
             {exercise?.preparation}
           </CustomText>
         </View>
@@ -81,21 +73,11 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
 
     const ExerciseDescription = () => {
       return (
-        <View style={{paddingHorizontal: 30}}>
-          <CustomText
-            style={{
-              fontSize: 18,
-              fontWeight: '700',
-              color: Colors.BLACKISH_TEXT,
-            }}>
+        <View style={style.exerciseDescriptionContainer}>
+          <CustomText style={style.exerciseDescriptionTitle}>
             Opis zadatka
           </CustomText>
-          <CustomText
-            style={{
-              fontSize: 14,
-              paddingTop: 13,
-              color: Colors.DARK_GRAY,
-            }}>
+          <CustomText style={style.exerciseDescription}>
             {exercise?.description}
           </CustomText>
         </View>
@@ -108,11 +90,11 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
       <GeneralExerciseScreen
         upperContent={<GeneralInfoWithWeekIndicator />}
         lowerContent={
-          <View style={{flex: 1, justifyContent: 'space-between'}}>
+          <View style={style.lowerSectionContainer}>
             <View>
               <ExerciseDescription />
               <ExplanationBox
-                style={{marginTop: 28}}
+                style={style.explanationBox}
                 title={'Pojašnjenja'}
                 text={exercise?.explanation ?? ''}
               />
