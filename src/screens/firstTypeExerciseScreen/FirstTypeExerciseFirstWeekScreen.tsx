@@ -27,22 +27,22 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
     const dispatch = useAppDispatch();
 
     const checkForNextExercise = () => {
-      const firstDate = new Date(dateOfTheFirstUsage ?? '');
-      firstDate.setDate(firstDate.getDate() + 7);
+      // const firstDate = new Date(dateOfTheFirstUsage ?? '');
+      // firstDate.setDate(firstDate.getDate() + 7);
 
-      if (firstDate && firstDate >= new Date()) {
-        console.log('lastWeekNR: ' + lastUsedWeekNumber);
-        const sdfgsdf = lastUsedWeekNumber + 1;
-        dispatch(setLastUsedExerciseWeek(sdfgsdf));
-        dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
-        console.log('nextWE: ' + sdfgsdf);
-      }
+      // if (firstDate && firstDate >= new Date()) {
+      //   console.log('lastWeekNR: ' + lastUsedWeekNumber);
+      const sdfgsdf = lastUsedWeekNumber + 1;
+      dispatch(setLastUsedExerciseWeek(sdfgsdf));
+      dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
+      console.log('nextWE: ' + sdfgsdf);
+      // }
     };
 
-    useEffect(() => {
-      checkForNextExercise();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    // useEffect(() => {
+    //   checkForNextExercise();
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, []);
 
     console.log('WEEEEK: ' + lastUsedWeekNumber);
     const exerciseSelector = useSelector(exerciseByWeekNumber);
@@ -75,7 +75,7 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
       return (
         <View>
           <CustomText style={{fontSize: 14, color: Colors.GREEN_LIGHT}}>
-            {exercise?.weekNumber} nedelja
+            {exercise?.weekNumber}. nedelja
           </CustomText>
           <CustomText
             style={{
