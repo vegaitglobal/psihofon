@@ -8,10 +8,8 @@ import {FirstTypeExcerciseCheckScreenProps} from '../../navigation/FirstExcercis
 import {AppRoute} from '../../navigation/routes';
 import {
   resetExercises,
-  resetFirstUsageDate,
   setFirstUsageDateAsPresent,
 } from '../../reducers/selfEmpowermentExercises';
-import {toggleIsFirstUsage} from '../../reducers/settingsReducer';
 import {useAppDispatch} from '../../store/store';
 import style from './style';
 

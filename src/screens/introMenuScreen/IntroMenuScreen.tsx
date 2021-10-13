@@ -20,6 +20,8 @@ import {
   getSelfEmpowermentExercises,
   isExerciseDue,
   setFirstUsageDateAsPresent,
+  setUserWorkedOnCurrentAssignment,
+  trySwitchingToNextExercise,
 } from '../../reducers/selfEmpowermentExercises';
 import notifee, {
   AndroidCategory,
@@ -37,16 +39,11 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
 }) => {
   const dispatch = useAppDispatch();
   const {isFirstUsafe} = useSelector((state: RootState) => state.settings);
-  const {dateOfTheFirstUsage} = useSelector(
+  const {dateOfTheFirstUsage, userWorkedOnCurrentAssignment} = useSelector(
     (state: RootState) => state.selfEmpowerment,
   );
 
   useEffect(() => {
-    if (isFirstUsafe) {
-      dispatch(setFirstUsageDateAsPresent());
-      dispatch(toggleIsFirstUsage(false));
-    }
-
     dispatch(getOrganizations());
     dispatch(getSelfEmpowermentExercises());
     dispatch(getMentalStates());
@@ -181,8 +178,23 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
     }
   };
 
+  const navigateToSelfEmpowermentExercises = () => {
+    navigation.navigate(AppRoute.DRAWER, {
+      screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
+    });
+  };
+
   const onSelfEmpowermentPressed = () => {
-    if (isExerciseDue(dateOfTheFirstUsage ?? '')) {
+    if (isFirstUsafe) {
+      dispatch(setFirstUsageDateAsPresent());
+      dispatch(toggleIsFirstUsage(false));
+      navigateToSelfEmpowermentExercises();
+      return;
+    }
+
+    const isExerciseDueValue = isExerciseDue(dateOfTheFirstUsage ?? '');
+
+    if (!userWorkedOnCurrentAssignment && isExerciseDueValue) {
       navigation.navigate(AppRoute.DRAWER, {
         screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
         params: {
@@ -191,9 +203,15 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
       });
       return;
     }
-    navigation.navigate(AppRoute.DRAWER, {
-      screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
-    });
+
+    // This is part of the flow without the warning screen
+    // and without the first usage flow
+    if (isExerciseDueValue) {
+      dispatch(trySwitchingToNextExercise());
+    }
+
+    dispatch(setUserWorkedOnCurrentAssignment(true));
+    navigateToSelfEmpowermentExercises();
   };
 
   return (

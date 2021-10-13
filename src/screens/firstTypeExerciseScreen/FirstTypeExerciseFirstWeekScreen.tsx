@@ -13,6 +13,7 @@ import {RootState} from '../../reducers/rootReducer';
 import {
   exerciseByCurrentWeekNumberSelector,
   setFirstUsageDateAsPresent,
+  setUserWorkedOnCurrentAssignment,
   // exerciseCountSelector,
   trySwitchingToNextExercise,
 } from '../../reducers/selfEmpowermentExercises';
@@ -67,8 +68,6 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
     //   // eslint-disable-next-line react-hooks/exhaustive-deps
     // // }, [exercise]);
 
-    useHeader(navigation, false);
-
     // useEffect(() => {
     //   dispatch(setLastUsedExerciseWeek(exercise?.weekNumber ?? 0)); //TODONF
     //   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -94,9 +93,9 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
 
     const handleAppStateChange = (newState: AppStateStatus) => {
       if (newState !== 'active') {
-        console.log('ignoring');
         return;
       }
+
       //checkForNextExercise();
       dispatch(trySwitchingToNextExercise());
     };
@@ -160,6 +159,8 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
         </View>
       );
     };
+
+    useHeader(navigation, false);
 
     return (
       <GeneralExerciseScreen

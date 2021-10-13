@@ -11,6 +11,7 @@ export interface SelfEmpowermentExcercisesState {
   isLoading: boolean;
   lastUsedWeekNumber: number;
   dateOfTheFirstUsage: string | undefined;
+  userWorkedOnCurrentAssignment: boolean;
 }
 
 const initialState: SelfEmpowermentExcercisesState = {
@@ -19,6 +20,7 @@ const initialState: SelfEmpowermentExcercisesState = {
   isLoading: false,
   lastUsedWeekNumber: 1,
   dateOfTheFirstUsage: undefined,
+  userWorkedOnCurrentAssignment: false,
 };
 
 export const selfEmpowermentExcercisesSlice = createSlice({
@@ -39,11 +41,11 @@ export const selfEmpowermentExcercisesSlice = createSlice({
     },
 
     trySwitchingToNextExercise: state => {
-      console.log('trying');
       if (!isExerciseDue(state.dateOfTheFirstUsage ?? '')) {
-        console.log('GIVING UP');
         return;
       }
+
+      state.userWorkedOnCurrentAssignment = false;
 
       const currentWeekNumber = state.lastUsedWeekNumber;
       state.lastUsedWeekNumber =
@@ -56,6 +58,7 @@ export const selfEmpowermentExcercisesSlice = createSlice({
     resetExercises: state => {
       state.lastUsedWeekNumber = initialState.lastUsedWeekNumber;
       state.dateOfTheFirstUsage = new Date().toLocaleDateString();
+      state.userWorkedOnCurrentAssignment = false;
     },
 
     setFirstUsageDateAsPresent: state => {
@@ -63,6 +66,13 @@ export const selfEmpowermentExcercisesSlice = createSlice({
     },
     resetFirstUsageDate: state => {
       state.dateOfTheFirstUsage = initialState.dateOfTheFirstUsage;
+    },
+
+    setUserWorkedOnCurrentAssignment: (
+      state,
+      action: PayloadAction<boolean>,
+    ) => {
+      state.userWorkedOnCurrentAssignment = action.payload;
     },
   },
 });
@@ -83,6 +93,8 @@ export const isExerciseDue = (dateAsString: string) => {
   currentDate.setHours(0);
   currentDate.setUTCMinutes(0);
   currentDate.setSeconds(0);
+  // Other two date variables don't contain seconds
+  // so we reset them here as well
 
   console.log('Current date: ' + currentDate);
 
@@ -97,6 +109,7 @@ export const {
   resetExercises,
   setFirstUsageDateAsPresent,
   resetFirstUsageDate,
+  setUserWorkedOnCurrentAssignment,
 } = selfEmpowermentExcercisesSlice.actions;
 
 export const getSelfEmpowermentExercises =
