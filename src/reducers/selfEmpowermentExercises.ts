@@ -9,12 +9,16 @@ export interface SelfEmpowermentExcercisesState {
   isLoggedIn: boolean;
   selfEmpowermentExcercises: Array<SelfEmpowermentExercise>;
   isLoading: boolean;
+  lastUsedWeekNumber: number;
+  dateOfTheFirstUsage: string | undefined;
 }
 
 const initialState: SelfEmpowermentExcercisesState = {
   isLoggedIn: false,
   selfEmpowermentExcercises: localSelfEmpowermentExcercises,
   isLoading: false,
+  lastUsedWeekNumber: 1,
+  dateOfTheFirstUsage: undefined,
 };
 
 export const selfEmpowermentExcercisesSlice = createSlice({
@@ -33,24 +37,79 @@ export const selfEmpowermentExcercisesSlice = createSlice({
     ) => {
       state.selfEmpowermentExcercises = action.payload;
     },
+
+    trySwitchingToNextExercise: state => {
+      console.log('trying');
+      if (!isExerciseDue(state.dateOfTheFirstUsage ?? '')) {
+        console.log('GIVING UP');
+        return;
+      }
+
+      const currentWeekNumber = state.lastUsedWeekNumber;
+      state.lastUsedWeekNumber =
+        currentWeekNumber >= state.selfEmpowermentExcercises.length
+          ? initialState.lastUsedWeekNumber
+          : currentWeekNumber + 1;
+
+      state.dateOfTheFirstUsage = new Date().toLocaleDateString();
+    },
+    resetExercises: state => {
+      state.lastUsedWeekNumber = initialState.lastUsedWeekNumber;
+      state.dateOfTheFirstUsage = new Date().toLocaleDateString();
+    },
+
+    setFirstUsageDateAsPresent: state => {
+      state.dateOfTheFirstUsage = new Date().toLocaleDateString();
+    },
+    resetFirstUsageDate: state => {
+      state.dateOfTheFirstUsage = initialState.dateOfTheFirstUsage;
+    },
   },
 });
+
+export const isExerciseDue = (dateAsString: string) => {
+  if (dateAsString === '') {
+    return false;
+  }
+
+  const firstDate = new Date(dateAsString);
+  console.log('First date: ' + firstDate);
+
+  const exerciseEndDate = new Date(firstDate.getTime());
+  exerciseEndDate.setDate(firstDate.getDate() + 7);
+  console.log('Exercise end date: ' + exerciseEndDate);
+
+  const currentDate = new Date();
+  currentDate.setHours(0);
+  currentDate.setUTCMinutes(0);
+  currentDate.setSeconds(0);
+
+  console.log('Current date: ' + currentDate);
+
+  return currentDate > exerciseEndDate;
+};
 
 export const {
   changeLogInState,
   getSelfEmpowermentExcercisesStart,
   getSelfEmpowermentExcercisesSuccess,
+  trySwitchingToNextExercise,
+  resetExercises,
+  setFirstUsageDateAsPresent,
+  resetFirstUsageDate,
 } = selfEmpowermentExcercisesSlice.actions;
 
-export const getSelfEmpowermentExercises = () => async (dispatch: AppDispatch) => {
-  dispatch(getSelfEmpowermentExcercisesStart());
-  try {
-    const selfEmpowermentExcercises = await SelfEmpowermentExcerciseService.fetchSelfEmpowermentExcercises();
-    dispatch(getSelfEmpowermentExcercisesSuccess(selfEmpowermentExcercises));
-  } catch (error) {
-    console.log(error);
-  }
-};
+export const getSelfEmpowermentExercises =
+  () => async (dispatch: AppDispatch) => {
+    dispatch(getSelfEmpowermentExcercisesStart());
+    try {
+      const selfEmpowermentExcercises =
+        await SelfEmpowermentExcerciseService.fetchSelfEmpowermentExcercises();
+      dispatch(getSelfEmpowermentExcercisesSuccess(selfEmpowermentExcercises));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 export const excerciseById = createSelector(
   (state: RootState) => ({
@@ -63,17 +122,26 @@ export const excerciseById = createSelector(
     },
 );
 
-export const exerciseByWeekNumber = createSelector(
+export const exerciseByCurrentWeekNumberSelector = createSelector(
   (state: RootState) => ({
     selfEmpowermentExcercises: state.selfEmpowerment.selfEmpowermentExcercises,
+    lastUsedWeekNumber: state.selfEmpowerment.lastUsedWeekNumber,
   }),
-  ({selfEmpowermentExcercises}) =>
-    (weekNumber: number): SelfEmpowermentExercise | undefined => {
-      return selfEmpowermentExcercises.find(
-        exercise => exercise.weekNumber === weekNumber,
-      );
-    },
+  ({selfEmpowermentExcercises, lastUsedWeekNumber}) => {
+    return selfEmpowermentExcercises.find(
+      exercise => exercise.weekNumber === lastUsedWeekNumber,
+    );
+  },
 );
+
+// export const exerciseCountSelector = createSelector(
+//   (state: RootState) => ({
+//     selfEmpowermentExcercises: state.selfEmpowerment.selfEmpowermentExcercises,
+//   }),
+//   ({selfEmpowermentExcercises}) => {
+//     return selfEmpowermentExcercises?.length;
+//   },
+// );
 
 // const decideExercise = () => {
 //   if (!lastUsedExerciseId) {

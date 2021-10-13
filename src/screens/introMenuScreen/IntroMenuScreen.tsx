@@ -11,15 +11,16 @@ import {Colors} from '../../styles/colors';
 import {useAppDispatch} from '../../store/store';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
-import {
-  setFirstUsageDate,
-  toggleIsFirstUsage,
-} from '../../reducers/settingsReducer';
+import {toggleIsFirstUsage} from '../../reducers/settingsReducer';
 import {getOrganizations} from '../../reducers/organizationsSlice';
 import {getMentalStates} from '../../reducers/mentalStatesReducer';
 import {getCrisisExercises} from '../../reducers/crisisExcercisesReducer';
 import {getQuestionnaire} from '../../reducers/questionnairesReducer';
-import {getSelfEmpowermentExercises} from '../../reducers/selfEmpowermentExercises';
+import {
+  getSelfEmpowermentExercises,
+  isExerciseDue,
+  setFirstUsageDateAsPresent,
+} from '../../reducers/selfEmpowermentExercises';
 import notifee, {
   AndroidCategory,
   AndroidImportance,
@@ -35,12 +36,14 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
 }) => {
   const dispatch = useAppDispatch();
-  const {isFirstUsafe, dateOfTheFirstUsage} = useSelector(
-    (state: RootState) => state.settings,
+  const {isFirstUsafe} = useSelector((state: RootState) => state.settings);
+  const {dateOfTheFirstUsage} = useSelector(
+    (state: RootState) => state.selfEmpowerment,
   );
+
   useEffect(() => {
     if (isFirstUsafe) {
-      dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
+      dispatch(setFirstUsageDateAsPresent());
       dispatch(toggleIsFirstUsage(false));
     }
 
@@ -178,6 +181,21 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
     }
   };
 
+  const onSelfEmpowermentPressed = () => {
+    if (isExerciseDue(dateOfTheFirstUsage ?? '')) {
+      navigation.navigate(AppRoute.DRAWER, {
+        screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
+        params: {
+          screen: AppRoute.FIRST_TYPE_EXCERCISE_CHECK,
+        },
+      });
+      return;
+    }
+    navigation.navigate(AppRoute.DRAWER, {
+      screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
+    });
+  };
+
   return (
     <>
       <StatusBar barStyle={'dark-content'} backgroundColor={Colors.PALE_GREY} />
@@ -190,24 +208,7 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
           <BigButton
             theme={ButtonTheme.INVERTED}
             text={'Vežbe za samoosnaživanje'}
-            onPress={() => {
-              const firstDate = new Date(dateOfTheFirstUsage ?? '');
-              firstDate.setDate(firstDate.getDate() + 7);
-              console.log('FirstD: ' + firstDate);
-              console.log('Today: ' + new Date());
-              if (firstDate && firstDate >= new Date()) {
-                navigation.navigate(AppRoute.DRAWER, {
-                  screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
-                  params: {
-                    screen: AppRoute.FIRST_TYPE_EXCERCISE_CHECK,
-                  },
-                });
-                return;
-              }
-              navigation.navigate(AppRoute.DRAWER, {
-                screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
-              });
-            }}
+            onPress={onSelfEmpowermentPressed}
           />
           <BigButton
             theme={ButtonTheme.INVERTED}

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {BackHandler, View} from 'react-native';
+import {AppState, AppStateStatus, BackHandler, View} from 'react-native';
 import {CustomText} from '../../components/customText/CustomText';
 import {RecommendationBox} from '../../components/recommendationBox/RecommendationBox';
 import {useHeader} from '../../hooks/useHeader';
@@ -10,51 +10,96 @@ import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
-import {exerciseByWeekNumber} from '../../reducers/selfEmpowermentExercises';
-import {useAppDispatch} from '../../store/store';
 import {
-  setFirstUsageDate,
-  setLastUsedExerciseWeek,
-} from '../../reducers/settingsReducer';
+  exerciseByCurrentWeekNumberSelector,
+  setFirstUsageDateAsPresent,
+  // exerciseCountSelector,
+  trySwitchingToNextExercise,
+} from '../../reducers/selfEmpowermentExercises';
+import {useAppDispatch} from '../../store/store';
 import {useFocusEffect} from '@react-navigation/native';
+// import {AppRoute} from '../../navigation/routes';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
-    const {dateOfTheFirstUsage, lastUsedWeekNumber} = useSelector(
-      (state: RootState) => state.settings,
+    const {dateOfTheFirstUsage} = useSelector(
+      (state: RootState) => state.selfEmpowerment,
     );
+
+    // const {lastUsedWeekNumber} = useSelector(
+    //   (state: RootState) => state.selfEmpowerment,
+    // );
+
+    const exercise = useSelector(exerciseByCurrentWeekNumberSelector);
+    // const exerciseCount = useSelector(exerciseCountSelector);
 
     const dispatch = useAppDispatch();
 
     const checkForNextExercise = () => {
-      // const firstDate = new Date(dateOfTheFirstUsage ?? '');
-      // firstDate.setDate(firstDate.getDate() + 7);
+      console.log('checking');
+      if (currentDate > exerciseEndDate) {
+        // console.log('its time for a change: ' + lastUsedWeekNumber);
+        // const nextWeekNumber = lastUsedWeekNumber + 1;
+        //console.log('NEXT WEEK NUMBER: ' + nextWeekNumber);
+        // if (nextWeekNumber >= exerciseCount) {
+        //   console.log('All exercises finished');
+        //   navigation.replace(AppRoute.INTRO_MENU); //TODONF
+        // } else {
+        //   console.log('SELECTED WEEK NR: ' + nextWeekNumber);
+        // }
 
-      // if (firstDate && firstDate >= new Date()) {
-      //   console.log('lastWeekNR: ' + lastUsedWeekNumber);
-      const sdfgsdf = lastUsedWeekNumber + 1;
-      dispatch(setLastUsedExerciseWeek(sdfgsdf));
-      dispatch(setFirstUsageDate(new Date().toLocaleDateString()));
-      console.log('nextWE: ' + sdfgsdf);
-      // }
+        dispatch(trySwitchingToNextExercise());
+        console.log('Dispatching new');
+        dispatch(setFirstUsageDateAsPresent());
+      }
     };
 
     // useEffect(() => {
     //   checkForNextExercise();
     //   // eslint-disable-next-line react-hooks/exhaustive-deps
     // }, []);
-
-    console.log('WEEEEK: ' + lastUsedWeekNumber);
-    const exerciseSelector = useSelector(exerciseByWeekNumber);
-
-    const exercise = exerciseSelector(lastUsedWeekNumber);
+    // // useEffect(() => {
+    //   console.log('EFFECRTING');
+    //   if (!exercise) {
+    //     console.log('IT"S NULL');
+    //     dispatch(setLastUsedExerciseWeek(1));
+    //   }
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // // }, [exercise]);
 
     useHeader(navigation, false);
 
+    // useEffect(() => {
+    //   dispatch(setLastUsedExerciseWeek(exercise?.weekNumber ?? 0)); //TODONF
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // }, []);
+
+    // useFocusEffect(() => {
+    //   console.log('WHATT');
+    //   checkForNextExercise();
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    // });
+
     useEffect(() => {
-      dispatch(setLastUsedExerciseWeek(exercise?.weekNumber ?? 0));
+      const subscription = AppState.addEventListener(
+        'change',
+        handleAppStateChange,
+      );
+
+      return () => {
+        subscription.remove();
+      };
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    const handleAppStateChange = (newState: AppStateStatus) => {
+      if (newState !== 'active') {
+        console.log('ignoring');
+        return;
+      }
+      //checkForNextExercise();
+      dispatch(trySwitchingToNextExercise());
+    };
 
     useFocusEffect(
       React.useCallback(() => {

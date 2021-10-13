@@ -7,10 +7,11 @@ import {useHeader} from '../../hooks/useHeader';
 import {FirstTypeExcerciseCheckScreenProps} from '../../navigation/FirstExcercisesNavigator';
 import {AppRoute} from '../../navigation/routes';
 import {
-  setFirstUsageDate,
-  setLastUsedExerciseWeek,
-  toggleIsFirstUsage,
-} from '../../reducers/settingsReducer';
+  resetExercises,
+  resetFirstUsageDate,
+  setFirstUsageDateAsPresent,
+} from '../../reducers/selfEmpowermentExercises';
+import {toggleIsFirstUsage} from '../../reducers/settingsReducer';
 import {useAppDispatch} from '../../store/store';
 import style from './style';
 
@@ -35,6 +36,9 @@ export const FirstTypeExcerciseCheckScreen: React.FC<FirstTypeExcerciseCheckScre
             text="Želim da nastavim sa vezbama"
             onPress={() => {
               console.log('Želim da nastavim sa vežbama');
+              // TODO Check the requirements here. Do we want to stay on outdated exercise or go ti new one according to timeline.
+              // And what about skipping multiple weeks.
+              dispatch(setFirstUsageDateAsPresent()); // This way user will get another week to complete current exercise before being moved to the next one.
               navigateToExercises();
             }}
           />
@@ -44,9 +48,7 @@ export const FirstTypeExcerciseCheckScreen: React.FC<FirstTypeExcerciseCheckScre
             text="Želim da krenem od početka"
             onPress={() => {
               console.log('Želim da krenem od početka');
-              dispatch(setFirstUsageDate(undefined));
-              dispatch(toggleIsFirstUsage(true));
-              dispatch(setLastUsedExerciseWeek(1));
+              dispatch(resetExercises());
               navigateToExercises();
             }}
           />
