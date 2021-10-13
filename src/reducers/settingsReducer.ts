@@ -7,14 +7,12 @@ export interface SettingsState {
     score: number;
   }>;
   isFirstUsafe: boolean;
-  //lastUsedExerciseId: number | undefined;
 }
 
 const initialState: SettingsState = {
   isSurveyFinished: false,
   surveyData: [],
   isFirstUsafe: true,
-  //lastUsedExerciseId: undefined,
 };
 
 export const settingsSlice = createSlice({
@@ -27,9 +25,6 @@ export const settingsSlice = createSlice({
     toggleIsFirstUsage: (state, action: PayloadAction<boolean>) => {
       state.isFirstUsafe = action.payload;
     },
-    // setLastUsageExercise: (state, action: PayloadAction<number>) => {
-    //   state.lastUsedExerciseId = action.payload;
-    // },
     addSurveyData: (
       state,
       {payload}: PayloadAction<{mentalStateId: number; score: number}>,
@@ -55,7 +50,6 @@ export const {
   addSurveyData,
   addInitialSurveyData,
   toggleIsFirstUsage,
-  //setLastUsageExercise,
 } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

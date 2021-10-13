@@ -9,75 +9,18 @@ import TimerIcon from '../../../assets/icons/Timer.svg';
 import {ExplanationBox} from '../../components/explanationBox/ExplanationBox';
 import {GeneralExerciseScreen} from '../generalExerciseScreen/GeneralExerciseScreen';
 import {useSelector} from 'react-redux';
-import {RootState} from '../../reducers/rootReducer';
 import {
   exerciseByCurrentWeekNumberSelector,
-  setFirstUsageDateAsPresent,
-  setUserWorkedOnCurrentAssignment,
-  // exerciseCountSelector,
   trySwitchingToNextExercise,
 } from '../../reducers/selfEmpowermentExercises';
 import {useAppDispatch} from '../../store/store';
 import {useFocusEffect} from '@react-navigation/native';
-// import {AppRoute} from '../../navigation/routes';
 
 export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWeekProps> =
   ({navigation}) => {
-    const {dateOfTheFirstUsage} = useSelector(
-      (state: RootState) => state.selfEmpowerment,
-    );
-
-    // const {lastUsedWeekNumber} = useSelector(
-    //   (state: RootState) => state.selfEmpowerment,
-    // );
-
     const exercise = useSelector(exerciseByCurrentWeekNumberSelector);
-    // const exerciseCount = useSelector(exerciseCountSelector);
 
     const dispatch = useAppDispatch();
-
-    const checkForNextExercise = () => {
-      console.log('checking');
-      if (currentDate > exerciseEndDate) {
-        // console.log('its time for a change: ' + lastUsedWeekNumber);
-        // const nextWeekNumber = lastUsedWeekNumber + 1;
-        //console.log('NEXT WEEK NUMBER: ' + nextWeekNumber);
-        // if (nextWeekNumber >= exerciseCount) {
-        //   console.log('All exercises finished');
-        //   navigation.replace(AppRoute.INTRO_MENU); //TODONF
-        // } else {
-        //   console.log('SELECTED WEEK NR: ' + nextWeekNumber);
-        // }
-
-        dispatch(trySwitchingToNextExercise());
-        console.log('Dispatching new');
-        dispatch(setFirstUsageDateAsPresent());
-      }
-    };
-
-    // useEffect(() => {
-    //   checkForNextExercise();
-    //   // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
-    // // useEffect(() => {
-    //   console.log('EFFECRTING');
-    //   if (!exercise) {
-    //     console.log('IT"S NULL');
-    //     dispatch(setLastUsedExerciseWeek(1));
-    //   }
-    //   // eslint-disable-next-line react-hooks/exhaustive-deps
-    // // }, [exercise]);
-
-    // useEffect(() => {
-    //   dispatch(setLastUsedExerciseWeek(exercise?.weekNumber ?? 0)); //TODONF
-    //   // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, []);
-
-    // useFocusEffect(() => {
-    //   console.log('WHATT');
-    //   checkForNextExercise();
-    //   // eslint-disable-next-line react-hooks/exhaustive-deps
-    // });
 
     useEffect(() => {
       const subscription = AppState.addEventListener(
@@ -96,7 +39,6 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
         return;
       }
 
-      //checkForNextExercise();
       dispatch(trySwitchingToNextExercise());
     };
 

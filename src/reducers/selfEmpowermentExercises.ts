@@ -147,33 +147,4 @@ export const exerciseByCurrentWeekNumberSelector = createSelector(
   },
 );
 
-// export const exerciseCountSelector = createSelector(
-//   (state: RootState) => ({
-//     selfEmpowermentExcercises: state.selfEmpowerment.selfEmpowermentExcercises,
-//   }),
-//   ({selfEmpowermentExcercises}) => {
-//     return selfEmpowermentExcercises?.length;
-//   },
-// );
-
-// const decideExercise = () => {
-//   if (!lastUsedExerciseId) {
-//     return selfEmpowermentExcercises[0].id;
-//   }
-
-//   const firstDate = new Date(dateOfTheFirstUsage ?? '');
-//   firstDate.setDate(firstDate.getDate() + 7);
-
-//   if (firstDate && firstDate >= new Date()) {
-//     console.log('lastWeekNR: ' + lastUsedWeekNumber);
-//     const exerciseForNextWeek = getExerciseForAWeek(lastUsedWeekNumber + 1);
-//     console.log('nextWE: ' + JSON.stringify(exerciseForNextWeek));
-//     setLastUsedExerciseWeek(exerciseForNextWeek?.id ?? 0);
-//     setLastUsageExercise(exerciseForNextWeek?.id ?? 0);
-//     return exerciseForNextWeek?.id ?? 0;
-//   }
-
-//   return selfEmpowermentExcercises[0].id;
-// };
-
 export default selfEmpowermentExcercisesSlice.reducer;
