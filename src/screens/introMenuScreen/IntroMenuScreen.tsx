@@ -208,9 +208,10 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
     // and without the first usage flow
     if (isExerciseDueValue) {
       dispatch(trySwitchingToNextExercise());
+    } else {
+      dispatch(setUserWorkedOnCurrentAssignment(true));
     }
 
-    dispatch(setUserWorkedOnCurrentAssignment(true));
     navigateToSelfEmpowermentExercises();
   };
 
