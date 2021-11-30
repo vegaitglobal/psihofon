@@ -1,6 +1,6 @@
 import React, {useEffect, useLayoutEffect} from 'react';
 import styles from './style';
-import {Pressable, View, StatusBar, Button} from 'react-native';
+import {Pressable, View, StatusBar} from 'react-native';
 import {ButtonTheme} from '../../constants/enums';
 import {CustomText} from '../../components/customText/CustomText';
 import {IntroMenuScreenProps} from '../../navigation/RootNavigator';
@@ -23,22 +23,12 @@ import {
   setUserWorkedOnCurrentAssignment,
   trySwitchingToNextExercise,
 } from '../../reducers/selfEmpowermentExercises';
-import notifee, {
-  AndroidCategory,
-  AndroidImportance,
-  AndroidStyle,
-  AndroidVisibility,
-  EventType,
-  RepeatFrequency,
-  TimestampTrigger,
-  TriggerType,
-} from '@notifee/react-native';
 
 export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   navigation,
 }) => {
   const dispatch = useAppDispatch();
-  const {isFirstUsafe} = useSelector((state: RootState) => state.settings);
+  const {isFirstUsage} = useSelector((state: RootState) => state.settings);
   const {dateOfTheFirstUsage, userWorkedOnCurrentAssignment} = useSelector(
     (state: RootState) => state.selfEmpowerment,
   );
@@ -63,121 +53,6 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
     });
   }, [navigation]);
 
-  const notifications: NotificationItems = {
-    basic: {
-      title: 'Basic',
-      body: 'notification',
-      android: {
-        channelId: 'default',
-        pressAction: {
-          id: 'default',
-        },
-      },
-      ios: {
-        sound: 'default',
-      },
-    },
-    image: {
-      title: 'Image',
-      body: 'notification',
-      android: {
-        channelId: 'default',
-        pressAction: {
-          id: 'default',
-        },
-        style: {
-          type: AndroidStyle.BIGPICTURE,
-          picture:
-            'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png',
-        },
-      },
-      ios: {
-        sound: 'default',
-        attachments: [
-          {
-            url: 'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png',
-          },
-        ],
-      },
-    },
-    quickActions: {
-      title: 'Quick Actions',
-      body: 'notification',
-      id: 'quickAction',
-      android: {
-        channelId: 'default',
-        pressAction: {
-          id: 'default',
-        },
-        actions: [
-          {
-            title: 'Reply, Open & Cancel',
-            pressAction: {
-              id: 'first_action_reply',
-            },
-            // input: {
-            //   choices: ['Yes', 'No', 'Maybe'],
-            //   placeholder: 'Reply to Sarah...',
-            // },
-            input: {},
-          },
-          {
-            title: 'Nothing',
-            pressAction: {
-              id: 'second_action_nothing',
-            },
-          },
-        ],
-      },
-      ios: {
-        sound: 'default',
-        categoryId: 'quickActions',
-      },
-    },
-    fullScreen: {
-      title: 'Full-screen',
-      body: 'notification',
-      android: {
-        channelId: 'fullscreen',
-        // Recommended to set a category
-        category: AndroidCategory.CALL,
-        // Recommended to set importance to high
-        importance: AndroidImportance.HIGH,
-        visibility: AndroidVisibility.PUBLIC,
-        sound: 'default',
-        fullScreenAction: {
-          id: 'default',
-          // mainComponent: 'full-screen-main-component'
-          launchActivity: 'com.example.CustomActivity',
-        },
-      },
-      ios: {
-        sound: 'default',
-      },
-    },
-  };
-
-  const notification = notifications.basic;
-
-  const onDisplayNotificationPress = async () => {
-    await notifee.deleteChannel('default');
-    // Create a channel
-    await notifee.createChannel({
-      id: 'default',
-      name: 'default',
-      importance: AndroidImportance.DEFAULT,
-      visibility: AndroidVisibility.PRIVATE,
-      vibration: true,
-      sound: 'default',
-    });
-
-    try {
-      await notifee.displayNotification(notification);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   const navigateToSelfEmpowermentExercises = () => {
     navigation.navigate(AppRoute.DRAWER, {
       screen: AppRoute.SELF_EMPOWERMENT_NAVIGATOR,
@@ -185,7 +60,7 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
   };
 
   const onSelfEmpowermentPressed = () => {
-    if (isFirstUsafe) {
+    if (isFirstUsage) {
       dispatch(setFirstUsageDateAsPresent());
       dispatch(toggleIsFirstUsage(false));
       navigateToSelfEmpowermentExercises();
@@ -220,10 +95,6 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
       <StatusBar barStyle={'dark-content'} backgroundColor={Colors.PALE_GREY} />
       <View style={styles.container}>
         <View style={styles.upperArea}>
-          <Button
-            title="Display Notification"
-            onPress={() => onDisplayNotificationPress()}
-          />
           <BigButton
             theme={ButtonTheme.INVERTED}
             text={'Vežbe za samoosnaživanje'}
