@@ -29,7 +29,7 @@ export default () => {
 const App = () => {
   const dispatch = useAppDispatch();
   const shouldShowReminder = useSelector(shouldDisplayReminder);
-  
+
   useSplashScreen();
   usePermissionRequest();
   // useNotificationListenerSetup(); //! Use this when you want to take actions based on notifications.

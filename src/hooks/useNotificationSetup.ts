@@ -7,11 +7,6 @@ import notifee, {
 } from '@notifee/react-native';
 import {useEffect} from 'react';
 
-interface Notification {
-  title: string;
-  body: string;
-}
-
 //! Extendible Object that is responsible for local notification delivery.
 export const useNotificationSetup = {
   CreateAndroidChannel: (channelIdentifier: string) => {
@@ -38,21 +33,21 @@ export const useNotificationSetup = {
   ) => {
     useEffect(() => {
       (async () => {
-        await new Promise(f => setTimeout(f, 1000 * 15)); //! Make a 15s delay.
+        await new Promise(f => setTimeout(f, 1000 * 10)); //! Make a 10s delay because of permission asking.
         if (!shouldShowReminder) {
           await notifee.cancelNotification('localReminder');
           return;
         }
         const fireAt = new Date(Date.now());
-        // fireAt.setDate(fireAt.getDate() + 1);
-        // fireAt.setHours(20);
-        // fireAt.setMinutes(0);
+        fireAt.setDate(fireAt.getDate() + 1);
+        fireAt.setHours(20);
+        fireAt.setMinutes(0);
 
         //! Create a time-based trigger that will trigger the notification.
         const trigger: TimestampTrigger = {
           type: TriggerType.TIMESTAMP,
-          timestamp: fireAt.getTime() + 1000 * 10,
-          repeatFrequency: RepeatFrequency.HOURLY,
+          timestamp: fireAt.getTime(),
+          repeatFrequency: RepeatFrequency.DAILY,
         };
 
         //! Create a trigger notification

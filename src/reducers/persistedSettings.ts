@@ -17,8 +17,7 @@ export const persistedSettingsSlice = createSlice({
     registerFirstAppOpen: state => {
       if (!state.firstAppOpeningDate) {
         const now = new Date(Date.now());
-        // state.firstAppOpeningDate = `${now.getFullYear()}.${now.getMonth()}.${now.getDate()}`;
-        state.firstAppOpeningDate = `${now.getHours()}`;
+        state.firstAppOpeningDate = `${now.getFullYear()}.${now.getMonth()}.${now.getDate()}`;
       }
     },
   },
@@ -37,24 +36,20 @@ export const shouldDisplayReminder = createSelector(
       return true;
     }
     const now = new Date(Date.now());
-    // const currentYear = now.getFullYear().toString();
-    // const currentMonth = now.getMonth().toString();
-    // const currentDay = now.getDate().toString();
+    const currentYear = now.getFullYear().toString();
+    const currentMonth = now.getMonth().toString();
+    const currentDay = now.getDate().toString();
 
-    // const firstUsageDate = firstAppOpeningDate?.split('.');
-    // const firstUsageYear = firstUsageDate![0];
-    // const firstUsageMonth = firstUsageDate![1];
-    // const firstUsageDay = firstUsageDate![2];
+    const firstUsageDate = firstAppOpeningDate?.split('.');
+    const firstUsageYear = firstUsageDate![0];
+    const firstUsageMonth = firstUsageDate![1];
+    const firstUsageDay = firstUsageDate![2];
 
-    // if (
-    //   currentYear === firstUsageYear &&
-    //   currentMonth === firstUsageMonth &&
-    //   currentDay <= firstUsageDay + MAX_NOTIFICATION_REPEAT_COUNT
-    // ) {
-    //   return true;
-    // }
-
-    if (now.getHours().toString() <= firstAppOpeningDate + 3) {
+    if (
+      currentYear === firstUsageYear &&
+      currentMonth === firstUsageMonth &&
+      currentDay <= firstUsageDay + MAX_NOTIFICATION_REPEAT_COUNT
+    ) {
       return true;
     }
 
