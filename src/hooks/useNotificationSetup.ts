@@ -1,11 +1,15 @@
 import notifee, {
   AndroidImportance,
   AndroidVisibility,
-  RepeatFrequency,
   TimestampTrigger,
   TriggerType,
 } from '@notifee/react-native';
 import {useEffect} from 'react';
+
+interface Notification {
+  title: string;
+  body: string;
+}
 
 //! Extendible Object that is responsible for local notification delivery.
 export const useNotificationSetup = {
@@ -27,47 +31,58 @@ export const useNotificationSetup = {
     }, []);
   },
 
-  SetupReminderNotification: (
+  SetupReminderNotification: async (
+    onSuccess: () => void,
     channelIdentifier: string,
-    shouldShowReminder: boolean,
   ) => {
-    useEffect(() => {
-      (async () => {
-        await new Promise(f => setTimeout(f, 1000 * 10)); //! Make a 10s delay because of permission asking.
-        if (!shouldShowReminder) {
-          await notifee.cancelNotification('localReminder');
-          return;
-        }
-        const fireAt = new Date(Date.now());
-        fireAt.setDate(fireAt.getDate() + 1);
-        fireAt.setHours(20);
-        fireAt.setMinutes(0);
+    await new Promise(f => setTimeout(f, 1000 * 20)); //! Make a 20s delay because of permission asking. If you run immediately this code and the permissions aren't granted on IOS, then the user won't be able to receive them. (Because if this code runs successfully, then it won't re-run).
 
-        //! Create a time-based trigger that will trigger the notification.
-        const trigger: TimestampTrigger = {
-          type: TriggerType.TIMESTAMP,
-          timestamp: fireAt.getTime(),
-          repeatFrequency: RepeatFrequency.DAILY,
-        };
+    const notifications: Notification[] = [
+      {title: 'Ćao,', body: 'Da li si za vežbe?'},
+      {title: 'Hej tamo,', body: 'Da li imaš volje da se družimo?'},
+      {title: 'Ćaos,', body: 'Nemoj zaboraviti na svoje vežbe.'},
+    ];
+    let errorHappened = false;
 
-        //! Create a trigger notification
-        try {
-          await notifee.createTriggerNotification(
-            {
-              id: 'localReminder',
-              title: 'Ćao,',
-              body: 'Da li si za vežbe danas?',
-              android: {
-                channelId: channelIdentifier,
+    for (let i = 0; i < 3; i++) {
+      const fireAt = new Date(Date.now());
+      fireAt.setDate(fireAt.getDate() + (i + 1));
+      fireAt.setHours(20);
+      fireAt.setMinutes(0);
+
+      //! Create a time-based trigger that will trigger the notification.
+      const trigger: TimestampTrigger = {
+        type: TriggerType.TIMESTAMP,
+        timestamp: fireAt.getTime(),
+      };
+
+      //! Create a trigger notification
+      try {
+        await notifee.createTriggerNotification(
+          {
+            id: `localReminder${i}`,
+            title: notifications[i].title,
+            body: notifications[i].body,
+
+            android: {
+              channelId: channelIdentifier,
+              pressAction: {
+                launchActivity: 'default',
+                id: 'default',
               },
             },
-            trigger,
-          );
-        } catch (exception) {
-          console.log('Scheduled notification created after time.', exception);
-        }
-      })();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+          },
+          trigger,
+        );
+      } catch (exception) {
+        console.log('Scheduled notification created after time.', exception);
+        errorHappened = true;
+      }
+    }
+
+    //! If the setup was successful, we dont have to setup the reminders anymore.
+    if (!errorHappened) {
+      onSuccess();
+    }
   },
 };

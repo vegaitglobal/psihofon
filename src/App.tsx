@@ -10,11 +10,9 @@ import {persistor, store, useAppDispatch} from './store/store';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {usePermissionRequest} from './hooks/usePermissionRequest';
 import {useNotificationSetup} from './hooks/useNotificationSetup';
+import {RootState} from './reducers/rootReducer';
+import {setReminderNotificationSetup} from './reducers/persistedSettings';
 // import {useNotificationListenerSetup} from './hooks/useNotificationListenerSetup'; //! Use this when you want to handle notifications.
-import {
-  registerFirstAppOpen,
-  shouldDisplayReminder,
-} from './reducers/persistedSettings';
 
 enableScreens(false);
 
@@ -28,22 +26,32 @@ export default () => {
 
 const App = () => {
   const dispatch = useAppDispatch();
-  const shouldShowReminder = useSelector(shouldDisplayReminder);
+  const {reminderNotificationSetupDone} = useSelector(
+    (state: RootState) => state.persistedSettings,
+  );
 
   useSplashScreen();
   usePermissionRequest();
   // useNotificationListenerSetup(); //! Use this when you want to take actions based on notifications.
   useNotificationSetup.CreateAndroidChannel('scheduled');
-  useNotificationSetup.SetupReminderNotification(
-    'scheduled',
-    shouldShowReminder,
-  );
-  dispatch(registerFirstAppOpen());
+
+  //! The PersistorGate will call this method after retrieving all the relevant state.
+  const setupReminders = async () => {
+    if (!reminderNotificationSetupDone) {
+      const onSuccess = () => {
+        dispatch(setReminderNotificationSetup(true));
+      };
+      useNotificationSetup.SetupReminderNotification(onSuccess, 'scheduled');
+    }
+  };
 
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <PersistGate loading={null} persistor={persistor}>
+        <PersistGate
+          loading={null}
+          persistor={persistor}
+          onBeforeLift={setupReminders}>
           <RootNavigator />
         </PersistGate>
       </NavigationContainer>
