@@ -34,6 +34,9 @@ export default StyleSheet.create({
     marginTop: Margins.MEDIUM,
     marginBottom: Margins.SMALL,
   } as ViewStyle,
+  skipButton: {
+    marginBottom: Margins.SMALL,
+  } as ViewStyle,
   headerArea: {
     marginVertical: 5,
   } as ViewStyle,

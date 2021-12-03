@@ -54,6 +54,7 @@ export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
               onPress={() => navigation.push(AppRoute.QUIZ)}
             />
             <CustomButton
+              style={styles.skipButton}
               text={'Izostavi upitnik'}
               isDark={false}
               onPress={() =>
