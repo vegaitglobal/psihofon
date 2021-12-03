@@ -1,11 +1,12 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
+interface SurveyChoices {
+  mentalStateId: number;
+  score: number;
+}
 export interface SettingsState {
   isSurveyFinished: boolean;
-  surveyData: Array<{
-    mentalStateId: number;
-    score: number;
-  }>;
+  surveyData: SurveyChoices[];
   isFirstUsage: boolean;
 }
 
@@ -29,12 +30,14 @@ export const settingsSlice = createSlice({
       state,
       {payload}: PayloadAction<{mentalStateId: number; score: number}>,
     ) => {
-      state.surveyData = state.surveyData.map(item => {
-        if (item.mentalStateId === payload.mentalStateId) {
-          item.score = payload.score;
-        }
-        return item;
-      });
+      const dataIndex = state.surveyData.findIndex(
+        item => item.mentalStateId === payload.mentalStateId,
+      );
+      if (dataIndex > -1) {
+        state.surveyData[dataIndex] = payload; //! Score will appear summed.
+      } else {
+        state.surveyData.push(payload);
+      }
     },
     addInitialSurveyData: (
       state,
