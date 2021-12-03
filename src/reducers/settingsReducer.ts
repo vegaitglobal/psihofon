@@ -6,13 +6,13 @@ export interface SettingsState {
     mentalStateId: number;
     score: number;
   }>;
-  isFirstUsafe: boolean;
+  isFirstUsage: boolean;
 }
 
 const initialState: SettingsState = {
   isSurveyFinished: false,
   surveyData: [],
-  isFirstUsafe: true,
+  isFirstUsage: true,
 };
 
 export const settingsSlice = createSlice({
@@ -23,7 +23,7 @@ export const settingsSlice = createSlice({
       state.isSurveyFinished = action.payload;
     },
     toggleIsFirstUsage: (state, action: PayloadAction<boolean>) => {
-      state.isFirstUsafe = action.payload;
+      state.isFirstUsage = action.payload;
     },
     addSurveyData: (
       state,

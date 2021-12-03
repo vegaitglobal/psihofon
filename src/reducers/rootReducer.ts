@@ -1,3 +1,4 @@
+import persistedSettingsSlice from './persistedSettings';
 import {combineReducers} from '@reduxjs/toolkit';
 import crisisExcercisesSlice from './crisisExcercisesReducer';
 import mentalStatesSlice from './mentalStatesReducer';
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   crisisExcercises: crisisExcercisesSlice,
   mentalStates: mentalStatesSlice,
   selfEmpowerment: selfEmpowermentExcercisesSlice,
+  persistedSettings: persistedSettingsSlice,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
