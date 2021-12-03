@@ -10,7 +10,10 @@ import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/Analyt
 import {useSelector} from 'react-redux';
 import {RootState} from '../reducers/rootReducer';
 import {ScaleExplanationScreen} from '../screens/scaleExplanationScreen/ScaleExplanationScreen';
-import {ExcerciseOverviewScreen} from '../screens/exerciseOverview/ExcerciseOverviewScreen';
+import {
+  ExcerciseOverviewScreen,
+  ExerciseOverviewScreenParams,
+} from '../screens/exerciseOverview/ExcerciseOverviewScreen';
 import {
   ExerciseListScreen,
   ExerciseListScreenParams,
@@ -28,7 +31,7 @@ export type SecondExcercisesNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ANALYTICS_QUIZ_RESULTS]: undefined;
   [AppRoute.SCALE_EXPLANATION]: undefined;
-  [AppRoute.EXCERCISE_OVERVIEW]: undefined;
+  [AppRoute.EXCERCISE_OVERVIEW]: ExerciseOverviewScreenParams;
   [AppRoute.SECOND_EXCERCISE_SCREEN]: SecondTypeEcerciseScreenParams;
   [AppRoute.EXERCISE_LIST]: ExerciseListScreenParams;
 };
@@ -43,35 +46,13 @@ export interface SecondExcercisesNavigatorProps<
   route: RouteProp<SecondExcercisesNavigatorParams, Screen>;
 }
 
-export interface QuizScreenProps {
-  navigation: NativeStackNavigationProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.QUIZ
-  >;
-  route: RouteProp<SecondExcercisesNavigatorParams, AppRoute.QUIZ>;
-}
+export type QuizScreenProps = SecondExcercisesNavigatorProps<AppRoute.QUIZ>;
 
-export interface AnalyticsQuizResultsScreenProps {
-  navigation: NativeStackNavigationProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.ANALYTICS_QUIZ_RESULTS
-  >;
-  route: RouteProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.ANALYTICS_QUIZ_RESULTS
-  >;
-}
+export type AnalyticsQuizResultsScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.ANALYTICS_QUIZ_RESULTS>;
 
-export interface ExcerciseOverviewScreenProps {
-  navigation: NativeStackNavigationProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.EXCERCISE_OVERVIEW
-  >;
-  route: RouteProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.ANALYTICS_QUIZ_RESULTS
-  >;
-}
+export type ExcerciseOverviewScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.EXCERCISE_OVERVIEW>;
 
 export type ScaleExplanationScreenProps =
   SecondExcercisesNavigatorProps<AppRoute.SCALE_EXPLANATION>;

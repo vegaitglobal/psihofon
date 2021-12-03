@@ -10,8 +10,13 @@ import {TitleText} from '../../components/titleText/TitleText';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
 
+export interface ExerciseOverviewScreenParams {
+  skippedQuiz?: boolean;
+}
+
 export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
-  ({navigation}: ExcerciseOverviewScreenProps) => {
+  ({navigation, route}) => {
+    const {skippedQuiz} = route.params ?? false;
     const {mentalStates} = useSelector(
       (state: RootState) => state.mentalStates,
     );
@@ -41,21 +46,23 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
                 />
               )}
             />
-            <Pressable
-              onPress={() =>
-                navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
-              }>
-              <Text style={style.textButton}>
-                Pogledaj prethodne rezultate testa
-              </Text>
-            </Pressable>
+            {!skippedQuiz && (
+              <Pressable
+                onPress={() =>
+                  navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
+                }>
+                <Text style={style.textButton}>
+                  Pogledaj prethodne rezultate testa
+                </Text>
+              </Pressable>
+            )}
           </View>
         </View>
         <View style={style.lowerArea}>
           <CustomButton
             isDark={false}
             style={style.bottomButton}
-            text="Želim ponovo da radim test!"
+            text={`Želim ${skippedQuiz ? '' : 'ponovo'} da radim test!`}
             onPress={() => navigation.navigate(AppRoute.SCALE_EXPLANATION)}
           />
         </View>

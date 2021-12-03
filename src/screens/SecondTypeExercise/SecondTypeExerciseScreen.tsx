@@ -30,11 +30,13 @@ const LowerExerciseContent: React.FC<{
   return (
     <View style={style.lowerContentContainer}>
       <CustomText style={style.lowerContentText}>{description}</CustomText>
-      {!!recommendation?.length && <RecommendationBox
-        title="Preporuka"
-        content={recommendation}
-        icon={<Heart />}
-      />}
+      {!!recommendation?.length && (
+        <RecommendationBox
+          title="Preporuka"
+          content={recommendation}
+          icon={<Heart />}
+        />
+      )}
     </View>
   );
 };
