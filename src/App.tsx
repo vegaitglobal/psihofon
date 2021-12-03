@@ -8,7 +8,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {NavigationContainer} from '@react-navigation/native';
 import {persistor, store, useAppDispatch} from './store/store';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {usePermissionRequest} from './hooks/usePermissionRequest';
+import {RequestUserPermission} from './utils/RequestUserPermission';
 import {useNotificationSetup} from './hooks/useNotificationSetup';
 import {RootState} from './reducers/rootReducer';
 import {setReminderNotificationSetup} from './reducers/persistedSettings';
@@ -31,18 +31,24 @@ const App = () => {
   );
 
   useSplashScreen();
-  usePermissionRequest();
   // useNotificationListenerSetup(); //! Use this when you want to take actions based on notifications.
   useNotificationSetup.CreateAndroidChannel('scheduled');
 
   //! The PersistorGate will call this method after retrieving all the relevant state.
   const setupReminders = async () => {
-    if (!reminderNotificationSetupDone) {
-      const onSuccess = () => {
-        dispatch(setReminderNotificationSetup(true));
-      };
-      useNotificationSetup.SetupReminderNotification(onSuccess, 'scheduled');
-    }
+    RequestUserPermission().then(notificationsAllowed => {
+      if (notificationsAllowed) {
+        if (!reminderNotificationSetupDone) {
+          const onSuccess = () => {
+            dispatch(setReminderNotificationSetup(true));
+          };
+          useNotificationSetup.SetupReminderNotification(
+            onSuccess,
+            'scheduled',
+          );
+        }
+      }
+    });
   };
 
   return (

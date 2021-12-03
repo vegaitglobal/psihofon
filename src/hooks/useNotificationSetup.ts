@@ -35,8 +35,6 @@ export const useNotificationSetup = {
     onSuccess: () => void,
     channelIdentifier: string,
   ) => {
-    await new Promise(f => setTimeout(f, 1000 * 20)); //! Make a 20s delay because of permission asking. If you run immediately this code and the permissions aren't granted on IOS, then the user won't be able to receive them. (Because if this code runs successfully, then it won't re-run).
-
     const notifications: Notification[] = [
       {title: 'Ćao,', body: 'Da li si za vežbe?'},
       {title: 'Hej tamo,', body: 'Da li imaš volje da se družimo?'},
@@ -45,7 +43,7 @@ export const useNotificationSetup = {
     let errorHappened = false;
 
     for (let i = 0; i < 3; i++) {
-      const fireAt = new Date(Date.now());
+      const fireAt = new Date();
       fireAt.setDate(fireAt.getDate() + (i + 1));
       fireAt.setHours(20);
       fireAt.setMinutes(0);
