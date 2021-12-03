@@ -10,7 +10,9 @@ export default StyleSheet.create({
     marginTop: verticalScale(Margins.MIDLARGE),
   },
   separator: {
-    height: 0.5,
+    height: StyleSheet.hairlineWidth,
+    borderWidth: 0.5,
+    borderColor: 'white',
     backgroundColor: Colors.WHITE,
   } as ViewStyle,
   upperArea: {
