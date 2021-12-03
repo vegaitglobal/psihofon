@@ -58,7 +58,7 @@ const QuestionItem = ({
             onPress={() => onPressHandle(answer.orderNumber)}
             isPressed={questionScore === answer.orderNumber}
             theme={ButtonTheme.GRAY_BLACK}
-            key={answer.id}
+            key={`Q_${question.id}_A_${answer.id}`}
           />
         ))}
       </View>
@@ -125,10 +125,10 @@ const ViewPagerItem = ({
   };
 
   return (
-    <View key={item.id} style={[styles.item, {width}]}>
+    <View style={[styles.item, {width}]}>
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
         {questionnarie.map(question => (
-          <View style={styles.questionItem}>
+          <View style={styles.questionItem} key={`Q_${question.id}`}>
             <QuestionItem question={question} onPress={onPressHandle} />
           </View>
         ))}
@@ -247,7 +247,11 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
           horizontal
           pagingEnabled
           renderItem={({item}) => (
-            <ViewPagerItem item={item} onPress={handleOnPress} />
+            <ViewPagerItem
+              item={item}
+              key={'Page_' + item.id}
+              onPress={handleOnPress}
+            />
           )}
           keyExtractor={(item: MentalState) => item.id.toString()}
         />
@@ -257,7 +261,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
             <Circle
               scrollX={scrollOffsetAnimatedValue}
               index={index}
-              key={item.id}
+              key={'C_' + item.id}
             />
           ))}
         </View>
