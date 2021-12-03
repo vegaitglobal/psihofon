@@ -10,10 +10,15 @@ import {Animated, Dimensions, Keyboard, Pressable, View} from 'react-native';
 
 interface Props {
   placeholder: string;
-  setSearchText: (inputText: string) => void;
+  inputValue: string;
+  onTextChange: (inputText: string) => void;
 }
 
-export const SearchBar: React.FC<Props> = ({placeholder, setSearchText}) => {
+export const SearchBar: React.FC<Props> = ({
+  placeholder,
+  inputValue,
+  onTextChange,
+}) => {
   const screenWidth = Dimensions.get('window').width;
   const [placeholderWidth, setPlaceholderWidth] = useState(0);
   const positionXPlaceholder = useRef(new Animated.Value(0)).current;
@@ -73,16 +78,17 @@ export const SearchBar: React.FC<Props> = ({placeholder, setSearchText}) => {
           ...{transform: [{translateX: positionXSearchBar}]},
         }}>
         <TextInput
+          value={inputValue}
           selectionColor={Colors.DARK_GREEN}
           style={styles.textInput}
-          onChangeText={e => setSearchText(e)}
+          onChangeText={e => onTextChange(e)}
           ref={textInputRef}
+          onBlur={animateOutComponents}
         />
         <Pressable
           style={styles.closeIcon}
           onPress={() => {
-            setSearchText('');
-            textInputRef.current.clear();
+            onTextChange('');
             Keyboard.dismiss();
             animateOutComponents();
           }}>
