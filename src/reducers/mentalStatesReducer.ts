@@ -56,7 +56,10 @@ export const mentalStateExercisesByIdAndQuery = createSelector(
         }
       })!;
       const result = mentalState.exercises!.filter(exercise => {
-        if (query.length === 0 || exercise.title.includes(query)) {
+        if (
+          query.length === 0 ||
+          exercise.title.toLocaleLowerCase().includes(query.toLowerCase())
+        ) {
           return exercise;
         }
       })!;

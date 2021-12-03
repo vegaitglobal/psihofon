@@ -23,18 +23,17 @@ export const ExerciseListScreen: React.FC<ExerciseListScreenProps> = ({
   route,
 }) => {
   const {id} = route.params;
-
   const exerciseSelector = useSelector(mentalStateExercisesByIdAndQuery);
-
   const exerciseSelect = useSelector(mentalStateById);
-
   const exercise = exerciseSelect(id);
-
   const [searchText, setSearchText] = useState('');
-
   const data = exerciseSelector(id, searchText);
 
   useHeader(navigation);
+
+  const onTextChange = (text: string) => {
+    setSearchText(text);
+  };
 
   return (
     <SolidBackground
@@ -46,11 +45,13 @@ export const ExerciseListScreen: React.FC<ExerciseListScreenProps> = ({
       <View style={styles.header}>
         <SearchBar
           placeholder={exercise.exerciseListLabel}
-          setSearchText={setSearchText}
+          onTextChange={onTextChange}
+          inputValue={searchText}
         />
       </View>
       <FadeAnimation>
         <FlatList
+          keyboardShouldPersistTaps="always"
           data={data}
           style={styles.list}
           contentContainerStyle={styles.listContainer}
@@ -60,12 +61,14 @@ export const ExerciseListScreen: React.FC<ExerciseListScreenProps> = ({
             <CustomButton
               isDark={false}
               text={item.title}
-              onPress={() =>
+              onPress={() => {
+                setSearchText('');
+                Keyboard.dismiss();
                 navigation.navigate(AppRoute.SECOND_EXCERCISE_SCREEN, {
                   mentalStateId: id,
                   exerciseId: item.id,
-                })
-              }
+                });
+              }}
             />
           )}
         />
