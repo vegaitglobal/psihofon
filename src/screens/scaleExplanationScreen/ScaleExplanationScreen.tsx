@@ -13,6 +13,7 @@ import {
   getQuestionnaire,
   questionnarieAnswers,
 } from '../../reducers/questionnairesReducer';
+import {RootState} from '../../reducers/rootReducer';
 import {useAppDispatch} from '../../store/store';
 import styles from './style';
 
@@ -20,6 +21,7 @@ export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
   navigation,
 }) => {
   useHeader(navigation);
+  const {isSurveyFinished} = useSelector((state: RootState) => state.settings);
   const dispatch = useAppDispatch();
 
   const scaleGrades = useSelector(questionnarieAnswers);
@@ -53,16 +55,14 @@ export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
               isDark={false}
               onPress={() => navigation.push(AppRoute.QUIZ)}
             />
-            <CustomButton
-              style={styles.skipButton}
-              text={'Izostavi upitnik'}
-              isDark={false}
-              onPress={() =>
-                navigation.navigate(AppRoute.EXCERCISE_OVERVIEW, {
-                  skippedQuiz: true,
-                })
-              }
-            />
+            {isSurveyFinished && (
+              <CustomButton
+                style={styles.skipButton}
+                text={'Preskoči upitnik'}
+                isDark={false}
+                onPress={() => navigation.navigate(AppRoute.EXCERCISE_OVERVIEW)}
+              />
+            )}
           </>
         }
         keyExtractor={({id}) => id.toString()}

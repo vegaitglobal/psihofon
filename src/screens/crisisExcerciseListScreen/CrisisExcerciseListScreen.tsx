@@ -51,7 +51,6 @@ export const CrisisExercisesListScreen: React.FC<CrisisExercisesListScreenProps>
                     })
                   }
                   isDark={false}
-                  key={item.id}
                 />
                 <View style={styles.separtor} key={index} />
               </View>

@@ -35,11 +35,10 @@ export const useNotificationSetup = {
     onSuccess: () => void,
     channelIdentifier: string,
   ) => {
-    const notifications: Notification[] = [
-      {title: 'Ćao,', body: 'Da li si za vežbe?'},
-      {title: 'Hej tamo,', body: 'Da li imaš volje da se družimo?'},
-      {title: 'Ćaos,', body: 'Nemoj zaboraviti na svoje vežbe.'},
-    ];
+    const notification: Notification = {
+      title: 'Zdravo,',
+      body: 'Nemoj zaboraviti na svoje vežbe.',
+    };
     let errorHappened = false;
 
     for (let i = 0; i < 3; i++) {
@@ -59,8 +58,8 @@ export const useNotificationSetup = {
         await notifee.createTriggerNotification(
           {
             id: `localReminder${i}`,
-            title: notifications[i].title,
-            body: notifications[i].body,
+            title: notification.title,
+            body: notification.body,
 
             android: {
               channelId: channelIdentifier,

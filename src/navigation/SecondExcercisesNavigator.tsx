@@ -7,13 +7,8 @@ import {
 import {AppRoute} from './routes';
 import {QuizScreen} from '../screens/quiz/QuizScreen';
 import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/AnalyticsQuizResultsScreen';
-import {useSelector} from 'react-redux';
-import {RootState} from '../reducers/rootReducer';
 import {ScaleExplanationScreen} from '../screens/scaleExplanationScreen/ScaleExplanationScreen';
-import {
-  ExcerciseOverviewScreen,
-  ExerciseOverviewScreenParams,
-} from '../screens/exerciseOverview/ExcerciseOverviewScreen';
+import {ExcerciseOverviewScreen} from '../screens/exerciseOverview/ExcerciseOverviewScreen';
 import {
   ExerciseListScreen,
   ExerciseListScreenParams,
@@ -31,7 +26,7 @@ export type SecondExcercisesNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ANALYTICS_QUIZ_RESULTS]: undefined;
   [AppRoute.SCALE_EXPLANATION]: undefined;
-  [AppRoute.EXCERCISE_OVERVIEW]: ExerciseOverviewScreenParams;
+  [AppRoute.EXCERCISE_OVERVIEW]: undefined;
   [AppRoute.SECOND_EXCERCISE_SCREEN]: SecondTypeEcerciseScreenParams;
   [AppRoute.EXERCISE_LIST]: ExerciseListScreenParams;
 };
@@ -66,13 +61,10 @@ export type SecondTypeEcerciseScreenProps =
 export const SecondExcercisesNavigator = (
   props: Partial<StackNavigatorProps>,
 ) => {
-  const {isSurveyFinished} = useSelector((state: RootState) => state.settings);
   return (
     <Stack.Navigator
       {...props}
-      initialRouteName={
-        isSurveyFinished ? AppRoute.QUIZ : AppRoute.SCALE_EXPLANATION
-      }
+      initialRouteName={AppRoute.SCALE_EXPLANATION}
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,

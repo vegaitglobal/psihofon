@@ -37,7 +37,8 @@ export const {getCrisisExcerciseStart, getCrisisExcerciseSuccess} =
 export const getCrisisExercises = () => async (dispatch: AppDispatch) => {
   dispatch(getCrisisExcerciseStart());
   try {
-    const crisisExcercises = await CrisisExcerciceService.fetchCrisisExercices();
+    const crisisExcercises =
+      await CrisisExcerciceService.fetchCrisisExercices();
     dispatch(getCrisisExcerciseSuccess(crisisExcercises));
   } catch (error) {
     console.log(error);

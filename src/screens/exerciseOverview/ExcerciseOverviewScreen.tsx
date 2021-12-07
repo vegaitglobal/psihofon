@@ -10,15 +10,13 @@ import {TitleText} from '../../components/titleText/TitleText';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
 
-export interface ExerciseOverviewScreenParams {
-  skippedQuiz?: boolean;
-}
-
 export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
-  ({navigation, route}) => {
-    const {skippedQuiz} = route.params ?? false;
+  ({navigation}) => {
     const {mentalStates} = useSelector(
       (state: RootState) => state.mentalStates,
+    );
+    const {isSurveyFinished} = useSelector(
+      (state: RootState) => state.settings,
     );
     useHeader(navigation);
 
@@ -46,7 +44,7 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
                 />
               )}
             />
-            {!skippedQuiz && (
+            {isSurveyFinished && (
               <Pressable
                 onPress={() =>
                   navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
@@ -62,7 +60,7 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
           <CustomButton
             isDark={false}
             style={style.bottomButton}
-            text={`Želim ${skippedQuiz ? '' : 'ponovo'} da radim test!`}
+            text={`Želim ${!isSurveyFinished ? '' : 'ponovo'} da radim test!`}
             onPress={() => navigation.navigate(AppRoute.SCALE_EXPLANATION)}
           />
         </View>

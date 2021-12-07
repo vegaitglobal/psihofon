@@ -21,8 +21,8 @@ const ListItem = ({item}: {item: MentalState}) => {
   const points = surveyData.find(data => data.mentalStateId === item.id);
 
   const scaleDivider = 0.04 * answers.length; //! We have scale from 1-5 (values should start from 0-4). We want to map 0-4 to 0-100, so we need to 4/100 = 0.04 :)
-  const scaledPoints = points!.score - answers.length;
-
+  const scaledPoints =
+    points!.score >= answers.length ? points!.score - answers.length : 0;
   const percentage = scaledPoints / scaleDivider || 0; //! If scaledPoints === 0, then 0 will be returned.
 
   return (
