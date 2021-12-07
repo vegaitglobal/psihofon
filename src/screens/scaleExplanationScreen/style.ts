@@ -31,7 +31,11 @@ export default StyleSheet.create({
     marginVertical: verticalScale(18),
   } as ViewStyle,
   buttonSpacing: {
-    marginVertical: Margins.MEDIUM,
+    marginTop: Margins.MEDIUM,
+    marginBottom: Margins.SMALL,
+  } as ViewStyle,
+  skipButton: {
+    marginBottom: Margins.SMALL,
   } as ViewStyle,
   headerArea: {
     marginVertical: 5,

@@ -8,12 +8,14 @@ export interface SettingsState {
   isSurveyFinished: boolean;
   surveyData: SurveyChoices[];
   isFirstUsage: boolean;
+  reminderNotificationSetupDone: boolean;
 }
 
 const initialState: SettingsState = {
   isSurveyFinished: false,
   surveyData: [],
   isFirstUsage: true,
+  reminderNotificationSetupDone: false,
 };
 
 export const settingsSlice = createSlice({
@@ -45,6 +47,12 @@ export const settingsSlice = createSlice({
     ) => {
       state.surveyData = payload;
     },
+    setReminderNotificationSetup: (
+      state,
+      {payload}: PayloadAction<boolean>,
+    ) => {
+      state.reminderNotificationSetupDone = payload;
+    },
   },
 });
 
@@ -53,6 +61,7 @@ export const {
   addSurveyData,
   addInitialSurveyData,
   toggleIsFirstUsage,
+  setReminderNotificationSetup,
 } = settingsSlice.actions;
 
 export default settingsSlice.reducer;

@@ -1,6 +1,5 @@
-import {useFocusEffect} from '@react-navigation/native';
 import React, {useEffect} from 'react';
-import {BackHandler, FlatList, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import {CustomButton} from '../../components/buttons/customButton/CustomButton';
 import {CustomText} from '../../components/customText/CustomText';
@@ -14,6 +13,7 @@ import {
   getQuestionnaire,
   questionnarieAnswers,
 } from '../../reducers/questionnairesReducer';
+import {RootState} from '../../reducers/rootReducer';
 import {useAppDispatch} from '../../store/store';
 import styles from './style';
 
@@ -21,6 +21,7 @@ export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
   navigation,
 }) => {
   useHeader(navigation);
+  const {isSurveyFinished} = useSelector((state: RootState) => state.settings);
   const dispatch = useAppDispatch();
 
   const scaleGrades = useSelector(questionnarieAnswers);
@@ -47,12 +48,22 @@ export const ScaleExplanationScreen: React.FC<ScaleExplanationScreenProps> = ({
           </View>
         }
         ListFooterComponent={
-          <CustomButton
-            style={styles.buttonSpacing}
-            text={'Nastavi'}
-            isDark={false}
-            onPress={() => navigation.push(AppRoute.QUIZ)}
-          />
+          <>
+            <CustomButton
+              style={styles.buttonSpacing}
+              text={'Nastavi'}
+              isDark={false}
+              onPress={() => navigation.push(AppRoute.QUIZ)}
+            />
+            {isSurveyFinished && (
+              <CustomButton
+                style={styles.skipButton}
+                text={'Preskoči upitnik'}
+                isDark={false}
+                onPress={() => navigation.navigate(AppRoute.EXCERCISE_OVERVIEW)}
+              />
+            )}
+          </>
         }
         keyExtractor={({id}) => id.toString()}
         renderItem={({item}) => (

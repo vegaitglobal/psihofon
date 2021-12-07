@@ -11,7 +11,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {RequestUserPermission} from './utils/RequestUserPermission';
 import {useNotificationSetup} from './hooks/useNotificationSetup';
 import {RootState} from './reducers/rootReducer';
-import {setReminderNotificationSetup} from './reducers/persistedSettings';
+import {setReminderNotificationSetup} from './reducers/settingsReducer';
 // import {useNotificationListenerSetup} from './hooks/useNotificationListenerSetup'; //! Use this when you want to handle notifications.
 
 enableScreens(false);
@@ -27,7 +27,7 @@ export default () => {
 const App = () => {
   const dispatch = useAppDispatch();
   const {reminderNotificationSetupDone} = useSelector(
-    (state: RootState) => state.persistedSettings,
+    (state: RootState) => state.settings,
   );
 
   useSplashScreen();

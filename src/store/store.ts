@@ -18,13 +18,13 @@ const persistConfig: PersistConfig<CombinedState<RootState>> = {
   key: 'root',
   storage: AsyncStorage,
   blacklist: [
-    'settings',
     'organizations',
     'questionnaire',
     'crisisExcercises',
     'mentalStates',
     'selfEmpowerment',
   ],
+  whitelist: ['settings'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

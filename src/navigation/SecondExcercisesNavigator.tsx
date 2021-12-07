@@ -7,8 +7,6 @@ import {
 import {AppRoute} from './routes';
 import {QuizScreen} from '../screens/quiz/QuizScreen';
 import {AnalyticsQuizResultsScreen} from '../screens/analyticsQuizResults/AnalyticsQuizResultsScreen';
-import {useSelector} from 'react-redux';
-import {RootState} from '../reducers/rootReducer';
 import {ScaleExplanationScreen} from '../screens/scaleExplanationScreen/ScaleExplanationScreen';
 import {ExcerciseOverviewScreen} from '../screens/exerciseOverview/ExcerciseOverviewScreen';
 import {
@@ -43,35 +41,13 @@ export interface SecondExcercisesNavigatorProps<
   route: RouteProp<SecondExcercisesNavigatorParams, Screen>;
 }
 
-export interface QuizScreenProps {
-  navigation: NativeStackNavigationProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.QUIZ
-  >;
-  route: RouteProp<SecondExcercisesNavigatorParams, AppRoute.QUIZ>;
-}
+export type QuizScreenProps = SecondExcercisesNavigatorProps<AppRoute.QUIZ>;
 
-export interface AnalyticsQuizResultsScreenProps {
-  navigation: NativeStackNavigationProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.ANALYTICS_QUIZ_RESULTS
-  >;
-  route: RouteProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.ANALYTICS_QUIZ_RESULTS
-  >;
-}
+export type AnalyticsQuizResultsScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.ANALYTICS_QUIZ_RESULTS>;
 
-export interface ExcerciseOverviewScreenProps {
-  navigation: NativeStackNavigationProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.EXCERCISE_OVERVIEW
-  >;
-  route: RouteProp<
-    SecondExcercisesNavigatorParams,
-    AppRoute.ANALYTICS_QUIZ_RESULTS
-  >;
-}
+export type ExcerciseOverviewScreenProps =
+  SecondExcercisesNavigatorProps<AppRoute.EXCERCISE_OVERVIEW>;
 
 export type ScaleExplanationScreenProps =
   SecondExcercisesNavigatorProps<AppRoute.SCALE_EXPLANATION>;
@@ -85,13 +61,10 @@ export type SecondTypeEcerciseScreenProps =
 export const SecondExcercisesNavigator = (
   props: Partial<StackNavigatorProps>,
 ) => {
-  const {isSurveyFinished} = useSelector((state: RootState) => state.settings);
   return (
     <Stack.Navigator
       {...props}
-      initialRouteName={
-        isSurveyFinished ? AppRoute.QUIZ : AppRoute.SCALE_EXPLANATION
-      }
+      initialRouteName={AppRoute.SCALE_EXPLANATION}
       screenOptions={{
         headerShadowVisible: false,
         headerBackVisible: false,

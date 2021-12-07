@@ -11,9 +11,12 @@ import {useSelector} from 'react-redux';
 import {RootState} from '../../reducers/rootReducer';
 
 export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
-  ({navigation}: ExcerciseOverviewScreenProps) => {
+  ({navigation}) => {
     const {mentalStates} = useSelector(
       (state: RootState) => state.mentalStates,
+    );
+    const {isSurveyFinished} = useSelector(
+      (state: RootState) => state.settings,
     );
     useHeader(navigation);
 
@@ -41,21 +44,23 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
                 />
               )}
             />
-            <Pressable
-              onPress={() =>
-                navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
-              }>
-              <Text style={style.textButton}>
-                Pogledaj prethodne rezultate testa
-              </Text>
-            </Pressable>
+            {isSurveyFinished && (
+              <Pressable
+                onPress={() =>
+                  navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
+                }>
+                <Text style={style.textButton}>
+                  Pogledaj prethodne rezultate testa
+                </Text>
+              </Pressable>
+            )}
           </View>
         </View>
         <View style={style.lowerArea}>
           <CustomButton
             isDark={false}
             style={style.bottomButton}
-            text="Želim ponovo da radim test!"
+            text={`Želim ${!isSurveyFinished ? '' : 'ponovo'} da radim test!`}
             onPress={() => navigation.navigate(AppRoute.SCALE_EXPLANATION)}
           />
         </View>
