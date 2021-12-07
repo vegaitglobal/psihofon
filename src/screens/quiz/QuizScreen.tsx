@@ -229,6 +229,7 @@ export const QuizScreen: React.FC<QuizScreenProps> = ({navigation}) => {
         <Animated.FlatList
           ref={ref}
           style={styles.pagerView}
+          showsHorizontalScrollIndicator={false}
           data={mentalStates}
           bounces={false}
           scrollEnabled={false}
