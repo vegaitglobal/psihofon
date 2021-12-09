@@ -27,6 +27,7 @@ export const mentalStatesSlice = createSlice({
       action: PayloadAction<Array<MentalState>>,
     ) => {
       state.mentalStates = action.payload;
+      state.isLoading = false;
     },
   },
 });

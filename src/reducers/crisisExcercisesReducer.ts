@@ -27,6 +27,7 @@ export const crisisExcercisesSlice = createSlice({
       action: PayloadAction<Array<CrisisExercise>>,
     ) => {
       state.crisisExcercises = action.payload;
+      state.isLoading = false;
     },
   },
 });
