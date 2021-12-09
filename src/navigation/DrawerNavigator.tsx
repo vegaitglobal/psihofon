@@ -23,10 +23,14 @@ import {Paddings} from '../styles/paddings';
 import Logo from '../../assets/icons/Logo.svg';
 import {CustomText} from '../components/customText/CustomText';
 import {CrisisNavigator} from './CrisisNavigator';
-import {FirstExcercisesNavigator} from './FirstExcercisesNavigator';
+import {
+  FirstExcercisesNavigator,
+  FirstExcercisesNavigatorParams,
+} from './FirstExcercisesNavigator';
 import {verticalScale} from 'react-native-size-matters';
 import {Margins} from '../styles/margins';
 import {isTinyDevice} from '../constants/constants';
+import {NavigatorScreenParams} from '@react-navigation/native';
 
 const Drawer = createDrawerNavigator();
 
@@ -37,7 +41,9 @@ export type DrawerNavigatorParams = {
   [AppRoute.QUIZ]: undefined;
   [AppRoute.ORGANIZATIONS_NAVIGATOR]: undefined;
   [AppRoute.CRISIS]: undefined;
-  [AppRoute.SELF_EMPOWERMENT_NAVIGATOR]: undefined;
+  [AppRoute.SELF_EMPOWERMENT_NAVIGATOR]:
+    | NavigatorScreenParams<FirstExcercisesNavigatorParams>
+    | undefined;
 };
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {

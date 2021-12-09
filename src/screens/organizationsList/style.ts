@@ -1,5 +1,5 @@
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Colors} from '../../styles/colors';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 export default StyleSheet.create({
   organizationContainer: {
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     backgroundColor: Colors.WHITE,
     width: '60%',
     height: 50,
-    paddingLeft: 9,
+    paddingHorizontal: 9,
     borderRadius: 10,
     marginRight: 8,
   } as ViewStyle,

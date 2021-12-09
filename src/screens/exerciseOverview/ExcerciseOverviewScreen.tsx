@@ -15,9 +15,6 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
     const {mentalStates} = useSelector(
       (state: RootState) => state.mentalStates,
     );
-    const {isSurveyFinished} = useSelector(
-      (state: RootState) => state.settings,
-    );
     useHeader(navigation);
 
     return (
@@ -44,23 +41,21 @@ export const ExcerciseOverviewScreen: React.FC<ExcerciseOverviewScreenProps> =
                 />
               )}
             />
-            {isSurveyFinished && (
-              <Pressable
-                onPress={() =>
-                  navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
-                }>
-                <Text style={style.textButton}>
-                  Pogledaj prethodne rezultate testa
-                </Text>
-              </Pressable>
-            )}
+            <Pressable
+              onPress={() =>
+                navigation.navigate(AppRoute.ANALYTICS_QUIZ_RESULTS)
+              }>
+              <Text style={style.textButton}>
+                Pogledaj prethodne rezultate testa
+              </Text>
+            </Pressable>
           </View>
         </View>
         <View style={style.lowerArea}>
           <CustomButton
             isDark={false}
             style={style.bottomButton}
-            text={`Želim ${!isSurveyFinished ? '' : 'ponovo'} da radim test!`}
+            text="Želim ponovo da radim test!"
             onPress={() => navigation.navigate(AppRoute.SCALE_EXPLANATION)}
           />
         </View>

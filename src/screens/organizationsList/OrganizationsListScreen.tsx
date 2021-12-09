@@ -28,7 +28,9 @@ interface OrganizationNameProps {
 const OrganizationName: React.FC<OrganizationNameProps> = ({name}) => {
   return (
     <View style={style.nameContainer}>
-      <Text>{name}</Text>
+      <Text ellipsizeMode="tail" numberOfLines={2}>
+        {name}
+      </Text>
     </View>
   );
 };

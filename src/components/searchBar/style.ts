@@ -1,12 +1,15 @@
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
-import {BorderRadiuses} from '../../styles/borderRadiuses';
 import {Colors} from '../../styles/colors';
+import {BorderRadiuses} from '../../styles/borderRadiuses';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 export default StyleSheet.create({
   container: {
     width: '100%',
     alignItems: 'center',
     flexDirection: 'row',
+  } as ViewStyle,
+  placeholderText: {
+    width: '88%',
   } as ViewStyle,
   barContainer: {
     height: 50,
@@ -36,6 +39,6 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   } as ViewStyle,
   searchButton: {
-    marginRight: 1,
+    marginRight: 3,
   } as ViewStyle,
 });
