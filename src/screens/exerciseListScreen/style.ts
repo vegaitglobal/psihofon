@@ -20,10 +20,9 @@ export default StyleSheet.create({
   separator: {
     height: 10,
   } as ViewStyle,
-  list: {
-    marginTop: verticalScale(Margins.MIDLARGE),
-  } as ViewStyle,
   listContainer: {
-    paddingBottom: verticalScale(90),
+    flex: 1,
+    marginTop: verticalScale(Margins.MIDLARGE),
+    marginBottom: verticalScale(Margins.MEDIUM),
   } as ViewStyle,
 });

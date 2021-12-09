@@ -1,11 +1,11 @@
-import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 import {Colors} from '../../styles/colors';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 export default StyleSheet.create({
   lowerContentContainer: {
     flex: 1,
     paddingTop: 10,
-    // justifyContent: 'space-between',
+    justifyContent: 'space-between',
     height: '100%',
   } as ViewStyle,
   title: {

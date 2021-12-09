@@ -93,11 +93,13 @@ export const FirstTypeExerciseFirstWeekScreen: React.FC<FirstTypeExerciseFirstWe
           <View style={style.lowerSectionContainer}>
             <View>
               <ExerciseDescription />
-              <ExplanationBox
-                style={style.explanationBox}
-                title={'Pojašnjenja'}
-                text={exercise?.explanation ?? ''}
-              />
+              {!!exercise?.explanation && (
+                <ExplanationBox
+                  style={style.explanationBox}
+                  title={'Pojašnjenja'}
+                  text={exercise?.explanation ?? ''}
+                />
+              )}
             </View>
             <RecommendationBox
               icon={<TimerIcon />}

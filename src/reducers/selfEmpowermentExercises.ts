@@ -38,6 +38,7 @@ export const selfEmpowermentExcercisesSlice = createSlice({
       action: PayloadAction<Array<SelfEmpowermentExercise>>,
     ) => {
       state.selfEmpowermentExcercises = action.payload;
+      state.isLoading = false;
     },
 
     trySwitchingToNextExercise: state => {

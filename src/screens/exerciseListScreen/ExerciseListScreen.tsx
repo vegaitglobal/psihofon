@@ -49,30 +49,35 @@ export const ExerciseListScreen: React.FC<ExerciseListScreenProps> = ({
           inputValue={searchText}
         />
       </View>
-      <FadeAnimation>
-        <FlatList
-          keyboardShouldPersistTaps="always"
-          data={data}
-          style={styles.list}
-          contentContainerStyle={styles.listContainer}
-          showsVerticalScrollIndicator={false}
-          ItemSeparatorComponent={() => <View style={styles.separator} />}
-          renderItem={({item}) => (
-            <CustomButton
-              isDark={false}
-              text={item.title}
-              onPress={() => {
-                setSearchText('');
-                Keyboard.dismiss();
-                navigation.navigate(AppRoute.SECOND_EXCERCISE_SCREEN, {
-                  mentalStateId: id,
-                  exerciseId: item.id,
-                });
-              }}
-            />
-          )}
-        />
-      </FadeAnimation>
+      <View style={styles.listContainer}>
+        <FadeAnimation>
+          <FlatList
+            keyboardShouldPersistTaps="always"
+            data={data}
+            showsVerticalScrollIndicator={false}
+            ItemSeparatorComponent={() => (
+              <View
+                onStartShouldSetResponder={() => true}
+                style={styles.separator}
+              />
+            )}
+            renderItem={({item}) => (
+              <CustomButton
+                isDark={false}
+                text={item.title}
+                onPress={() => {
+                  setSearchText('');
+                  Keyboard.dismiss();
+                  navigation.navigate(AppRoute.SECOND_EXCERCISE_SCREEN, {
+                    mentalStateId: id,
+                    exerciseId: item.id,
+                  });
+                }}
+              />
+            )}
+          />
+        </FadeAnimation>
+      </View>
     </SolidBackground>
   );
 };

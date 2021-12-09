@@ -59,7 +59,12 @@ export const SearchBar: React.FC<Props> = ({
     <View style={styles.container}>
       <View style={styles.titleRow}>
         <Animated.View
-          style={{transform: [{translateX: positionXPlaceholder}]}}
+          style={[
+            {
+              transform: [{translateX: positionXPlaceholder}],
+            },
+            styles.placeholderText,
+          ]}
           onLayout={e => setPlaceholderWidth(e.nativeEvent.layout.width)}>
           <TitleText>{placeholder}</TitleText>
         </Animated.View>

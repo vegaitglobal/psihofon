@@ -30,6 +30,7 @@ export const questionnaireSlice = createSlice({
     },
     getQuestionnaireSuccess: (state, action: PayloadAction<Questionnaire>) => {
       state.questionnaires = action.payload;
+      state.isLoading = false;
     },
   },
 });

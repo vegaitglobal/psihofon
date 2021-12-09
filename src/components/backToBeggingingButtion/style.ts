@@ -1,5 +1,5 @@
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Colors } from '../../styles/colors';
+import {Colors} from '../../styles/colors';
+import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 export default StyleSheet.create({
   buttonContainer: {

@@ -31,6 +31,7 @@ export const organizationsSlice = createSlice({
       action: PayloadAction<Array<Organization>>,
     ) => {
       state.organizations = action.payload;
+      state.isLoading = false;
     },
   },
 });

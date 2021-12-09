@@ -22,9 +22,8 @@ const persistConfig: PersistConfig<CombinedState<RootState>> = {
     'questionnaire',
     'crisisExcercises',
     'mentalStates',
-    'selfEmpowerment',
   ],
-  whitelist: ['settings'],
+  whitelist: ['settings', 'selfEmpowerment'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
