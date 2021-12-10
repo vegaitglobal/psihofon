@@ -30,7 +30,11 @@ export default StyleSheet.create({
     color: Colors.WHITE,
   } as TextStyle,
   closeIcon: {
-    marginRight: 20,
+    width: 40,
+    height: '100%',
+    marginRight: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   } as ViewStyle,
   titleRow: {
     width: '100%',
@@ -39,6 +43,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   } as ViewStyle,
   searchButton: {
-    marginRight: 3,
+    padding: 10,
+    marginRight: -7,
   } as ViewStyle,
 });
