@@ -130,6 +130,15 @@ export const IntroMenuScreen: React.FC<IntroMenuScreenProps> = ({
             }>
             <CustomText>Baza podataka organizacija</CustomText>
           </Pressable>
+          <Pressable
+            style={styles.bottomButton}
+            onPress={() =>
+              navigation.navigate(AppRoute.DRAWER, {
+                screen: AppRoute.REFERENCES_NAVIGATOR,
+              })
+            }>
+            <CustomText>Reference</CustomText>
+          </Pressable>
         </View>
       </View>
     </>
