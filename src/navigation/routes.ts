@@ -18,4 +18,5 @@ export enum AppRoute {
   SECOND_EXCERCISE_SCREEN = 'Second Exercise',
   REFERENCES_LIST = 'References List',
   REFERENCES_NAVIGATOR = 'References Navigators',
+  INSTRUCTIONS = 'Instructions',
 }

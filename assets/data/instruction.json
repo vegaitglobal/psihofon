@@ -1,0 +1,6 @@
+{
+  "id": 1,
+  "title": "Uputstvo",
+  "introduction": "Aplikacija sadrži:\n1) listu psihofizičkih znakova (simptoma) za identifikaciju svake od pojedinačnih epizoda\n2) savete, instrukcije i intervencije za njihovo ublažavanje i prevazilaženje\n3) paket vežbi za samoosnaživanje\n4) bazu podataka o organizacijama u Vojvodini koje pružaju usluge vezane za mentalno zdravlje.",
+  "description": "Opis aplikacije:\n\nNa osnovu ponuđene liste različitih psihofizičkih simptoma koji se odnose na: anksioznost, tugu, stres i nisko samopouzdanje, čekiraš svoje simptome kako bi dobio povratnu informaciju o vrsti psihološkog problema sa kojim se suočavaš. Pokrećeš deo aplikacije koji se odnosi na tvoj problem - anksioznost, tugu, stres ili nisko samopouzdanje.i dobijaš pristup psihološkim savetima, instrukcijama i intervencijama kako bi ublažio problem.\n\nSavete, instrukcije i intervencije primenjuješ u definisanom vremenskom roku i prema uputstvu – radiš na sebi. Pored vežbi, saveta i instrukcija za anksioznost, tugu, stres i samopouzdanje, aplikacija sadrži i paket vežbi za samoosnaživanje namenjen opštem psihičkom jačanju.\n\nUkoliko prepoznaš potrebu za obuhvatnijim stručnim tretmanom, možeš kontaktirati neku od organizacija koje se bave mentalnim zdravljem a nalaze se u priloženoj bazi podataka unutar aplikacije."
+}

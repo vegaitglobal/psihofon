@@ -9,9 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {useSelector} from 'react-redux';
 import {Reference} from '../../models/Reference';
-import {RootState} from '../../reducers/rootReducer';
 import Globe from '../../../assets/icons/Globe.svg';
 import {CustomText} from '../../components/customText/CustomText';
 import {SolidBackground} from '../../components/solidBackground/SolidBackground';
@@ -20,6 +18,7 @@ import {useHeader} from '../../hooks/useHeader';
 import {ReferencesListScreenProps} from '../../navigation/DrawerNavigator';
 import style from './style';
 import {useFocusEffect} from '@react-navigation/native';
+import localReferences from '../../../assets/data/references.json';
 
 interface ReferenceNameProps {
   name: string;
@@ -78,8 +77,6 @@ const ReferenceContainer: React.FC<ReferenceContainerProps> = ({
 export const ReferencesListScreen: React.FC<ReferencesListScreenProps> = ({
   navigation,
 }) => {
-  const {references} = useSelector((state: RootState) => state.references);
-
   const renderItem = ({item}: ListRenderItemInfo<Reference>) => (
     <ReferenceContainer name={item.name} websiteUrl={item.websiteUrl} />
   );
@@ -114,7 +111,7 @@ export const ReferencesListScreen: React.FC<ReferencesListScreenProps> = ({
       <CustomText style={style.title}>Reference</CustomText>
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={references}
+        data={localReferences}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
       />
