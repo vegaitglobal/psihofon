@@ -24,7 +24,7 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
   } as ViewStyle,
   bottomButton: {
-    padding: 20,
+    padding: 10,
     bottom: verticalScale(90),
   } as ViewStyle,
 });

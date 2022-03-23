@@ -31,6 +31,7 @@ import {verticalScale} from 'react-native-size-matters';
 import {Margins} from '../styles/margins';
 import {isTinyDevice} from '../constants/constants';
 import {NavigatorScreenParams} from '@react-navigation/native';
+import {ReferencesListNavigator} from './ReferencesListNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -44,6 +45,7 @@ export type DrawerNavigatorParams = {
   [AppRoute.SELF_EMPOWERMENT_NAVIGATOR]:
     | NavigatorScreenParams<FirstExcercisesNavigatorParams>
     | undefined;
+  [AppRoute.REFERENCES_NAVIGATOR]: undefined;
 };
 
 const CustomDrawerContent = (props: DrawerContentComponentProps) => {
@@ -96,6 +98,13 @@ const CustomDrawerContent = (props: DrawerContentComponentProps) => {
               Baza podataka organizacija
             </CustomText>
           </Pressable>
+          <Pressable
+            style={style.menuItem}
+            onPress={() =>
+              props.navigation.navigate(AppRoute.REFERENCES_NAVIGATOR)
+            }>
+            <CustomText style={style.itemTextContainer}>Reference</CustomText>
+          </Pressable>
         </View>
         <View style={style.logo}>
           <Logo />
@@ -114,6 +123,9 @@ export interface RootNavigatorProps<
 
 export type OrganizationsListScreenProps =
   RootNavigatorProps<AppRoute.ORGANIZATIONS_NAVIGATOR>;
+
+export type ReferencesListScreenProps =
+  RootNavigatorProps<AppRoute.REFERENCES_NAVIGATOR>;
 
 export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
   return (
@@ -154,6 +166,11 @@ export const DrawerNavigator = (props: Partial<DrawerNavigatorProperties>) => {
         options={{gestureEnabled: false}}
         name={AppRoute.SELF_EMPOWERMENT_NAVIGATOR}
         component={FirstExcercisesNavigator}
+      />
+      <Drawer.Screen
+        options={{gestureEnabled: false}}
+        name={AppRoute.REFERENCES_NAVIGATOR}
+        component={ReferencesListNavigator}
       />
     </Drawer.Navigator>
   );

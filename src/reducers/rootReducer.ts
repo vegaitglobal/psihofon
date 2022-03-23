@@ -1,5 +1,6 @@
 import {combineReducers} from '@reduxjs/toolkit';
 import crisisExcercisesSlice from './crisisExcercisesReducer';
+import instructionSlice from './instructionReducer';
 import mentalStatesSlice from './mentalStatesReducer';
 import organizationsSlice from './organizationsSlice';
 import questionnaireSlice from './questionnairesReducer';
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   crisisExcercises: crisisExcercisesSlice,
   mentalStates: mentalStatesSlice,
   selfEmpowerment: selfEmpowermentExcercisesSlice,
+  instruction: instructionSlice,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
